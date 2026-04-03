@@ -1,0 +1,117 @@
+[
+    {
+        "name": "Pęknięty lodowy sztylet",
+        "value": 10,
+        "rarity": "common"
+    },
+    {
+        "name": "Futrzany płaszcz podróżnika",
+        "value": 25,
+        "rarity": "common"
+    },
+    {
+        "name": "Zamarznięty racjon żywnościowy",
+        "value": 5,
+        "rarity": "common"
+    },
+    {
+        "name": "Mikstura ogrzania ciała",
+        "value": 40,
+        "rarity": "common"
+    },
+    {
+        "name": "Latarnia z niebieskim płomieniem",
+        "value": 30,
+        "rarity": "common"
+    },
+    {
+        "name": "Kościany nóż łowcy",
+        "value": 12,
+        "rarity": "common"
+    },
+    {
+        "name": "Sakiewka z lodowymi kryształami",
+        "value": 15,
+        "rarity": "common"
+    },
+    {
+        "name": "Topór z lodowego żelaza",
+        "value": 120,
+        "rarity": "rare"
+    },
+    {
+        "name": "Amulet odporności na zimno",
+        "value": 180,
+        "rarity": "rare"
+    },
+    {
+        "name": "Pierścień lodowego dotyku",
+        "value": 200,
+        "rarity": "rare"
+    },
+    {
+        "name": "Futro niedźwiedzia polarnego",
+        "value": 150,
+        "rarity": "rare"
+    },
+    {
+        "name": "Mikstura odporności na mróz",
+        "value": 160,
+        "rarity": "rare"
+    },
+    {
+        "name": "Zamarznięty relikt Auril",
+        "value": 220,
+        "rarity": "rare"
+    },
+    {
+        "name": "Miecz wiecznej zimy",
+        "value": 400,
+        "rarity": "epic"
+    },
+    {
+        "name": "Zbroja lodowego strażnika",
+        "value": 380,
+        "rarity": "epic"
+    },
+    {
+        "name": "Laska burzy śnieżnej",
+        "value": 450,
+        "rarity": "epic"
+    },
+    {
+        "name": "Hełm widzenia w zamieci",
+        "value": 370,
+        "rarity": "epic"
+    },
+    {
+        "name": "Serce lodowego olbrzyma",
+        "value": 500,
+        "rarity": "epic"
+    },
+    {
+        "name": "Ostrze Auril",
+        "value": 1200,
+        "rarity": "legendary"
+    },
+    {
+        "name": "Korona Wiecznej Nocy",
+        "value": 1500,
+        "rarity": "legendary"
+    },
+    {
+        "name": "Artefakt Zamarzniętego Czasu",
+        "value": 1800,
+        "rarity": "legendary"
+    },
+    {
+        "name": "Płaszcz Królowej Lodu",
+        "value": 2000,
+        "rarity": "legendary"
+    },
+    {
+        "name": "Serce Lodowego Smoka",
+        "value": 2200,
+        "rarity": "legendary"
+    }
+]

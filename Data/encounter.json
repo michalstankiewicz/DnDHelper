@@ -1,0 +1,132 @@
+[
+    {
+        "name": "3 wilki polarne na polowaniu",
+        "type": "monster",
+        "difficulty": 2
+    },
+    {
+        "name": "2 lodowe mefity patrolujące teren",
+        "type": "monster",
+        "difficulty": 2
+    },
+    {
+        "name": "Zbłąkany niedźwiedź polarny",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Grupa 4 goblinów w futrach z zasadzki",
+        "type": "monster",
+        "difficulty": 2
+    },
+    {
+        "name": "2 bandytów i zwiadowca próbujący obrabować drużynę",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Młody troll lodowy wynurzający się z lodu",
+        "type": "monster",
+        "difficulty": 4
+    },
+    {
+        "name": "Upiór zamarzniętego podróżnika",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "2 kultystów Auril z lodowym akolitą",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Yeti tropiące drużynę",
+        "type": "monster",
+        "difficulty": 4
+    },
+    {
+        "name": "Wędrowny kupiec szukający eskorty",
+        "type": "npc",
+        "difficulty": 1
+    },
+    {
+        "name": "Zaginiony myśliwy proszący o pomoc",
+        "type": "npc",
+        "difficulty": 1
+    },
+    {
+        "name": "Grupa uchodźców zamarzająca przy ognisku",
+        "type": "npc",
+        "difficulty": 1
+    },
+    {
+        "name": "Podejrzany przewodnik oferujący skrót przez tundrę",
+        "type": "npc",
+        "difficulty": 2
+    },
+    {
+        "name": "Kapłanka Auril obserwująca drużynę z oddali",
+        "type": "npc",
+        "difficulty": 2
+    },
+    {
+        "name": "Nagła zamieć śnieżna ograniczająca widoczność",
+        "type": "event",
+        "difficulty": 2
+    },
+    {
+        "name": "Pękający lód pod stopami",
+        "type": "event",
+        "difficulty": 3
+    },
+    {
+        "name": "Znaleziony zamarznięty obóz z ukrytym lootem",
+        "type": "event",
+        "difficulty": 1
+    },
+    {
+        "name": "Aurora na niebie wywołująca dziwne wizje",
+        "type": "event",
+        "difficulty": 2
+    },
+    {
+        "name": "Zamarznięte jezioro – coś porusza się pod lodem",
+        "type": "event",
+        "difficulty": 3
+    },
+    {
+        "name": "Mały lodowy żywiołak blokujący drogę",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Stado 6 wilków otaczające drużynę",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Ogar piekielny przystosowany do zimna",
+        "type": "monster",
+        "difficulty": 4
+    },
+    {
+        "name": "Zasadzka 3 barbarzyńców północy",
+        "type": "monster",
+        "difficulty": 3
+    },
+    {
+        "name": "Zamrożone ruiny z aktywną pułapką lodową",
+        "type": "event",
+        "difficulty": 3
+    },
+    {
+        "name": "Echo głosów w zamieci prowadzące w pułapkę",
+        "type": "event",
+        "difficulty": 2
+    },
+    {
+        "name": "Znaleziony ślad ogromnego stworzenia w śniegu",
+        "type": "event",
+        "difficulty": 2
+    }
+]
