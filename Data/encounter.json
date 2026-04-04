@@ -1,132 +1,152 @@
 [
     {
-        "name": "3 wilki polarne na polowaniu",
-        "type": "monster",
-        "difficulty": 2
+        "name": "Ice Mephit",
+        "cr": 0.5,
+        "type": "elemental",
+        "page": 215
     },
     {
-        "name": "2 lodowe mefity patrolujące teren",
-        "type": "monster",
-        "difficulty": 2
+        "name": "Goblin",
+        "cr": 0.25,
+        "type": "humanoid",
+        "page": 166
     },
     {
-        "name": "Zbłąkany niedźwiedź polarny",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Zombie",
+        "cr": 0.25,
+        "type": "undead",
+        "page": 316
     },
     {
-        "name": "Grupa 4 goblinów w futrach z zasadzki",
-        "type": "monster",
-        "difficulty": 2
+        "name": "Fox (Arctic)",
+        "cr": 0,
+        "type": "beast",
+        "page": 304
     },
     {
-        "name": "2 bandytów i zwiadowca próbujący obrabować drużynę",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Giant Spider",
+        "cr": 1,
+        "type": "beast",
+        "page": 328
     },
     {
-        "name": "Młody troll lodowy wynurzający się z lodu",
-        "type": "monster",
-        "difficulty": 4
+        "name": "Winter Wolf",
+        "cr": 3,
+        "type": "beast",
+        "page": 340
     },
     {
-        "name": "Upiór zamarzniętego podróżnika",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Frost Giant",
+        "cr": 8,
+        "type": "giant",
+        "page": 155
     },
     {
-        "name": "2 kultystów Auril z lodowym akolitą",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Troll",
+        "cr": 5,
+        "type": "giant",
+        "page": 291
     },
     {
-        "name": "Yeti tropiące drużynę",
-        "type": "monster",
-        "difficulty": 4
+        "name": "Wight",
+        "cr": 3,
+        "type": "undead",
+        "page": 300
     },
     {
-        "name": "Wędrowny kupiec szukający eskorty",
-        "type": "npc",
-        "difficulty": 1
+        "name": "Owlbear",
+        "cr": 3,
+        "type": "monstrosity",
+        "page": 249
     },
     {
-        "name": "Zaginiony myśliwy proszący o pomoc",
-        "type": "npc",
-        "difficulty": 1
+        "name": "Kobold",
+        "cr": 0.125,
+        "type": "humanoid",
+        "page": 195
     },
     {
-        "name": "Grupa uchodźców zamarzająca przy ognisku",
-        "type": "npc",
-        "difficulty": 1
+        "name": "Skeleton",
+        "cr": 0.25,
+        "type": "undead",
+        "page": 272
     },
     {
-        "name": "Podejrzany przewodnik oferujący skrót przez tundrę",
-        "type": "npc",
-        "difficulty": 2
+        "name": "Air Elemental",
+        "cr": 5,
+        "type": "elemental",
+        "page": 124
     },
     {
-        "name": "Kapłanka Auril obserwująca drużynę z oddali",
-        "type": "npc",
-        "difficulty": 2
+        "name": "Bandit",
+        "cr": 0.125,
+        "type": "humanoid",
+        "page": 343
     },
     {
-        "name": "Nagła zamieć śnieżna ograniczająca widoczność",
-        "type": "event",
-        "difficulty": 2
+        "name": "Young White Dragon",
+        "cr": 6,
+        "type": "dragon",
+        "page": 101
     },
     {
-        "name": "Pękający lód pod stopami",
-        "type": "event",
-        "difficulty": 3
+        "name": "Orc",
+        "cr": 0.5,
+        "type": "humanoid",
+        "page": 246
     },
     {
-        "name": "Znaleziony zamarznięty obóz z ukrytym lootem",
-        "type": "event",
-        "difficulty": 1
+        "name": "Specter",
+        "cr": 1,
+        "type": "undead",
+        "page": 279
     },
     {
-        "name": "Aurora na niebie wywołująca dziwne wizje",
-        "type": "event",
-        "difficulty": 2
+        "name": "Remorhaz",
+        "cr": 11,
+        "type": "monstrosity",
+        "page": 258
     },
     {
-        "name": "Zamarznięte jezioro – coś porusza się pod lodem",
-        "type": "event",
-        "difficulty": 3
+        "name": "Sea Hag",
+        "cr": 2,
+        "type": "fey",
+        "page": 179
     },
     {
-        "name": "Mały lodowy żywiołak blokujący drogę",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Will-o'-Wisp",
+        "cr": 2,
+        "type": "undead",
+        "page": 301
     },
     {
-        "name": "Stado 6 wilków otaczające drużynę",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Displacer Beast",
+        "cr": 3,
+        "type": "monstrosity",
+        "page": 81
     },
     {
-        "name": "Ogar piekielny przystosowany do zimna",
-        "type": "monster",
-        "difficulty": 4
+        "name": "Cultist",
+        "cr": 0.125,
+        "type": "humanoid",
+        "page": 345
     },
     {
-        "name": "Zasadzka 3 barbarzyńców północy",
-        "type": "monster",
-        "difficulty": 3
+        "name": "Giant Constrictor Snake",
+        "cr": 2,
+        "type": "beast",
+        "page": 324
     },
     {
-        "name": "Zamrożone ruiny z aktywną pułapką lodową",
-        "type": "event",
-        "difficulty": 3
+        "name": "Revenant",
+        "cr": 5,
+        "type": "undead",
+        "page": 259
     },
     {
-        "name": "Echo głosów w zamieci prowadzące w pułapkę",
-        "type": "event",
-        "difficulty": 2
-    },
-    {
-        "name": "Znaleziony ślad ogromnego stworzenia w śniegu",
-        "type": "event",
-        "difficulty": 2
+        "name": "Harpy",
+        "cr": 1,
+        "type": "monstrosity",
+        "page": 181
     }
 ]

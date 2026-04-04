@@ -51,15 +51,23 @@ class MyApp(tk.Tk):
         messagebox.showinfo("Dice Roll", f"Wypadło: {result} (d{sides})")
 
     def generate_encounter(self):
-        self.encounter_listbox.delete(0, tk.END)  # usuwa poprzedni wpis
-        enc = ecounter.generate_encounter()
-        self.encounter_listbox.insert(
-            tk.END, f"{enc['name']} ({enc['type']}, difficulty {enc['difficulty']})"
-        )
+        self.encounter_listbox.delete(0, tk.END)  # clear previous encounters
+        # we are using _ because we don't care about the loop variable, we just want to repeat 4 times
+        # generate 4 encounters and add them to the listbox
+        for _ in range(4):
+            enc = ecounter.generate_encounter()
+            # if we get is_monster true, we format the text as a monster, otherwise as an adventure
+            if enc.get("is_monster"):
+                text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['page']})"
+            else:
+                text = f"[ADVENTURE] {enc['name']} (difficulty: {enc['difficulty']}, {enc['description']})"
+            self.encounter_listbox.insert(tk.END, text)
+    # i added generate loot function, which will generate 6 items of loot and add them to the loot listbox
 
     def loot_generator(self):
-        self.loot_listbox.delete(0, tk.END)  # usuwa poprzedni wpis
-        lt = loot.generate_loot()
-        self.loot_listbox.insert(
-            tk.END, f"{lt['name']} value {lt['value']} gold, rarity {lt['rarity']})"
-        )
+        self.loot_listbox.delete(0, tk.END)  # clear previous loot
+        for _ in range(6):
+            lt = loot.generate_loot()
+            self.loot_listbox.insert(
+                tk.END, f"{lt['name']} value {lt['value']} of gold, rarity {lt['rarity']}, description: {lt['description']}"
+            )

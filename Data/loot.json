@@ -1,117 +1,314 @@
 [
     {
-        "name": "Pęknięty lodowy sztylet",
-        "value": 10,
-        "rarity": "common"
-    },
-    {
-        "name": "Futrzany płaszcz podróżnika",
-        "value": 25,
-        "rarity": "common"
-    },
-    {
-        "name": "Zamarznięty racjon żywnościowy",
+        "name": "Zamarznięty racjon",
         "value": 5,
-        "rarity": "common"
+        "rarity": "common",
+        "description": "Porcja jedzenia na mroźną noc."
     },
     {
-        "name": "Mikstura ogrzania ciała",
-        "value": 40,
-        "rarity": "common"
+        "name": "Zardzewiały nóż",
+        "value": 3,
+        "rarity": "common",
+        "description": "Stary nóż do krojenia lub obrony."
     },
     {
-        "name": "Latarnia z niebieskim płomieniem",
-        "value": 30,
-        "rarity": "common"
+        "name": "Pęknięta latarnia",
+        "value": 2,
+        "rarity": "common",
+        "description": "Latarnia świeci słabo w mrozie."
     },
     {
-        "name": "Kościany nóż łowcy",
-        "value": 12,
-        "rarity": "common"
+        "name": "Płaszcz z futra",
+        "value": 10,
+        "rarity": "uncommon",
+        "description": "Chroni przed mrozem i wiatrem."
     },
     {
-        "name": "Sakiewka z lodowymi kryształami",
+        "name": "Skórzane buty",
+        "value": 8,
+        "rarity": "common",
+        "description": "Solidne buty na śnieg i lód."
+    },
+    {
+        "name": "Mikstura rozgrzewająca",
         "value": 15,
-        "rarity": "common"
+        "rarity": "uncommon",
+        "description": "Rozgrzewa ciało w ekstremalnym mrozie."
     },
     {
-        "name": "Topór z lodowego żelaza",
-        "value": 120,
-        "rarity": "rare"
+        "name": "Zimowe rękawice",
+        "value": 4,
+        "rarity": "common",
+        "description": "Chronią dłonie przed odmrożeniem."
     },
     {
-        "name": "Amulet odporności na zimno",
-        "value": 180,
-        "rarity": "rare"
+        "name": "Złota moneta",
+        "value": 20,
+        "rarity": "rare",
+        "description": "Cenna moneta do wymiany lub sprzedaży."
     },
     {
-        "name": "Pierścień lodowego dotyku",
-        "value": 200,
-        "rarity": "rare"
+        "name": "Koc niedźwiedzi",
+        "value": 12,
+        "rarity": "uncommon",
+        "description": "Ciepły koc na noc na śniegu."
     },
     {
-        "name": "Futro niedźwiedzia polarnego",
-        "value": 150,
-        "rarity": "rare"
+        "name": "Złamany kubek",
+        "value": 1,
+        "rarity": "common",
+        "description": "Stary kubek, użyteczny prowizorycznie."
     },
     {
-        "name": "Mikstura odporności na mróz",
-        "value": 160,
-        "rarity": "rare"
+        "name": "Zimowy kapelusz",
+        "value": 5,
+        "rarity": "common",
+        "description": "Chroni głowę przed zimnem."
     },
     {
-        "name": "Zamarznięty relikt Auril",
-        "value": 220,
-        "rarity": "rare"
+        "name": "Kamień runiczny",
+        "value": 25,
+        "rarity": "rare",
+        "description": "Starodawny kamień z magicznymi symbolami."
     },
     {
-        "name": "Miecz wiecznej zimy",
-        "value": 400,
-        "rarity": "epic"
+        "name": "Sakwa z monetami",
+        "value": 15,
+        "rarity": "uncommon",
+        "description": "Torba z drobnym złotem."
     },
     {
-        "name": "Zbroja lodowego strażnika",
-        "value": 380,
-        "rarity": "epic"
+        "name": "Lina z lodu",
+        "value": 6,
+        "rarity": "common",
+        "description": "Skręcona lina, przydatna w śniegu."
     },
     {
-        "name": "Laska burzy śnieżnej",
-        "value": 450,
-        "rarity": "epic"
+        "name": "Świeca woskowa",
+        "value": 2,
+        "rarity": "common",
+        "description": "Pomaga w ciemności i w zimnie."
     },
     {
-        "name": "Hełm widzenia w zamieci",
-        "value": 370,
-        "rarity": "epic"
+        "name": "Zimowy pas",
+        "value": 3,
+        "rarity": "common",
+        "description": "Pas podtrzymujący ubranie, chroni przed wiatrem."
     },
     {
-        "name": "Serce lodowego olbrzyma",
-        "value": 500,
-        "rarity": "epic"
+        "name": "Stare rękawice skórzane",
+        "value": 2,
+        "rarity": "common",
+        "description": "Chronią ręce, już trochę przetarte."
     },
     {
-        "name": "Ostrze Auril",
-        "value": 1200,
-        "rarity": "legendary"
+        "name": "Lodowy sztylet",
+        "value": 18,
+        "rarity": "uncommon",
+        "description": "Sztylet z ostrzem pokrytym lodem."
     },
     {
-        "name": "Korona Wiecznej Nocy",
-        "value": 1500,
-        "rarity": "legendary"
+        "name": "Miniaturowy kompas",
+        "value": 7,
+        "rarity": "common",
+        "description": "Pomaga znaleźć kierunek w zamieci."
     },
     {
-        "name": "Artefakt Zamarzniętego Czasu",
-        "value": 1800,
-        "rarity": "legendary"
+        "name": "Zimowy płaszcz kapturowy",
+        "value": 9,
+        "rarity": "uncommon",
+        "description": "Ciepły kaptur chroni przed śniegiem."
     },
     {
-        "name": "Płaszcz Królowej Lodu",
-        "value": 2000,
-        "rarity": "legendary"
+        "name": "Skórzany pas na broń",
+        "value": 4,
+        "rarity": "common",
+        "description": "Trzyma broń przy pasie."
     },
     {
-        "name": "Serce Lodowego Smoka",
-        "value": 2200,
-        "rarity": "legendary"
+        "name": "Mroźny eliksir",
+        "value": 12,
+        "rarity": "uncommon",
+        "description": "Chroni przed wychłodzeniem przez godzinę."
+    },
+    {
+        "name": "Złamany miecz",
+        "value": 3,
+        "rarity": "common",
+        "description": "Nie nadaje się do walki, może prowizorycznie."
+    },
+    {
+        "name": "Sakwa z prowiantem",
+        "value": 5,
+        "rarity": "common",
+        "description": "Zapas jedzenia i wody na drogę."
+    },
+    {
+        "name": "Śnieżna lampa",
+        "value": 6,
+        "rarity": "common",
+        "description": "Lampka świeci w śnieżnej zamieci."
+    },
+    {
+        "name": "Kamień ogrzewający",
+        "value": 8,
+        "rarity": "uncommon",
+        "description": "Trzyma ciepło w dłoniach przez kilka minut."
+    },
+    {
+        "name": "Stare buty wojskowe",
+        "value": 5,
+        "rarity": "common",
+        "description": "Wygodne na krótkie wyprawy."
+    },
+    {
+        "name": "Zimowy pas na sakwy",
+        "value": 3,
+        "rarity": "common",
+        "description": "Przytrzymuje torby i sakwy."
+    },
+    {
+        "name": "Zimowa maska",
+        "value": 4,
+        "rarity": "common",
+        "description": "Chroni twarz przed wiatrem i śniegiem."
+    },
+    {
+        "name": "Pikowana kurtka",
+        "value": 9,
+        "rarity": "uncommon",
+        "description": "Chroni przed lodowatym wiatrem."
+    },
+    {
+        "name": "Mroźny amulet",
+        "value": 20,
+        "rarity": "rare",
+        "description": "Chroni przed zimnem i magią lodu."
+    },
+    {
+        "name": "Złamana topórka",
+        "value": 2,
+        "rarity": "common",
+        "description": "Nie nadaje się do walki, do użytku awaryjnego."
+    },
+    {
+        "name": "Rękawice z futra",
+        "value": 5,
+        "rarity": "common",
+        "description": "Ciepłe rękawice do zimowej wyprawy."
+    },
+    {
+        "name": "Sakiewka z kryształami",
+        "value": 25,
+        "rarity": "rare",
+        "description": "Małe kryształy o wartości magicznej."
+    },
+    {
+        "name": "Zimowy kubek",
+        "value": 3,
+        "rarity": "common",
+        "description": "Trzyma ciepły napój przez chwilę."
+    },
+    {
+        "name": "Skórzany pas na broń",
+        "value": 4,
+        "rarity": "common",
+        "description": "Podtrzymuje miecz lub sztylet."
+    },
+    {
+        "name": "Mikstura lodowego oddechu",
+        "value": 15,
+        "rarity": "uncommon",
+        "description": "Ułatwia oddychanie w mrozie."
+    },
+    {
+        "name": "Stary kociołek",
+        "value": 5,
+        "rarity": "common",
+        "description": "Do gotowania na ognisku."
+    },
+    {
+        "name": "Zimowy kocyk",
+        "value": 6,
+        "rarity": "common",
+        "description": "Lekki koc na krótkie noclegi."
+    },
+    {
+        "name": "Latarnia ręczna",
+        "value": 7,
+        "rarity": "common",
+        "description": "Świeci na kilka godzin w mrozie."
+    },
+    {
+        "name": "Stare sakwy",
+        "value": 3,
+        "rarity": "common",
+        "description": "Torba na drobiazgi, przetarta."
+    },
+    {
+        "name": "Łopata śnieżna",
+        "value": 8,
+        "rarity": "uncommon",
+        "description": "Do odśnieżania lub kopania w śniegu."
+    },
+    {
+        "name": "Płaszcz futrzany",
+        "value": 10,
+        "rarity": "uncommon",
+        "description": "Chroni przed mrozem i wiatrem."
+    },
+    {
+        "name": "Mroźny pierścień",
+        "value": 18,
+        "rarity": "uncommon",
+        "description": "Chroni przed niskimi temperaturami."
+    },
+    {
+        "name": "Zimowy kaptur",
+        "value": 4,
+        "rarity": "common",
+        "description": "Kaptur do ochrony głowy i twarzy."
+    },
+    {
+        "name": "Skórzany pas na sakwy",
+        "value": 3,
+        "rarity": "common",
+        "description": "Trzyma torby przy pasie."
+    },
+    {
+        "name": "Mroźny talizman",
+        "value": 20,
+        "rarity": "rare",
+        "description": "Chroni przed ekstremalnym zimnem."
+    },
+    {
+        "name": "Śnieżna latarnia",
+        "value": 7,
+        "rarity": "common",
+        "description": "Świeci słabo, wystarczy do oświetlenia drogi."
+    },
+    {
+        "name": "Zimowa sakiewka",
+        "value": 4,
+        "rarity": "common",
+        "description": "Torba z drobnymi monetami."
+    },
+    {
+        "name": "Mroźny zwój",
+        "value": 15,
+        "rarity": "uncommon",
+        "description": "Zawiera wiedzę o mroźnej magii."
+    },
+    {
+        "name": "Złamana strzała",
+        "value": 1,
+        "rarity": "common",
+        "description": "Do prowizorycznej broni lub naprawy."
+    },
+    {
+        "name": "Pikowana czapka",
+        "value": 4,
+        "rarity": "common",
+        "description": "Czapka chroni przed wiatrem i śniegiem."
     }
 ]
