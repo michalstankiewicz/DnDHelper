@@ -4,26 +4,7 @@ on:
   push:
     branches: [ "DnD" ]
 
-jobs:
-  run-app-on-ubuntu:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13.7"
-
-      - name: Instalacja zależności
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Uruchom aplikację
-        run: python main.py
-        
+jobs:      
   run-app-on-windows:
     runs-on: windows-latest
     steps:
@@ -35,9 +16,9 @@ jobs:
         with:
           python-version: "3.13.7"
 
-      - name: Instalacja zależności
+      - name: Check dependencies
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if ( -f requirements.txt ); then pip install -r requirements.txt; fi
 
-      - name: Uruchom aplikację
+      - name: App Start
         run: python main.py
