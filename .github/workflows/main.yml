@@ -25,4 +25,4 @@ jobs:
               Write-Host "No requirements.txt found, skipping dependency installation."   
           }
       - name: App Start
-        run: python main.py
+        run: python main.py --test
