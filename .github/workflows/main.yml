@@ -17,8 +17,12 @@ jobs:
           python-version: "3.13.7"
 
       - name: Check dependencies
+        shell: pwsh
         run: |
-          if ( -f requirements.txt ); then pip install -r requirements.txt; fi
-
+          if (Test-Path "requirements.txt") {
+              pip install -r requirements.txt
+          } else {
+              Write-Host "No requirements.txt found, skipping dependency installation."   
+          }
       - name: App Start
         run: python main.py
