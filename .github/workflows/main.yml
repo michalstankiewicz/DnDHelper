@@ -2,7 +2,7 @@ name: DnDHelper CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "DnD" ]
 
 jobs:
   run-app-on-ubuntu:
