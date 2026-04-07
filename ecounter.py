@@ -1,10 +1,21 @@
 import json
 import os
 import random
+import sys
 
-encounter_file = os.path.join(
-    os.path.dirname(__file__), 'Data', 'encounter.json')
-adventure_file = os.path.join(os.path.dirname(__file__), 'Data', 'adv.json')
+
+def resource_path(relative_path):
+    """Absolute file path for both dev and exe."""
+    try:
+        base_path = sys._MEIPASS  # for exe
+    except AttributeError:
+        base_path = os.path.dirname(os.path.abspath(__file__))  # if dev
+
+    return os.path.join(base_path, relative_path)
+
+
+encounter_file = resource_path(os.path.join('Data', 'encounter.json'))
+adventure_file = resource_path(os.path.join('Data', 'adv.json'))
 
 with open(encounter_file, 'r', encoding='utf-8') as f:
     encounters = json.load(f)
@@ -24,12 +35,12 @@ def generate_encounter():
 
     if choice_type == 'monster':
         enc = random.choice(encounters)
-        # jeśli potwór ma CR, traktujemy go jako monster
+        #  CR = monster encounter
         if enc.get('cr') is not None:
             enc['is_monster'] = True
             return enc
         else:
-            # fallback na adventure jeśli CR null
+            # if  CR is null = adventure
             adv = random.choice(adventures)
             adv['is_monster'] = False
             return adv

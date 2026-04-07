@@ -1,14 +1,25 @@
 import os
+import sys
 import random
 import json
 
-loot_file = os.path.join(os.path.dirname(__file__), 'Data', 'loot.json')
 
+def resource_path(relative_path):
+    """Absolute file path for both dev and exe."""
+    if hasattr(sys, '_MEIPASS'):
+        base_path = sys._MEIPASS  # exe
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))  # dev
+
+    return os.path.join(base_path, relative_path)
+
+
+loot_file = resource_path(os.path.join('Data', 'loot.json'))
 
 with open(loot_file, 'r', encoding='utf-8') as f:
-    loot_data = json.load(f)  # globalna lista
+    loot_data = json.load(f)  # global list of loot items
 
 
 def generate_loot():
     loot_item = random.choice(loot_data)
-    return loot_item  # zwracamy pojedynczy item
+    return loot_item  # one item is returned

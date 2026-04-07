@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from unittest import result
+from tkinter import ttk
 import dice
 import loot
 import ecounter
@@ -14,37 +14,45 @@ class MyApp(tk.Tk):
         self.create_widgets()
 
     def create_widgets(self):
-        # buttons
-        self.encounter_button = tk.Button(
-            self, text="Generate Encounter", command=self.generate_encounter)
-        self.encounter_button.pack(pady=10)
+        # tabs initialization
+        self.tabs = ttk.Notebook(self)
+        self.tabs.pack(fill=tk.BOTH, expand=True)
 
-        self.loot_button = tk.Button(
-            self, text="Generate Loot", command=self.loot_generator)
-        self.loot_button.pack(pady=10)
-
-        # dice sides and frame for dice buttons
+        # DICE
+        self.tabDice = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabDice, text="Dice")
         dice_sides = [4, 6, 8, 10, 12, 20]
-        frame = tk.Frame(self)
-        frame.pack(pady=10)
+        frame_dice = tk.Frame(self.tabDice)
+        frame_dice.pack(pady=10)
 
         for side in dice_sides:
             btn = tk.Button(
-                frame, text=f"d{side}", command=lambda s=side: self.roll_dice(s))
+                frame_dice, text=f"d{side}", command=lambda s=side: self.roll_dice(s))
             btn.pack(side=tk.LEFT, padx=5)
-        # encouter listbox
-        encounter_frame = tk.Frame(self)
+
+        # ENCOUNTER
+        self.tabEncLoot = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabEncLoot, text="Encounters and Loot Generator")
+        self.encounter_button = tk.Button(
+            self.tabEncLoot, text="Generate Encounter", command=self.generate_encounter)
+        self.encounter_button.pack(pady=10)
+        encounter_frame = tk.Frame(self.tabEncLoot)
         encounter_frame.pack(pady=10)
         self.encounter_listbox = tk.Listbox(
             encounter_frame, width=100, height=10)
         self.encounter_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        # loot listbox
-        loot_frame = tk.Frame(self)
+        # LOOT
+        self.loot_button = tk.Button(
+            self.tabEncLoot, text="Generate Loot", command=self.loot_generator)
+        self.loot_button.pack(pady=10)
+        loot_frame = tk.Frame(self.tabEncLoot)
         loot_frame.pack(pady=10)
         self.loot_listbox = tk.Listbox(
             loot_frame, width=100, height=10)
         self.loot_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    # Functions used in program
 
     def roll_dice(self, sides):
         result = dice.roll_dice(sides)
