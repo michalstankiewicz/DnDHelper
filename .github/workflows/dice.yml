@@ -8,31 +8,31 @@ on:
 jobs:
   test-dice:
     run-app-on-windows:
-    runs-on: windows-latest
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
+      runs-on: windows-latest
+      steps:
+        - name: Code checkout
+          uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13.7"
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: "3.13.7"
 
-      - name: Check dependencies
-        shell: pwsh
-        run: |
-          if (Test-Path "requirements.txt") {
-              pip install -r requirements.txt
-          } else {
-              Write-Host "No requirements.txt found, skipping dependency installation."   
-          }
+        - name: Check dependencies
+          shell: pwsh
+          run: |
+            if (Test-Path "requirements.txt") {
+                pip install -r requirements.txt
+            } else {
+                Write-Host "No requirements.txt found, skipping dependency installation."   
+            }
 
-      - name: Run Dice Unit Tests
-        run: |
-          python -m unittest discover -s . -p "test_dice*.py" -v > dice_test_log.txt || true
+        - name: Run Dice Unit Tests
+          run: |
+            python -m unittest discover -s . -p "test_dice*.py" -v > dice_test_log.txt || true
 
-      - name: Upload Test Logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: dice-test-logs
-          path: dice_test_log.txt
+        - name: Upload Test Logs
+          uses: actions/upload-artifact@v4
+          with:
+            name: dice-test-logs
+            path: dice_test_log.txt
