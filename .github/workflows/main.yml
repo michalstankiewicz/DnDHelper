@@ -1,11 +1,11 @@
-name: DnDHelper CI
+name: DnD Helper CI/CD
 
 on:
-  push:
-    branches: [ "DnD" ]
+  pull_request:
+    branches: [ "DnD" ]   #workflow works only for PRs to DnD branch
 
 jobs:
-  run-app-on-windows:
+  test:
     runs-on: windows-latest
     steps:
       - name: Checkout code
@@ -16,20 +16,37 @@ jobs:
         with:
           python-version: "3.13.7"
 
-      - name: Check dependencies
-        shell: pwsh
+      - name: Install deps
         run: |
-          if (Test-Path "requirements.txt") {
-              pip install -r requirements.txt
+          if (Test-Path req.txt) {
+            python -m pip install -r req.txt
           } else {
-              Write-Host "No requirements.txt found, skipping dependency installation."
+            Write-Host "No req.txt found, skipping dependency installation."
           }
 
-      - name: App Start
-        run: python main.py --test > log.txt
+      - name: Run tests
+        run: python main.py --test | tee log.txt
 
-      - name: Upload logs
-        uses: actions/upload-artifact@v4
+  build:
+    needs: test             # build job runs only if test job is successful
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          name: app-logs
-          path: log.txt
+          python-version: "3.13.7"
+
+      - name: Install deps
+        run: python -m pip install -r req.txt
+
+      - name: Build exe with PyInstaller
+        run: pyinstaller --onefile main.py
+
+      - name: Upload Executable Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dnd-helper-exe
+          path: dist/main.exe
