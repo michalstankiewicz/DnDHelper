@@ -3,6 +3,8 @@ import gui
 import sys
 if "--test" in sys.argv:
     print("Breaking in so we can break out")
+    with open("log.txt", "w") as f:
+        f.write("Test log\n")
     exit(0)
 
 # this is the main file which will start whole program.

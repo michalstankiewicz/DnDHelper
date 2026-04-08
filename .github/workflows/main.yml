@@ -25,4 +25,10 @@ jobs:
               Write-Host "No requirements.txt found, skipping dependency installation."   
           }
       - name: App Start
-        run: python main.py --test
+        run: python main.py --test > log.txt
+     
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-logs
+          path: log.txt
