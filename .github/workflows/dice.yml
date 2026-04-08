@@ -1,4 +1,4 @@
-name: DnDHelper CI
+name: DnD Dice Tests
 
 on:
   push:
