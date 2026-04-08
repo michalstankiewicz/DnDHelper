@@ -7,7 +7,6 @@ on:
 jobs:
   run-app-on-windows:
     runs-on: windows-latest
-    needs: [test-dice]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
