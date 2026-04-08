@@ -1,15 +1,15 @@
 name: DnDHelper CI
 
 on:
-  workflow_run:
-    workflows: ["Dice Unit Tests"]  # ZMIANA – czeka na dice.yml
-    types:
-      - completed
+  push:
+    branches: [ "DnD" ]
 
 jobs:
+  run-app-on-windows:
     runs-on: windows-latest
+    needs: [test-dice]
     steps:
-      - name: Code checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -23,10 +23,10 @@ jobs:
           if (Test-Path "requirements.txt") {
               pip install -r requirements.txt
           } else {
-              Write-Host "No requirements.txt found, skipping dependency installation."   
+              Write-Host "No requirements.txt found, skipping dependency installation."
+          }
 
       - name: App Start
-        shell: pwsh
         run: python main.py --test > log.txt
 
       - name: Upload logs

@@ -1,36 +1,42 @@
-name: Dice Unit Tests
+name: DnDHelper CI
+
 on:
   push:
-    branches: [ "DnD"]  #DnD is my Main branch
-  pull_request:
+    branches: [ "DnD" ]
 
 jobs:
-  test-dice:
-      runs-on: windows-latest
-      steps:
-        - name: Code checkout
-          uses: actions/checkout@v4
+  setup-python:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        - name: Setup Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: "3.13.7"
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.7"
 
-        - name: Check dependencies
-          shell: pwsh
-          run: |
-            if (Test-Path "requirements.txt") {
-                pip install -r requirements.txt
-            } else {
-                Write-Host "No requirements.txt found, skipping dependency installation."   
-            }
+  run-app-on-windows:
+    runs-on: windows-latest
+    needs: setup-python
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        - name: Run Dice Unit Tests
-          run: |
-            python -m unittest discover -s . -p "test_dice*.py" -v > dice_test_log.txt || true
+      - name: Check dependencies
+        shell: pwsh
+        run: |
+          if (Test-Path "requirements.txt") {
+              pip install -r requirements.txt
+          } else {
+              Write-Host "No requirements.txt found, skipping dependency installation."
+          }
 
-        - name: Upload Test Logs
-          uses: actions/upload-artifact@v4
-          with:
-            name: dice-test-logs
-            path: dice_test_log.txt
+      - name: App Start
+        run: python main.py --test > log.txt
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-logs
+          path: log.txt
