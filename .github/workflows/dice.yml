@@ -6,7 +6,6 @@ on:
 
 jobs:
   test-dice:
-    run-app-on-windows:
       runs-on: windows-latest
       steps:
         - name: Code checkout

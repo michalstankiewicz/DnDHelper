@@ -7,7 +7,6 @@ on:
       - completed
 
 jobs:
-  run-app-on-windows:
     runs-on: windows-latest
     steps:
       - name: Code checkout
