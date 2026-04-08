@@ -2,7 +2,7 @@ import gui
 # added for testing purposes, to check if the application starts without errors. Run "python main.py --test" to execute this test.
 import sys
 if "--test" in sys.argv:
-    print("Breaking in so we can break out")  # nice persona song
+    print("Breaking in so we can break out")  # Test Test Test
     with open("log.txt", "w") as f:
         f.write("Test log\n")
     exit(0)
