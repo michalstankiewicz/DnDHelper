@@ -18,13 +18,14 @@ jobs:
         with:
           python-version: "3.13.7"
 
-      - name: Install dependencies
+      - name: Check dependencies
+        shell: pwsh
         run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            echo "No requirements.txt found, skipping."
-          fi
+          if (Test-Path "requirements.txt") {
+              pip install -r requirements.txt
+          } else {
+              Write-Host "No requirements.txt found, skipping dependency installation."   
+          }
 
       - name: Run Dice Unit Tests
         run: |
