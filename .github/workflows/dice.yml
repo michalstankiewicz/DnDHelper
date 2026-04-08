@@ -14,15 +14,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13.7"
+          
       - name: Install pytest
         run: pip install pytest
-
-  run-app-on-windows:
-    runs-on: windows-latest
-    needs: setup-python
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
 
       - name: Run unit tests
         shell: pwsh
