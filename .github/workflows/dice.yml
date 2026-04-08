@@ -26,15 +26,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check dependencies
-        shell: pwsh
-        run: |
-          if (Test-Path "requirements.txt") {
-              pip install -r requirements.txt
-          } else {
-              Write-Host "No requirements.txt found, skipping dependency installation."
-          }
-          
       - name: Run unit tests
         run: pytest tests --maxfail=1 --disable-warnings -q > test_log.txt
 
