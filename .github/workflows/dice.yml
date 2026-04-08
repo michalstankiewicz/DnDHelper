@@ -10,11 +10,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13.7"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Install pytest
+        run: pip install pytest
 
   run-app-on-windows:
     runs-on: windows-latest
@@ -31,12 +34,12 @@ jobs:
           } else {
               Write-Host "No requirements.txt found, skipping dependency installation."
           }
+          
+      - name: Run unit tests
+        run: pytest tests --maxfail=1 --disable-warnings -q > test_log.txt
 
-      - name: App Start
-        run: python main.py --test > log.txt
-
-      - name: Upload logs
+      - name: Upload test logs
         uses: actions/upload-artifact@v4
         with:
-          name: app-logs
-          path: log.txt
+          name: pytest-logs
+          path: test_log.txt
