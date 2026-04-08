@@ -25,7 +25,10 @@ jobs:
           }
 
       - name: Run tests
-        run: pytest Tests/ --maxfail=1 --disable-warnings -q | tee test_log.txt
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH="$env:GITHUB_WORKSPACE"
+          pytest Tests/ --maxfail=1 --disable-warnings -q | tee test_log.txt
 
   build:
     needs: test             # build job runs only if test job is successful
