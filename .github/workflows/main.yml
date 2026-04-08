@@ -25,7 +25,7 @@ jobs:
           }
 
       - name: Run tests
-        run: python main.py --test | tee log.txt
+        run: pytest Tests/ --maxfail=1 --disable-warnings -q | tee test_log.txt
 
   build:
     needs: test             # build job runs only if test job is successful
