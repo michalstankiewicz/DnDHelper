@@ -25,6 +25,7 @@ jobs:
           }
 
       - name: Run tests
+        shell: pwsh
         run: |
           $env:PYTHONPATH="$env:GITHUB_WORKSPACE"
           pytest Tests/ --maxfail=1 --disable-warnings -q | tee test_log.txt
