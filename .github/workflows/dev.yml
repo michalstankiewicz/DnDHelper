@@ -1,0 +1,29 @@
+name: Dev build check
+
+on:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+  basic_check:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.7"
+
+      - name: Install deps (optional)
+        run: |
+          if (Test-Path req.txt) {
+            python -m pip install -r req.txt
+          } else {
+            Write-Host "No req.txt found, skipping dependency installation."
+          }
+
+      - name: App Start
+        run: python main.py --test | tee log.txt
