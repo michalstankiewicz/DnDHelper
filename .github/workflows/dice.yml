@@ -1,0 +1,37 @@
+name: Dice Unit Tests
+
+on:
+  push:
+    branches: [ "DnD"]  #DnD is my Main branch
+  pull_request:
+
+jobs:
+  test-dice:
+    run-app-on-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.7"
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "No requirements.txt found, skipping."
+          fi
+
+      - name: Run Dice Unit Tests
+        run: |
+          python -m unittest discover -s . -p "test_dice*.py" -v > dice_test_log.txt || true
+
+      - name: Upload Test Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: dice-test-logs
+          path: dice_test_log.txt

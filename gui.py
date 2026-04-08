@@ -24,11 +24,21 @@ class MyApp(tk.Tk):
         dice_sides = [4, 6, 8, 10, 12, 20]
         frame_dice = tk.Frame(self.tabDice)
         frame_dice.pack(pady=10)
+        self.dice_result_label = tk.Label(
+            self.tabDice, text="Roll a die to see the result")
+        self.dice_result_label.pack(pady=10)
 
         for side in dice_sides:
             btn = tk.Button(
                 frame_dice, text=f"d{side}", command=lambda s=side: self.roll_dice(s))
             btn.pack(side=tk.LEFT, padx=5)
+
+        self.dice_entry = tk.Entry(self.tabDice)
+        self.dice_entry.pack(pady=5)
+
+        self.roll_multiple_button = tk.Button(
+            self.tabDice, text="Roll Multiple Dice", command=self.roll_multi_dice)
+        self.roll_multiple_button.pack(pady=5)
 
         # ENCOUNTER
         self.tabEncLoot = ttk.Frame(self.tabs)
@@ -55,8 +65,19 @@ class MyApp(tk.Tk):
     # Functions used in program
 
     def roll_dice(self, sides):
-        result = dice.roll_dice(sides)
-        messagebox.showinfo("Dice Roll", f"Wypadło: {result} (d{sides})")
+        rolls, total = dice.roll_multiple_dice(1, sides)
+        self.dice_result_label.config(
+            text=f"Rolled a d{sides}: {rolls[0]} (Total: {total})")
+
+    def roll_multi_dice(self):
+        user_input = self.dice_entry.get()
+        try:
+            rolls, total = dice.roll_from_string(user_input)
+            self.dice_result_label.config(
+                text=f"Rolls: {rolls} | Total: {total} ({user_input})"
+            )
+        except ValueError as e:
+            self.dice_result_label.config(text=f"Error: {str(e)}")
 
     def generate_encounter(self):
         self.encounter_listbox.delete(0, tk.END)  # clear previous encounters
