@@ -1,5 +1,4 @@
-name: Build.exe manual
-
+name: RELEASE
 on: 
   workflow_dispatch
 
