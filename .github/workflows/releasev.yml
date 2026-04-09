@@ -1,0 +1,35 @@
+name: RELEASE
+on: 
+  workflow_dispatch
+
+jobs:
+  Executable:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.7"
+
+      - name: Install deps
+        run: python -m pip install -r req.txt
+
+      - name: Build exe with PyInstaller
+        run: pyinstaller --onefile main.py --distpath dist --noconsole --add-data "Data;Data"
+
+      - name: Upload Executable Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dnd-helper-exe
+          path: dist/main.exe
+      
+      - name: Create Release and upload EXE
+        uses: softprops/action-gh-release@v4
+        with:
+          tag_name: manual-build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
+          files: dist/main.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
