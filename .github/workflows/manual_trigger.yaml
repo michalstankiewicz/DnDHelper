@@ -1,4 +1,5 @@
-Name: Build.exe manual
+name: Build.exe manual
+
 on: 
   workflow_dispatch
 
