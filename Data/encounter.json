@@ -1,152 +1,320 @@
 [
     {
+        "name": "Abominable Yeti",
+        "type": "Monstrosity",
+        "cr": 4,
+        "description": "Potężny, zimnolubny bestialski humanoid z siłą lodowca"
+    },
+    {
         "name": "Ice Mephit",
+        "type": "Elemental",
         "cr": 0.5,
-        "type": "elemental",
-        "page": 215
+        "description": "Mały elementarz lodu plujący mroźnymi iskrami"
     },
     {
-        "name": "Goblin",
-        "cr": 0.25,
-        "type": "humanoid",
-        "page": 166
-    },
-    {
-        "name": "Zombie",
-        "cr": 0.25,
-        "type": "undead",
-        "page": 316
-    },
-    {
-        "name": "Fox (Arctic)",
-        "cr": 0,
-        "type": "beast",
-        "page": 304
-    },
-    {
-        "name": "Giant Spider",
-        "cr": 1,
-        "type": "beast",
-        "page": 328
-    },
-    {
-        "name": "Winter Wolf",
+        "name": "Snow Golem",
+        "type": "Construct",
         "cr": 3,
-        "type": "beast",
-        "page": 340
+        "description": "Niezwykle wytrzymała kula śniegu o brutalnej sile"
+    },
+    {
+        "name": "Snowy Owlbear",
+        "type": "Beast",
+        "cr": 3,
+        "description": "Mieszanka sowy i niedźwiedzia tropiąca ofiary w śniegu"
+    },
+    {
+        "name": "Yeti",
+        "type": "Monstrosity",
+        "cr": 3,
+        "description": "Olbrzymi włochaty drapieżnik północy"
+    },
+    {
+        "name": "Yeti Tyke",
+        "type": "Monstrosity",
+        "cr": 1,
+        "description": "Mniejsza, zwinna wersja yeti"
     },
     {
         "name": "Frost Giant",
+        "type": "Giant",
         "cr": 8,
-        "type": "giant",
-        "page": 155
+        "description": "Wojownik olbrzymów lodu, okrutny jak gwałtowna burza"
     },
     {
-        "name": "Troll",
+        "name": "Frost Druid",
+        "type": "Humanoid",
         "cr": 5,
-        "type": "giant",
-        "page": 291
+        "description": "Kapłan mrozu z kontrolą nad zimnem"
     },
     {
-        "name": "Wight",
-        "cr": 3,
-        "type": "undead",
-        "page": 300
+        "name": "Ice Troll",
+        "type": "Giant",
+        "cr": 5,
+        "description": "Troll o skórze jak lód, regeneruje się w chłodzie"
     },
     {
-        "name": "Owlbear",
-        "cr": 3,
-        "type": "monstrosity",
-        "page": 249
-    },
-    {
-        "name": "Kobold",
-        "cr": 0.125,
-        "type": "humanoid",
-        "page": 195
-    },
-    {
-        "name": "Skeleton",
+        "name": "Icewind Kobold",
+        "type": "Humanoid",
         "cr": 0.25,
-        "type": "undead",
-        "page": 272
+        "description": "Kobold przystosowany do arktycznych warunków"
     },
     {
-        "name": "Air Elemental",
-        "cr": 5,
-        "type": "elemental",
-        "page": 124
-    },
-    {
-        "name": "Bandit",
-        "cr": 0.125,
-        "type": "humanoid",
-        "page": 343
-    },
-    {
-        "name": "Young White Dragon",
-        "cr": 6,
-        "type": "dragon",
-        "page": 101
-    },
-    {
-        "name": "Orc",
-        "cr": 0.5,
-        "type": "humanoid",
-        "page": 246
-    },
-    {
-        "name": "Specter",
-        "cr": 1,
-        "type": "undead",
-        "page": 279
+        "name": "Coldlight Walker",
+        "type": "Undead",
+        "cr": 3,
+        "description": "Nieumarły oświetlony lodowym blaskiem Auril"
     },
     {
         "name": "Remorhaz",
+        "type": "Monstrosity",
         "cr": 11,
-        "type": "monstrosity",
-        "page": 258
+        "description": "Olbrzymi, ognisty robak topiący lód i mięso"
     },
     {
-        "name": "Sea Hag",
-        "cr": 2,
-        "type": "fey",
-        "page": 179
-    },
-    {
-        "name": "Will-o'-Wisp",
-        "cr": 2,
-        "type": "undead",
-        "page": 301
-    },
-    {
-        "name": "Displacer Beast",
+        "name": "Winter Wolf",
+        "type": "Monstrosity",
         "cr": 3,
-        "type": "monstrosity",
-        "page": 81
+        "description": "Inteligentny wilk o mroźnym oddechu"
     },
     {
-        "name": "Cultist",
-        "cr": 0.125,
-        "type": "humanoid",
-        "page": 345
-    },
-    {
-        "name": "Giant Constrictor Snake",
-        "cr": 2,
-        "type": "beast",
-        "page": 324
-    },
-    {
-        "name": "Revenant",
-        "cr": 5,
-        "type": "undead",
-        "page": 259
-    },
-    {
-        "name": "Harpy",
+        "name": "Dire Wolf (Winter)",
+        "type": "Beast",
         "cr": 1,
-        "type": "monstrosity",
-        "page": 181
+        "description": "Ogromny wilk tropiący po śniegu"
+    },
+    {
+        "name": "Polar Bear",
+        "type": "Beast",
+        "cr": 2,
+        "description": "Potężny niedźwiedź polarny"
+    },
+    {
+        "name": "Goliath Werebear",
+        "type": "Humanoid (shapechanger)",
+        "cr": 4,
+        "description": "Goliat przemieniający się w niedźwiedzia"
+    },
+    {
+        "name": "Coldlight Wisp",
+        "type": "Undead",
+        "cr": 1,
+        "description": "Mały duch mrozu o świetlistym ciele"
+    },
+    {
+        "name": "Frost Salamander",
+        "type": "Elemental",
+        "cr": 6,
+        "description": "Wąż ognisty przemieniony w lód"
+    },
+    {
+        "name": "Winter Wolf Pup",
+        "type": "Beast",
+        "cr": 0.5,
+        "description": "Młody wilk lodowy"
+    },
+    {
+        "name": "Chwinga",
+        "type": "Elemental",
+        "cr": 0,
+        "description": "Mały duch natury o lodowej magii"
+    },
+    {
+        "name": "Gnoll (Fang of Yeenoghu)",
+        "type": "Humanoid",
+        "cr": 1,
+        "description": "Gnoll z mroźnym sznytem"
+    },
+    {
+        "name": "Peryton (Snow)",
+        "type": "Monstrosity",
+        "cr": 2,
+        "description": "Latająca bestia żądająca serc"
+    },
+    {
+        "name": "Snow Goblin",
+        "type": "Humanoid",
+        "cr": 0.25,
+        "description": "Goblin przystosowany do śnieżnych krain"
+    },
+    {
+        "name": "Snow Leopard",
+        "type": "Beast",
+        "cr": 2,
+        "description": "Kocia drapieżna o białym futrze"
+    },
+    {
+        "name": "Tomb Tapper",
+        "type": "Construct",
+        "cr": 10,
+        "description": "Gigantyczny strażnik podziemi z klątwą kamienia"
+    },
+    {
+        "name": "Fox (Arctic)",
+        "type": "Beast",
+        "cr": 0.25,
+        "description": "Sprytne zwierzę północy"
+    },
+    {
+        "name": "Arctic Fox",
+        "type": "Beast",
+        "cr": 0,
+        "description": "Mały, szybki lis o śnieżnej sierści"
+    },
+    {
+        "name": "Bear (Cave)",
+        "type": "Beast",
+        "cr": 2,
+        "description": "Jaskiniowy niedźwiedź"
+    },
+    {
+        "name": "Giant Walrus",
+        "type": "Beast",
+        "cr": 4,
+        "description": "Ogromny morski łoś o potężnych kłach"
+    },
+    {
+        "name": "Killer Whale",
+        "type": "Beast",
+        "cr": 3,
+        "description": "Orka tropiąca w lodowatych wodach"
+    },
+    {
+        "name": "Reindeer",
+        "type": "Beast",
+        "cr": 0.125,
+        "description": "Stado reniferów"
+    },
+    {
+        "name": "Seal",
+        "type": "Beast",
+        "cr": 0,
+        "description": "Foka poszukująca ryb"
+    },
+    {
+        "name": "Snowy Owl",
+        "type": "Beast",
+        "cr": 0.25,
+        "description": "Sowa ukrywająca się na białym tle"
+    },
+    {
+        "name": "Rhinoceros (Wooly)",
+        "type": "Beast",
+        "cr": 2,
+        "description": "Nosorożec pokryty grubym futrem"
+    },
+    {
+        "name": "Woolly Mammoth",
+        "type": "Beast",
+        "cr": 6,
+        "description": "Olbrzymi ssak lodowy"
+    },
+    {
+        "name": "Wolf (Dire)",
+        "type": "Beast",
+        "cr": 1,
+        "description": "Groźny wilk północy"
+    },
+    {
+        "name": "Wolf (Winter)",
+        "type": "Beast",
+        "cr": 1,
+        "description": "Wilk przystosowany do zimna"
+    },
+    {
+        "name": "Owlbear (Snow)",
+        "type": "Monstrosity",
+        "cr": 3,
+        "description": "Feralna bestia mieszana"
+    },
+    {
+        "name": "Dryad (Frost)",
+        "type": "Fey",
+        "cr": 1,
+        "description": "Leśny duch w lodowej krainie"
+    },
+    {
+        "name": "Ghost (Frost)",
+        "type": "Undead",
+        "cr": 4,
+        "description": "Duch przemierza śnieżne ruiny"
+    },
+    {
+        "name": "Skeleton (Arctic)",
+        "type": "Undead",
+        "cr": 0.5,
+        "description": "Kości zamrożonej ofiary"
+    },
+    {
+        "name": "Zombie (Frost)",
+        "type": "Undead",
+        "cr": 0.25,
+        "description": "Zombi zmarzniętych trupów"
+    },
+    {
+        "name": "Wight (Frost)",
+        "type": "Undead",
+        "cr": 3,
+        "description": "Nieumarły dowódca mrozu"
+    },
+    {
+        "name": "Wraith (Cold)",
+        "type": "Undead",
+        "cr": 5,
+        "description": "Mroczna zjawa lodowego makabru"
+    },
+    {
+        "name": "Flameskull (Frozen)",
+        "type": "Undead",
+        "cr": 4,
+        "description": "Czaszka o lodowych ogniach"
+    },
+    {
+        "name": "Bulette (Frost)",
+        "type": "Monstrosity",
+        "cr": 5,
+        "description": "Pancerny drapieżnik z mrozu"
+    },
+    {
+        "name": "Ogre (Frost)",
+        "type": "Giant",
+        "cr": 2,
+        "description": "Olbrzym walczący w arktycznej burzy"
+    },
+    {
+        "name": "Orc (Ice)",
+        "type": "Humanoid",
+        "cr": 0.5,
+        "description": "Ork znoszący mroźne pustkowia"
+    },
+    {
+        "name": "Nothic (Cursed)",
+        "type": "Aberration",
+        "cr": 2,
+        "description": "Przerażone oko widzące tajemnice"
+    },
+    {
+        "name": "Dryad",
+        "type": "Fey",
+        "cr": 1,
+        "description": "Leśna nimfa, rzadko widywana na pustkowiach"
+    },
+    {
+        "name": "Bugbear (Snow)",
+        "type": "Humanoid",
+        "cr": 1,
+        "description": "Zamieszkuje lodowate fortecy"
+    },
+    {
+        "name": "Gnoll",
+        "type": "Humanoid",
+        "cr": 1,
+        "description": "Dziki rasowy gnoll"
+    },
+    {
+        "name": "Dire Bear (Polar)",
+        "type": "Beast",
+        "cr": 5,
+        "description": "Olbrzymi niedźwiedź północy"
     }
 ]
