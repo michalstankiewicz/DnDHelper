@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 jobs:
-    Executable:
+  Executable:
     runs-on: windows-latest
     steps:
       - name: Checkout code
