@@ -120,7 +120,7 @@ class MyApp(tk.Tk):
         for _ in range(4):
             enc = ecounter.generate_encounter()
             if enc.get("is_monster"):
-                text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['page']})"
+                text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['description']})"
             else:
                 text = f"[ADVENTURE] {enc['name']} (difficulty: {enc['difficulty']}, {enc['description']})"
             self.encounter_listbox.insert(tk.END, text)
