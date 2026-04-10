@@ -1,5 +1,5 @@
 import unittest
-from dice import roll_dice, roll_multiple_dice, roll_from_string
+from logic.dice import roll_dice, roll_multiple_dice, roll_from_string
 
 
 class TestDiceFunctions(unittest.TestCase):
