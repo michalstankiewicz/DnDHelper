@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
-import dice
-import loot
-import ecounter
-import spells
+import logic.dice as dice
+import logic.loot as loot
+import logic.ecounter as ecounter
+import logic.spells as spells
 import re
 
 

@@ -1,4 +1,4 @@
-import gui
+from ui import gui
 # added for testing purposes, to check if the application starts without errors. Run "python main.py --test" to execute this test.
 import sys
 if "--test" in sys.argv:
