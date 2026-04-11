@@ -15,10 +15,17 @@ def resource_path(relative_path):
 
 loot_file = resource_path(os.path.join('Data', 'loot.json'))
 
-with open(loot_file, 'r', encoding='utf-8') as f:
-    loot_data = json.load(f)  # global list of loot items
+_loot_cache = None
+
+
+def get_loot_data():
+    global _loot_cache
+    if _loot_cache is None:
+        file_path = resource_path("Data/loot.json")
+        with open(file_path, encoding="utf-8") as f:
+            _loot_cache = json.load(f)
+    return _loot_cache
 
 
 def generate_loot():
-    loot_item = random.choice(loot_data)
-    return loot_item  # one item is returned
+    return random.choice(get_loot_data())
