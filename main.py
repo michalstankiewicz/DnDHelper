@@ -6,6 +6,7 @@ def run_test():
     print("Test mode")
     with open("log.txt", "w") as f:
         f.write("Test OK")
+        exit(0)
 
 
 def main():
