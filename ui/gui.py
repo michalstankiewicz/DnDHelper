@@ -4,6 +4,7 @@ import logic.dice as dice
 import logic.loot as loot
 import logic.ecounter as ecounter
 import logic.spells as spells
+import logic.npc as npc
 import re
 
 
@@ -22,7 +23,7 @@ class MyApp(tk.Tk):
         # DICE
         self.tabDice = ttk.Frame(self.tabs)
         self.tabs.add(self.tabDice, text="Dice")
-        dice_sides = [4, 6, 8, 10, 12, 20]
+        dice_sides = [4, 6, 8, 10, 12, 20, 100]
         frame_dice = tk.Frame(self.tabDice)
         frame_dice.pack(pady=10)
         self.dice_result_label = tk.Label(
@@ -88,6 +89,18 @@ class MyApp(tk.Tk):
             encounter_frame, width=100, height=10)
         self.encounter_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
+        # npc
+        self.tabnpc = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabnpc, text="NPC")
+        self.npc_button = tk.Button(
+            self.tabnpc, text="Generate", command=self.generate_npc)
+        self.npc_button.pack(pady=10)
+        npc_frame = tk.Frame(self.tabnpc)
+        npc_frame.pack(pady=10)
+        self.npc_listbox = tk.Listbox(
+            npc_frame, width=100, height=10)
+        self.npc_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
         # LOOT
         self.loot_button = tk.Button(
             self.tabEncLoot, text="Generate Loot", command=self.loot_generator)
@@ -99,7 +112,7 @@ class MyApp(tk.Tk):
         self.loot_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     # Functions used in program
-
+    # CLICK CLAKCS
     def roll_dice(self, sides):
         rolls, total = dice.roll_multiple_dice(1, sides)
         self.dice_result_label.config(
@@ -114,6 +127,7 @@ class MyApp(tk.Tk):
             )
         except ValueError as e:
             self.dice_result_label.config(text=f"Error: {str(e)}")
+    # ENCOUNTER AND LOOT
 
     def generate_encounter(self):
         self.encounter_listbox.delete(0, tk.END)
@@ -133,6 +147,7 @@ class MyApp(tk.Tk):
                 tk.END, f"{lt['name']} value {lt['value']} of gold, rarity {lt['rarity']}, description: {lt['description']}"
             )
 
+    # SPELLS!
     # Function to show selected spell by user (description, etc from jsonq, triggered by event of selecting spell in listbox)
     def show_selected_spell_desc(self, event):
         selection = self.spell_listbox.curselection()
@@ -170,4 +185,18 @@ class MyApp(tk.Tk):
             self.spell_listbox.insert(
                 tk.END,
                 f"{s['name']} | Level: {s.get('level')} | Classes: {', '.join(s.get('classes', []))}"
+            )
+
+    # Npc Generator
+
+    def generate_npc(self):
+        self.npc_listbox.delete(0, tk.END)
+
+        for _ in range(6):
+            npclist = npc.generate_npc()
+            self.npc_listbox.insert(
+                tk.END,
+                f"|{npclist['name']} {npclist['surname']} | "
+                f"|{npclist['race']} {npclist['gender']}  | "
+                f"|{npclist['trait']} | {npclist['hook']} | "
             )
