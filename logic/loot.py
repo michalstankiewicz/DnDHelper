@@ -20,6 +20,7 @@ _loot_cache = None
 
 def get_loot_data():
     global _loot_cache
+
     if _loot_cache is None:
         file_path = resource_path("Data/loot.json")
         with open(file_path, encoding="utf-8") as f:
@@ -28,4 +29,6 @@ def get_loot_data():
 
 
 def generate_loot():
-    return random.choice(get_loot_data())
+    loot = get_loot_data()
+    assert loot is not None, "Loot cache not loaded"
+    return random.choice(loot)
