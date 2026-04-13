@@ -1,34 +1,22 @@
-import os
-import sys
 import random
-import json
+
+from logic.core.pathing import resource_path
+from logic.core.cache import get_cache
+from logic.core.io import load_json
+
+CACHE_KEY = 'loot'
 
 
-def resource_path(relative_path):
-    if hasattr(sys, '_MEIPASS'):
-        base_path = sys._MEIPASS  # exe
-    else:
-        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def load_loot():
+    file_path = resource_path("Data/loot.json")
 
-    return os.path.join(base_path, relative_path)
+    def loader():
+        return load_json(file_path)
 
-
-loot_file = resource_path(os.path.join('Data', 'loot.json'))
-
-_loot_cache = None
-
-
-def get_loot_data():
-    global _loot_cache
-
-    if _loot_cache is None:
-        file_path = resource_path("Data/loot.json")
-        with open(file_path, encoding="utf-8") as f:
-            _loot_cache = json.load(f)
-    return _loot_cache
+    return get_cache(CACHE_KEY, loader)
 
 
 def generate_loot():
-    loot = get_loot_data()
+    loot = load_loot()
     assert loot is not None, "Loot cache not loaded"
     return random.choice(loot)

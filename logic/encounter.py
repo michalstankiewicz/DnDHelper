@@ -1,43 +1,29 @@
-import json
-import os
+
 import random
-import sys
+from logic.core.pathing import resource_path
+from logic.core.cache import get_cache
+from logic.core.io import load_json
+
+CACHE_ENCOUNTERS = "encounters"
+CACHE_ADVENTURES = "adventures"
 
 
-def resource_path(relative_path):
-    """Absolute file path for both dev and exe."""
-    if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def load_encounters():
+    file_path = resource_path("Data/encounter.json")
 
-    return os.path.join(base_path, relative_path)
+    def loader():
+        return load_json(file_path)
 
-
-_encounter_cache = None
-_adventure_cache = None
+    return get_cache(CACHE_ENCOUNTERS, loader)
 
 
-def get_encounters():
-    global _encounter_cache
+def load_adventures():
+    file_path = resource_path("Data/adv.json")
 
-    if _encounter_cache is None:
-        file_path = resource_path("Data/encounter.json")
-        with open(file_path, encoding="utf-8") as f:
-            _encounter_cache = json.load(f)
+    def loader():
+        return load_json(file_path)
 
-    return _encounter_cache
-
-
-def get_adventures():
-    global _adventure_cache
-
-    if _adventure_cache is None:
-        file_path = resource_path("Data/adv.json")
-        with open(file_path, encoding="utf-8") as f:
-            _adventure_cache = json.load(f)
-
-    return _adventure_cache
+    return get_cache(CACHE_ADVENTURES, loader)
 
 
 def generate_encounter():
@@ -50,14 +36,16 @@ def generate_encounter():
     )[0]
 
     if choice_type == "monster":
-        enc = random.choice(get_encounters())
-        assert _encounter_cache is not None, "Encounter Cache not loaded"
-        enc = enc.copy()
-        enc["is_monster"] = True
-        return enc
+        encounters = load_encounters()
+        if not encounters:
+            raise RuntimeError("Encounter cache failed to load")
+        data_enc = random.choice(encounters).copy()
+        data_enc["is_monster"] = True
+        return data_enc
 
-    adv = random.choice(get_adventures())
-    assert _adventure_cache is not None, "Adventure Cache not loaded"
-    adv = adv.copy()
-    adv["is_monster"] = False
-    return adv
+    adventures = load_adventures()
+    if not adventures:
+        raise RuntimeError("Adventure cache failed to load")
+    data_adv = random.choice(adventures).copy()
+    data_adv["is_monster"] = False
+    return data_adv
