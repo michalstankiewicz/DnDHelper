@@ -2,13 +2,12 @@ import random
 
 
 def roll_dice(sides):
+    """Basic dice roll"""
     return random.randint(1, sides)
-
-# todo: add more dice types (d4, d6, d8, d10, d12, d20) and a function to roll multiple dice at once (e.g., 2d6)
 
 
 def roll_multiple_dice(num_dice, sides):
-
+    """Roll more then 1 dice """
     if num_dice <= 0:
         raise ValueError("Number of dice must be greater than 0")
     if sides <= 0:
@@ -18,6 +17,7 @@ def roll_multiple_dice(num_dice, sides):
 
 
 def roll_from_string(dice_string):
+    """Allow roll from str user input"""
     try:
         num_dice, sides = map(int, dice_string.lower().split('d'))
         return roll_multiple_dice(num_dice, sides)
