@@ -1,37 +1,36 @@
+from logic.core.pathing import resource_path
+from logic.core.cache import get_cache
 import json
-import os
-import sys
 import random
 
-
-def resource_path(relative_path):
-    """Absolute file path for both dev and exe."""
-    if hasattr(sys, '_MEIPASS'):
-        base_path = sys._MEIPASS  # exe
-    else:
-        base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-    return os.path.join(base_path, relative_path)
+CACHE_KEY = "npc"
 
 
-_npc_cache = None
+def _load_json(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
-def get_npc_data():
-    global _npc_cache
-    if _npc_cache is None:
-        npc_file = resource_path(os.path.join('Data', 'npc.json'))
-        with open(npc_file, 'r', encoding='utf-8') as f:
-            _npc_cache = json.load(f)  # global list of NPCs
-    return _npc_cache
+def load_npc():
+    file_path = resource_path("Data/npc.json")
+
+    def loader():
+        return _load_json(file_path)
+
+    return get_cache(CACHE_KEY, loader)
 
 
 def generate_npc():
-    npc_data = get_npc_data()
-    assert npc_data is not None, "Cache not loaded!"
+    npc_data = load_npc()
+    assert npc_data is not None, "NPC cache not loaded"
     race = random.choice(list(npc_data["races"]))
     gender = random.choice(["male", "female"])
-    name = random.choice(npc_data["races"][race][gender])
+
+    names = npc_data["races"].get(race, {}).get(gender, [])
+    if not names:
+        raise ValueError(f"Missing names for {race}/{gender}")
+
+    name = random.choice(names)
     surname = random.choice(npc_data["surnames"])
     trait = random.choice(npc_data["traits"])
     hook = random.choice(npc_data["hooks"])

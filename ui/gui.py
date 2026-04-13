@@ -130,7 +130,7 @@ class MyApp(tk.Tk):
         npc_frame.pack(fill=tk.BOTH, expand=True, pady=10)
 
         # CITY
-        city_data = city.get_city_data()
+        city_data = city.load_city()
         city_names = list(city_data.keys())
         self.tabCity = ttk.Frame(self.tabs)
         self.tabs.add(self.tabCity, text="City")
