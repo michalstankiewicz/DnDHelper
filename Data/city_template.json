@@ -1,0 +1,382 @@
+{
+  "bryn_shander": {
+    "problems": [
+      "Karawany z południa docierają z opóźnieniem i częściowym ładunkiem",
+      "W północnej dzielnicy znikają ludzie bez śladu",
+      "Magazyny żywności są opróżniane mimo zamkniętych drzwi",
+      "Straż znajduje ślady na śniegu urywające się przy murach",
+      "Latarnie gasną jednocześnie w całych ulicach",
+      "Woda w studniach zamarza szybciej niż w innych miastach",
+      "Zwierzęta bojowe odmawiają wejścia do miasta",
+      "Nocą słychać kroki na murach bez źródła",
+      "Znikają sanie pozostawione przed domami",
+      "Handlarze zgłaszają fałszywe monety w obiegu",
+      "Część domów traci ciepło mimo sprawnych pieców",
+      "Patrole zgłaszają brak odbić śladów w śniegu",
+      "W zaułkach słychać głosy bez źródła",
+      "Kupcy znikają na trasach wokół miasta",
+      "Niektóre budynki są nienaturalnie wychłodzone"
+    ],
+    "goods": [
+      "Lampy olejne odporne na ekstremalny mróz",
+      "Suszone mięso renifera pakowane na podróże",
+      "Racje karawanowe o długiej trwałości",
+      "Ostrza hartowane w lodowej wodzie",
+      "Maści przeciw odmrożeniom natychmiastowego działania",
+      "Futra zimowych bestii z tundry",
+      "Przewodnicy znający wszystkie szlaki Ten-Towns"
+    ],
+    "superstitions": [
+      "Śnieg skrzypiący trzykrotnie oznacza, że ktoś obserwuje",
+      "Ogień trzaskający bez powodu oznacza obecność ducha tundry",
+      "Jeśli cień porusza się wolniej niż właściciel, ktoś jest blisko",
+      "Puste sanie oznaczają, że ktoś nie wrócił z podróży",
+      "Spiralny wzór na szybie to znak nadchodzącego zniknięcia",
+      "Zatrzymanie oddechu przy pierwszym śniegu chroni przed klątwą",
+      "Rozlane mleko zimą zwiastuje zmianę losu",
+      "Gdy wiatr milknie nagle, coś przechodzi bardzo blisko"
+    ]
+  },
+  "targos": {
+    "problems": [
+      "Transporty z Bryn Shander są regularnie atakowane po drodze",
+      "Ryby zamarzają w sieciach zanim zostaną wyciągnięte",
+      "Straż portowa znajduje puste łodzie bez załogi",
+      "W nocy ktoś przecina liny zacumowanych statków",
+      "Ceny soli i zapasów gwałtownie wzrosły",
+      "Handel futrami kontroluje nieznana grupa",
+      "Znikają zapasy z nabrzeża bez śladu",
+      "Wilki krążą bliżej miasta niż kiedykolwiek",
+      "W dokach słychać plusk pod lodem",
+      "Karawany omijają Targos bez wyjaśnienia",
+      "Zamarznięte ryby pojawiają się na brzegu",
+      "Straż boi się nocnych patroli",
+      "Magazyny otwierają się od środka",
+      "Niektóre statki nie zamarzają w lodzie",
+      "Ludzie widzą światła pod wodą"
+    ],
+    "goods": [
+      "Suszone ryby z Morza Ruchomego Lodu",
+      "Sieci wzmacniane lodowym włóknem",
+      "Zestawy naprawcze do łodzi",
+      "Futra fok zimowych",
+      "Alkohol rozgrzewający wysokiej mocy",
+      "Mapy lodowych zatok",
+      "Rzadkie przyprawy południowe"
+    ],
+    "superstitions": [
+      "Jeśli woda nie zamarza przy brzegu, coś oddycha pod lodem",
+      "Trzy fale bez wiatru oznaczają śmierć w morzu",
+      "Cień na wodzie bez właściciela to omen",
+      "Zamarznięta ryba z otwartymi oczami widzi przyszłość",
+      "Gdy lód śpiewa, nie wolno wypływać",
+      "Krąg na lodzie oznacza przejście czegoś pod spodem",
+      "Puste sieci zawsze wracają cięższe niż były",
+      "Woda bez odbicia nieba jest przeklęta"
+    ]
+  },
+  "bremen": {
+    "problems": [
+      "Jezioro przestało dawać ryby mimo dobrych warunków",
+      "Sieci wracają pełne lodu zamiast połowu",
+      "Łodzie znikają nocą i wracają same",
+      "W wodzie pojawiają się nieznane ślady",
+      "Rybacy słyszą głosy spod lodu",
+      "Wilki krążą wokół brzegu bez ataku",
+      "Handel rybami całkowicie upadł",
+      "Znikają wiosła i sprzęt rybacki",
+      "Pod lodem widać ruch",
+      "Niektóre sieci są rozrywane od środka",
+      "Łodzie wracają bez załogi",
+      "Na brzegu pojawiają się mokre ślady",
+      "Zamarznięte fale poruszają się nocą",
+      "Mosty lodowe pękają bez powodu",
+      "Ludzie boją się wypływać na jezioro"
+    ],
+    "goods": [
+      "Sieci odporne na lód",
+      "Przynęty przyciągające zimowe ryby",
+      "Łodzie wzmacniane drewnem z południa",
+      "Futra wodnych bestii",
+      "Rzadkie alkohole rybackie",
+      "Mapy głębin jeziora",
+      "Suszone ryby jeziorne"
+    ],
+    "superstitions": [
+      "Jeśli lód faluje bez wiatru, coś się budzi",
+      "Krzyk spod lodu zwiastuje burzę",
+      "Gdy sieć wraca pusta, ktoś patrzył z dołu",
+      "Ryba bez oczu oznacza złe sny",
+      "Trzykrotne pęknięcie lodu oznacza odejście",
+      "Woda, która nie odbija nieba, jest przeklęta",
+      "Jeśli łódź sama się poruszy, nie wróci",
+      "Światła pod lodem oznaczają obecność czegoś żywego"
+    ]
+  },
+  "easthaven": {
+    "problems": [
+      "Lód na jeziorze świeci nocą pod powierzchnią",
+      "Karawany znikają na trasie do miasta",
+      "W portach pojawiają się puste statki",
+      "Mieszkańcy słyszą dzwony bez wieży",
+      "W nocy widać ruch pod zamarzniętą taflą",
+      "Straż zgłasza zniknięcia w pobliżu brzegu",
+      "Handel spada bez wyraźnego powodu",
+      "Domy w pobliżu jeziora tracą ciepło",
+      "Znikają sanie z zaprzęgami",
+      "W wodzie pojawiają się czarne smugi",
+      "Niektóre ulice są zawsze zasypane śniegiem",
+      "Rybacy wracają bez połowu",
+      "Zwierzęta unikają jeziora",
+      "W nocy słychać śpiew spod lodu",
+      "Ślady prowadzą do wody i się urywają"
+    ],
+    "goods": [
+      "Suszone ryby jeziorne",
+      "Lampy chroniące przed zimnem",
+      "Zioła rozgrzewające z południa",
+      "Mapy zamarzniętego jeziora",
+      "Futra wodnych bestii",
+      "Rzadkie wina transportowane przez tundrę",
+      "Przynęty na lodowe ryby"
+    ],
+    "superstitions": [
+      "Jeśli lód świeci, ktoś śni pod wodą",
+      "Dzwon bez wieży oznacza zbliżającą się śmierć",
+      "Cień na jeziorze bez właściciela to omen",
+      "Jeśli śnieg topnieje w kręgu, coś patrzy",
+      "Woda, która nie odbija gwiazd, jest przeklęta",
+      "Trzy kroki na lodzie bez echa oznaczają obecność ducha",
+      "Śpiew spod lodu oznacza wezwanie",
+      "Puste łodzie zawsze wracają pełniejsze niż były"
+    ]
+  },
+  "termalaine": {
+    "problems": [
+      "Kopalnia produkuje mniej rudy niż zwykle",
+      "Górnicy słyszą rytmiczne uderzenia pod ziemią",
+      "Część tuneli zawala się bez powodu",
+      "Znikają narzędzia górnicze",
+      "Światła pojawiają się w nieużywanych korytarzach",
+      "Powietrze w kopalni jest nienaturalnie zimne",
+      "Niektóre wyjścia są zablokowane od środka",
+      "Ludzie tracą orientację pod ziemią",
+      "Skały wydają dźwięki jak bicie serca",
+      "Górnicy wracają z urazami bez pamięci zdarzeń",
+      "Część szybów jest całkowicie opuszczona",
+      "Znikają zapasy z magazynów kopalni",
+      "Nikt nie chce pracować w dolnych poziomach",
+      "W kopalni pojawia się lodowy pył",
+      "Pod ziemią słychać oddech"
+    ],
+    "goods": [
+      "Surowa ruda srebra",
+      "Narzędzia górnicze wzmacniane stalą",
+      "Lampy górnicze odporne na mróz",
+      "Futra robocze",
+      "Wzmocnione liny",
+      "Maści regeneracyjne",
+      "Rzadkie minerały"
+    ],
+    "superstitions": [
+      "Jeśli skała pulsuje, coś żyje pod ziemią",
+      "Trzy uderzenia w pustej kopalni oznaczają odpowiedź",
+      "Światło gasnące jednocześnie oznacza obecność czegoś obcego",
+      "Gdy echo nie wraca, ktoś został pod ziemią",
+      "Lód w kopalni oznacza przejście do innego miejsca",
+      "Śpiew skał zwiastuje zawalenie",
+      "Nie wolno gwizdać pod ziemią",
+      "Jeśli cień nie nadąża, kopalnia nie jest pusta"
+    ]
+  },
+  "lonelywood": {
+    "problems": [
+      "Drwale znikają w lesie bez śladu",
+      "Zwierzęta uciekają z lasu przed czymś niewidzialnym",
+      "Drzewa wydają dźwięki nocą",
+      "Szlaki leśne zmieniają położenie po śnieżycach",
+      "W lesie pojawiają się świeże ślady bez właściciela",
+      "Obozy myśliwych są opuszczane w pośpiechu",
+      "Ludzie tracą orientację mimo znajomości terenu",
+      "W koronach drzew widać ruch",
+      "Znikają zapasy myśliwych",
+      "Las jest nienaturalnie cichy",
+      "Ślady prowadzą do pustych polan",
+      "Niektóre drzewa są całkowicie zamarznięte",
+      "W lesie słychać szepty",
+      "Zwierzęta mają rany bez walki",
+      "Nocą widać światła między drzewami"
+    ],
+    "goods": [
+      "Drewno odporne na mróz",
+      "Futra leśnych bestii",
+      "Zioła lecznicze tundry",
+      "Łuki myśliwskie",
+      "Pułapki na zwierzynę",
+      "Suszone mięso leśne",
+      "Przewodnicy leśni"
+    ],
+    "superstitions": [
+      "Jeśli las milknie, coś słucha",
+      "Ślady bez właściciela oznaczają, że las patrzy",
+      "Złamana gałąź bez wiatru to znak obecności ducha",
+      "Gdy drzewa się nie ruszają, coś się zbliża",
+      "Cień między drzewami zawsze jest prawdziwy",
+      "Jeśli śnieg nie spada z gałęzi, ktoś tam stoi",
+      "Szepty w lesie powtarzają twoje imię",
+      "Jeśli zgubisz echo, nie wrócisz"
+    ]
+  },
+  "caer_dineval": {
+    "problems": [
+      "Twierdza ma częściowo zamknięte skrzydła bez wyjaśnienia",
+      "Straż zachowuje się nienaturalnie posłusznie",
+      "W nocy widać światła w pustych oknach",
+      "Mieszkańcy unikają rozmów o zamku",
+      "Znikają służący bez śladu",
+      "W piwnicach słychać kroki",
+      "Część korytarzy jest niedostępna",
+      "Handel w mieście spadł",
+      "Niektórzy goście nie opuszczają twierdzy",
+      "Brama otwiera się sama w nocy",
+      "Strażnicy zmieniają się bez rotacji",
+      "W zamku czuć nienaturalny chłód",
+      "Znikają zapasy z kuchni",
+      "Nikt nie widział lordów od dłuższego czasu",
+      "Korytarze zmieniają układ"
+    ],
+    "goods": [
+      "Stare zapasy z twierdzy",
+      "Wina importowane z południa",
+      "Zbroje zimowe",
+      "Broń ceremonialna",
+      "Świece długopalne",
+      "Zioła lecznicze",
+      "Rzadkie tkaniny"
+    ],
+    "superstitions": [
+      "Jeśli światło w zamku gaśnie, ktoś przejął kontrolę",
+      "Echo w korytarzu bez źródła to ostrzeżenie",
+      "Gdy drzwi otwierają się same, ktoś słucha",
+      "Nie wolno liczyć kroków w zamku",
+      "Cień w oknie zawsze jest prawdziwy",
+      "Jeśli ściany się zmieniają, nie jesteś gościem",
+      "Szepty w murach są starsze niż zamek",
+      "Jeśli zgubisz drogę w środku, już nie wyszedłeś"
+    ]
+  },
+  "caer_konig": {
+    "problems": [
+      "Karawany omijają miasto po serii zniknięć na północnym szlaku",
+      "W porcie lodowym pojawiły się nieznane wraki bez załóg",
+      "Straż zgłasza nocne światła pod lodem przy nabrzeżu",
+      "Część magazynów została opróżniona bez śladów włamania",
+      "Mieszkańcy słyszą dzwony dochodzące z pustej latarni morskiej",
+      "Zwierzęta pociągowe odmawiają wejścia na lodowe mosty",
+      "W pobliżu miasta pojawiają się świeże ślady prowadzące do wody",
+      "Rybacy znajdują sieci rozerwane od środka",
+      "Lód na zatoce pęka w regularnych odstępach bez powodu",
+      "Niektóre budynki tracą ciepło mimo sprawnych palenisk",
+      "Patrole znikają podczas nocnych zmian",
+      "Na śniegu pojawiają się wzory przypominające mapy",
+      "W dokach słychać plusk pod lodem bez widocznego źródła",
+      "Handel rybny gwałtownie spadł mimo dobrych połowów",
+      "Znikają sanie pozostawione przy nabrzeżu"
+    ],
+    "goods": [
+      "Zapasowe liny i haki lodowe do pracy na zatoce",
+      "Suszone ryby z lokalnych połowów morskich",
+      "Lampy sygnalizacyjne do nawigacji w śnieżycy",
+      "Futra fok i fok lodowych z północnych wód",
+      "Rzadkie mapy lodowych prądów morskich",
+      "Alkohol rozgrzewający z importu południowego",
+      "Zestawy naprawcze do łodzi lodowych"
+    ],
+    "superstitions": [
+      "Jeśli lód na zatoce śpiewa, morze coś pamięta",
+      "Trzy uderzenia fal bez wiatru oznaczają odejście kogoś w głębinach",
+      "Cień na wodzie bez właściciela zwiastuje powrót czegoś z dna",
+      "Gdy latarnia morska świeci bez ognia, ktoś nią steruje",
+      "Zamarznięta ryba z otwartymi oczami widzi to, co nadchodzi",
+      "Krąg na lodzie oznacza przejście między wodą a czymś pod nią",
+      "Jeśli łódź poruszy się sama, nigdy nie była pusta",
+      "Woda bez odbicia gwiazd jest miejscem przejścia"
+    ]
+  },
+  "dougans_hole": {
+    "problems": [
+      "Wilki zniknęły nagle z okolic wioski bez śladu walki",
+      "Karawany przestały zatrzymywać się w osadzie",
+      "Zwierzęta gospodarskie znikają w nocy",
+      "Ślady prowadzą do jeziora i urywają się na lodzie",
+      "Mieszkańcy zgłaszają nocne odgłosy pod ziemią",
+      "Część domów traci ciepło mimo pełnych palenisk",
+      "Zapas żywności znika szybciej niż powinien",
+      "Na śniegu pojawiają się okręgi bez śladu wejścia",
+      "W okolicy widziano poruszające się światła w zamieci",
+      "Rybacy twierdzą, że coś porusza się pod lodem",
+      "Ludzie unikają północnych obrzeży wioski",
+      "Znikają sanie zaprzęgowe",
+      "Niektóre studnie zamarzają od dołu",
+      "Straż nie znajduje śladów intruzów",
+      "W lesie wokół wioski panuje nienaturalna cisza"
+    ],
+    "goods": [
+      "Surowe skóry wilków tundrowych",
+      "Racje przetrwania dla podróżnych",
+      "Proste lampy olejne odporne na mróz",
+      "Ręcznie robione narzędzia myśliwskie",
+      "Suszone mięso z polowań",
+      "Zioła lecznicze z tundry",
+      "Prymitywne mapy szlaków"
+    ],
+    "superstitions": [
+      "Jeśli wilki znikają bez śladu, ktoś je wezwał",
+      "Lód, który nie skrzypi, nie należy do tego świata",
+      "Okrąg na śniegu oznacza miejsce przejścia",
+      "Jeśli ogień nie daje cienia, coś stoi obok",
+      "Gdy wiatr milknie wokół wioski, coś oddycha blisko",
+      "Ślady prowadzące do wody nigdy nie wracają",
+      "Jeśli pies nie szczeka w nocy, lepiej nie wychodzić",
+      "Cisza w lesie oznacza, że las patrzy"
+    ]
+  },
+  "kelvins_cairn": {
+    "problems": [
+      "Lawiny schodzą bez ostrzeżenia nawet przy spokojnej pogodzie",
+      "Szlaki górskie zmieniają przebieg po każdej zamieci",
+      "Znikają grupy podróżnych na podejściach",
+      "W skałach słychać rytmiczne uderzenia bez źródła",
+      "Niektóre przełęcze są zablokowane lodem od środka",
+      "Zwierzęta górskie uciekają z rejonu szczytów",
+      "Ślady w śniegu urywają się na krawędziach urwisk",
+      "W nocy widoczne są światła na zboczach",
+      "Kamienie spadają bez wiatru",
+      "Powietrze w wyższych partiach jest nienaturalnie zimne",
+      "Mapy górskie przestają się zgadzać z terenem",
+      "Wędrowcy tracą orientację mimo widoczności",
+      "Część jaskiń jest niedostępna przez lodowe blokady",
+      "Echo w górach nie wraca do źródła",
+      "Na szczytach pojawiają się ślady bez wejścia"
+    ],
+    "goods": [
+      "Liny wspinaczkowe wzmacniane lodem",
+      "Hakowe zestawy alpinistyczne",
+      "Ciepłe odzieże wysokogórskie",
+      "Rzadkie minerały z gór",
+      "Mapy przełęczy i szlaków",
+      "Eliksiry odporności na zimno",
+      "Suszone racje wysokogórskie"
+    ],
+    "superstitions": [
+      "Jeśli echo nie wraca, góra coś zabrała",
+      "Trzy spadające kamienie bez wiatru oznaczają zejście czegoś z góry",
+      "Gdy śnieg przestaje padać na szczycie, ktoś tam stoi",
+      "Cień na ścianie skały bez właściciela to znak obecności",
+      "Jeśli wiatr zmienia kierunek bez powodu, góra oddycha",
+      "Ślady prowadzące w górę bez zejścia oznaczają przekroczenie granicy",
+      "Jeśli lód pokrywa skałę w jednej chwili, coś zostało uwięzione",
+      "Góra, która milczy, nie jest pusta"
+    ]
+  }
+}
