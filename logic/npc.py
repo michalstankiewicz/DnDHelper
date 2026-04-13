@@ -1,21 +1,16 @@
 from logic.core.pathing import resource_path
 from logic.core.cache import get_cache
-import json
+from logic.core.io import load_json
 import random
 
 CACHE_KEY = "npc"
-
-
-def _load_json(path):
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
 
 
 def load_npc():
     file_path = resource_path("Data/npc.json")
 
     def loader():
-        return _load_json(file_path)
+        return load_json(file_path)
 
     return get_cache(CACHE_KEY, loader)
 
