@@ -2,10 +2,34 @@ import tkinter as tk
 from tkinter import ttk
 import logic.dice as dice
 import logic.loot as loot
-import logic.ecounter as ecounter
+import logic.encounter as encounter
 import logic.spells as spells
 import logic.npc as npc
+import logic.city_gen as city
 import re
+
+# creating helper for gui
+
+
+def create_scrollable_listbox(parent, width=100, height=10, font=("Consolas", 10)):
+    frame = tk.Frame(parent)
+
+    scrollbar = tk.Scrollbar(frame)
+    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+    listbox = tk.Listbox(
+        frame,
+        width=width,
+        height=height,
+        font=font,
+        yscrollcommand=scrollbar.set
+    )
+
+    listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    scrollbar.config(command=listbox.yview)
+
+    return frame, listbox
 
 
 class MyApp(tk.Tk):
@@ -83,36 +107,47 @@ class MyApp(tk.Tk):
         self.encounter_button = tk.Button(
             self.tabEncLoot, text="Generate Encounter", command=self.generate_encounter)
         self.encounter_button.pack(pady=10)
-        encounter_frame = tk.Frame(self.tabEncLoot)
-        encounter_frame.pack(pady=10)
-        self.encounter_listbox = tk.Listbox(
-            encounter_frame, width=100, height=10)
-        self.encounter_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-
-        # npc
-        self.tabnpc = ttk.Frame(self.tabs)
-        self.tabs.add(self.tabnpc, text="NPC")
-        self.npc_button = tk.Button(
-            self.tabnpc, text="Generate", command=self.generate_npc)
-        self.npc_button.pack(pady=10)
-        npc_frame = tk.Frame(self.tabnpc)
-        npc_frame.pack(pady=10)
-        self.npc_listbox = tk.Listbox(
-            npc_frame, width=100, height=10)
-        self.npc_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        encounter_frame, self.encounter_listbox = create_scrollable_listbox(
+            self.tabEncLoot)
+        encounter_frame.pack(fill=tk.BOTH, expand=True, pady=10)
 
         # LOOT
         self.loot_button = tk.Button(
             self.tabEncLoot, text="Generate Loot", command=self.loot_generator)
         self.loot_button.pack(pady=10)
-        loot_frame = tk.Frame(self.tabEncLoot)
-        loot_frame.pack(pady=10)
-        self.loot_listbox = tk.Listbox(
-            loot_frame, width=100, height=10)
-        self.loot_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        loot_frame, self.loot_listbox = create_scrollable_listbox(
+            self.tabEncLoot)
+        loot_frame.pack(fill=tk.BOTH, expand=True, pady=10)
+
+        # NPC
+        self.tabnpc = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabnpc, text="NPC")
+        self.npc_button = tk.Button(
+            self.tabnpc, text="Generate", command=self.generate_npc)
+        self.npc_button.pack(pady=10)
+        npc_frame, self.npc_listbox = create_scrollable_listbox(self.tabnpc)
+        npc_frame.pack(fill=tk.BOTH, expand=True, pady=10)
+
+        # CITY
+        city_data = city.get_city_data()
+        city_names = list(city_data.keys())
+        self.tabCity = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabCity, text="City")
+        self.city_button = tk.Button(
+            self.tabCity, text="Generate", command=self.generate_city)
+        self.city_button.pack(pady=10)
+        self.city_selector = ttk.Combobox(
+            self.tabCity, state="readonly", values=city_names)
+        self.city_selector.current(0)
+        self.city_selector.pack(pady=5)
+        self.city_selector.pack(pady=5)
+        city_frame, self.city_listbox = create_scrollable_listbox(self.tabCity)
+        city_frame.pack(fill=tk.BOTH, expand=True, pady=10)
+####################################################################################
 
     # Functions used in program
-    # CLICK CLAKCS
+    # DICE
     def roll_dice(self, sides):
         rolls, total = dice.roll_multiple_dice(1, sides)
         self.dice_result_label.config(
@@ -132,7 +167,7 @@ class MyApp(tk.Tk):
     def generate_encounter(self):
         self.encounter_listbox.delete(0, tk.END)
         for _ in range(4):
-            enc = ecounter.generate_encounter()
+            enc = encounter.generate_encounter()
             if enc.get("is_monster"):
                 text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['description']})"
             else:
@@ -200,3 +235,31 @@ class MyApp(tk.Tk):
                 f"|{npclist['race']} {npclist['gender']}  | "
                 f"|{npclist['trait']} | {npclist['hook']} | "
             )
+
+    # City Generator
+    def generate_city(self):
+        self.city_listbox.delete(0, tk.END)
+
+        city_name = self.city_selector.get()
+        result = city.city_gen(city_name)
+
+        self.city_listbox.insert(tk.END, f"[CITY] {result['city']}")
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "PROBLEMS:")
+        for p in result["problems"]:
+            self.city_listbox.insert(tk.END, f"- {p}")
+
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "GOODS:")
+        for g in result["goods"]:
+            self.city_listbox.insert(tk.END, f"- {g}")
+
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "SUPERSTITIONS:")
+        self.city_listbox.insert(
+            tk.END,
+            f"- {result['superstitions']}"
+        )

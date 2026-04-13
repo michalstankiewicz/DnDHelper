@@ -2,6 +2,7 @@ import json
 import os
 import random
 import sys
+# PATH
 
 
 def resource_path(relative_path):
@@ -14,6 +15,7 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
+# Lazy initalization, cache
 _city_cache = None
 
 
@@ -27,6 +29,8 @@ def get_city_data():
 
     return _city_cache
 
+# Function to generate
+
 
 def city_gen(city_name):
     """City generator"""
@@ -34,8 +38,8 @@ def city_gen(city_name):
     assert _city_cache is not None, "Encounter Cache not loaded"
     city = data[city_name]
     problems = random.sample(city["problems"], 2)
-    goods = random.sample(city["goods"], 1)
-    superstitions = random.sample(city["superstitions"], 1)
+    goods = random.sample(city["goods"], 2)
+    superstitions = random.sample(city["superstitions"], 1)[0]
 
     return {
         "city": city_name,
