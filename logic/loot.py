@@ -18,5 +18,19 @@ def load_loot():
 
 def generate_loot():
     loot = load_loot()
-    assert loot is not None, "Loot cache not loaded"
-    return random.choice(loot)
+
+    if not loot:
+        raise RuntimeError("Loot cache failed to load")
+
+    if not isinstance(loot, list):
+        raise ValueError("Loot must be a list")
+
+    if len(loot) == 0:
+        raise ValueError("Loot list is empty")
+
+    item = random.choice(loot)
+
+    if not isinstance(item, dict):
+        raise ValueError("Loot item must be dict")
+
+    return item.copy()

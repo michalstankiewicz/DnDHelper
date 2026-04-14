@@ -17,7 +17,8 @@ def load_npc():
 
 def generate_npc():
     npc_data = load_npc()
-    assert npc_data is not None, "NPC cache not loaded"
+    if not npc_data:
+        raise RuntimeError("Npc cache failed to load")
     race = random.choice(list(npc_data["races"]))
     gender = random.choice(["male", "female"])
 

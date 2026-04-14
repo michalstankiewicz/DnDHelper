@@ -39,13 +39,33 @@ def generate_encounter():
         encounters = load_encounters()
         if not encounters:
             raise RuntimeError("Encounter cache failed to load")
-        data_enc = random.choice(encounters).copy()
+        if not isinstance(encounters, list):
+            raise ValueError("Encounters must be a list")
+        if len(encounters) == 0:
+            raise ValueError("Encounters list is empty")
+
+        data_enc = random.choice(encounters)
+
+        if not isinstance(data_enc, dict):
+            raise ValueError("Invalid encounter monster type format")
+
+        data_enc = data_enc.copy()
         data_enc["is_monster"] = True
         return data_enc
 
     adventures = load_adventures()
     if not adventures:
         raise RuntimeError("Adventure cache failed to load")
-    data_adv = random.choice(adventures).copy()
+    if not isinstance(adventures, list):
+        raise ValueError("Adventures must be a list")
+    if len(adventures) == 0:
+        raise ValueError("Adventures list is empty")
+
+    data_adv = random.choice(adventures)
+
+    if not isinstance(data_adv, dict):
+        raise ValueError("Adventure encounter type format is invalid")
+
+    data_adv = data_adv.copy()
     data_adv["is_monster"] = False
     return data_adv
