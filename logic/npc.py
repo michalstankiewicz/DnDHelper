@@ -1,6 +1,8 @@
 from logic.core.pathing import resource_path
 from logic.core.cache import get_cache
 from logic.core.io import load_json
+from logic.core.empty_validation_check import validate_item, validate_list
+
 import random
 
 CACHE_KEY = "npc"
@@ -16,14 +18,26 @@ def load_npc():
 
 
 def generate_npc():
+    # LOAD
     npc_data = load_npc()
-    assert npc_data is not None, "NPC cache not loaded"
-    race = random.choice(list(npc_data["races"]))
+
+    # Validate cache
+    if not npc_data:
+        raise RuntimeError("Npc cache failed to load")
+
+    # Validate Dict
+    races = npc_data["races"]
+    if not isinstance(races, dict):
+        raise ValueError("Invalid races structure")
+
+    race = random.choice(list(races))
+
     gender = random.choice(["male", "female"])
 
+    # Validate values
     names = npc_data["races"].get(race, {}).get(gender, [])
-    if not names:
-        raise ValueError(f"Missing names for {race}/{gender}")
+
+    validate_list(names, f"Missing names for {race}/{gender}")
 
     name = random.choice(names)
     surname = random.choice(npc_data["surnames"])
