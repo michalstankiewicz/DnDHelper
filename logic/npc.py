@@ -16,13 +16,25 @@ def load_npc():
 
 
 def generate_npc():
+    # LOAD
     npc_data = load_npc()
+
+    # Validate cache
     if not npc_data:
         raise RuntimeError("Npc cache failed to load")
-    race = random.choice(list(npc_data["races"]))
+
+    # Validate Dict
+    races = npc_data["races"]
+    if not isinstance(races, dict):
+        raise ValueError("Invalid races structure")
+
+    race = random.choice(list(races))
+
     gender = random.choice(["male", "female"])
 
+    # Validate values
     names = npc_data["races"].get(race, {}).get(gender, [])
+
     if not names:
         raise ValueError(f"Missing names for {race}/{gender}")
 

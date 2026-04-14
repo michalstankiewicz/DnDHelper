@@ -1,17 +1,31 @@
 from logic.core.pathing import resource_path
-import json
+from logic.core.cache import get_cache
+from logic.core.io import load_json
+
+CACHE_SPELLS = "spells"
 
 
 def load_spell_json():
     file_path = resource_path("Data/spells.json")
-    with open(file_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+
+    def loader():
+        return load_json(file_path)
+    return get_cache(CACHE_SPELLS, loader)
 
 
 def search_spells(name_filter="", level_filter="", class_filter=""):
-    results = []
-    spells = load_spell_json()
 
+    spells = load_spell_json()
+    if not spells:
+        raise RuntimeError("Spells cache failed to load")
+
+    if not isinstance(spells, list):
+        raise ValueError("Spells must be a list")
+
+    if len(spells) == 0:
+        raise ValueError("Spells list is empty")
+
+    results = []
     name_filter = name_filter.lower() if name_filter else ""
     class_filter = class_filter.lower() if class_filter else ""
 
