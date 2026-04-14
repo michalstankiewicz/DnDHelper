@@ -1,6 +1,8 @@
 from logic.core.pathing import resource_path
 from logic.core.cache import get_cache
 from logic.core.io import load_json
+from logic.core.empty_validation_check import validate_item, validate_list
+
 import random
 
 CACHE_KEY = "npc"
@@ -35,8 +37,7 @@ def generate_npc():
     # Validate values
     names = npc_data["races"].get(race, {}).get(gender, [])
 
-    if not names:
-        raise ValueError(f"Missing names for {race}/{gender}")
+    validate_list(names, f"Missing names for {race}/{gender}")
 
     name = random.choice(names)
     surname = random.choice(npc_data["surnames"])

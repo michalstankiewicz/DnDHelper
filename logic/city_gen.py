@@ -2,6 +2,7 @@ import random
 from logic.core.pathing import resource_path
 from logic.core.io import load_json
 from logic.core.cache import get_cache
+from logic.core.empty_validation_check import validate_item, validate_list
 
 CACHE_KEY = 'city'
 
@@ -28,24 +29,15 @@ def city_gen(city_name):
         raise ValueError(f"Invalid city structure: {city_name}")
 
     # Problems
-    if not isinstance(city["problems"], list):
-        raise ValueError(f"City 'problems' must be a list")
-    if len(city["problems"]) < 2:
-        raise ValueError("City 'problems' must contain at least 2 items")
+    validate_list(city["problems"], "City problems")
     problems = random.sample(city["problems"], 2)
 
     # Goods
-    if not isinstance(city["goods"], list):
-        raise ValueError(f"City 'goods' must be a list")
-    if len(city["goods"]) < 2:
-        raise ValueError("City 'goods' must contain at least 2 items")
+    validate_list(city["goods"], "City goods")
     goods = random.sample(city["goods"], 2)
 
     # Superstitions
-    if not isinstance(city["superstitions"], list):
-        raise ValueError("City 'superstitions' must be a list")
-    if len(city["superstitions"]) < 1:
-        raise ValueError("City 'superstitions' must contain at least 1 item")
+    validate_list(city["superstitions"], "City superstitions")
     superstitions = random.sample(city["superstitions"], 1)[0]
 
     return {

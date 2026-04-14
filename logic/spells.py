@@ -1,6 +1,8 @@
 from logic.core.pathing import resource_path
 from logic.core.cache import get_cache
 from logic.core.io import load_json
+from logic.core.empty_validation_check import validate_item, validate_list
+
 
 CACHE_SPELLS = "spells"
 
@@ -19,11 +21,7 @@ def search_spells(name_filter="", level_filter="", class_filter=""):
     if not spells:
         raise RuntimeError("Spells cache failed to load")
 
-    if not isinstance(spells, list):
-        raise ValueError("Spells must be a list")
-
-    if len(spells) == 0:
-        raise ValueError("Spells list is empty")
+    validate_list(spells, "Spells")
 
     results = []
     name_filter = name_filter.lower() if name_filter else ""
