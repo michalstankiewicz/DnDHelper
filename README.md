@@ -83,3 +83,12 @@ Example integration:
 ## Maintainer Note
 If this module is reused in other systems, ensure the attribution section is preserved.  
 It is not optional metadata—it is part of the usage conditions.
+
+
+---
+
+## Tech Stack
+- Python 3.11
+- Docker & Docker Compose
+- GitHub Actions (CI/CD with pytest)
+- pytest / unittest for unit testing
