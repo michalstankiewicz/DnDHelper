@@ -91,4 +91,4 @@ It is not optional metadata—it is part of the usage conditions.
 - Python 3.11
 - Docker & Docker Compose
 - GitHub Actions (CI/CD with pytest)
-- pytest for unit testing
+- pytest / unittest for unit testing
