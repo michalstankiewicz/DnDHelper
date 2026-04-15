@@ -25,4 +25,10 @@ def generate_loot():
 
     item = random.choice(loot)
 
-    validate_item(item, "Loot item must be dict")
+    if item is None:
+        raise ValueError("Loot item is None (bad data in loot.json)")
+
+    if not isinstance(item, dict):
+        raise TypeError(f"Invalid loot item type: {type(item)}")
+
+    return item
