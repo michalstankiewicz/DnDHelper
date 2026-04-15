@@ -1,0 +1,25 @@
+name: Logic Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  basic_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t dnd-helper .
+
+      - name: Run tests in Docker
+        run: docker run -v ${{ github.workspace }}:/app dnd-helper python tests/test_logic.py
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: test-log
+            path: log.txt
