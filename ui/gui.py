@@ -135,8 +135,7 @@ class MyApp(tk.Tk):
         npc_frame.pack(fill=tk.BOTH, expand=True, pady=10)
 
         # CITY
-        city_data = city.load_city()
-        city_names = list(city_data.keys())
+        city_names = city.get_available_city_names()
         self.tabCity = ttk.Frame(self.tabs)
         self.tabs.add(self.tabCity, text="City")
         self.city_button = tk.Button(
@@ -235,7 +234,7 @@ class MyApp(tk.Tk):
 
         city_name = self.city_selector.get()
         for _ in range(6):
-            city_list = city.city_gen(city_name)
+            city_list = city.generate_city(city_name)
 
             key = (
                 city_list["city"],
@@ -249,7 +248,7 @@ class MyApp(tk.Tk):
 
             self.used_city.add(key)
 
-        result = city.city_gen(city_name)
+        result = city.generate_city(city_name)
 
         self.city_listbox.insert(tk.END, f"[CITY] {result['city']}")
         self.city_listbox.insert(tk.END, "")
