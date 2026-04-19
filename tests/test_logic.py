@@ -1,6 +1,6 @@
 import unittest
 
-from logic.city_gen import city_gen
+from logic.city_gen import generate_city
 from logic.encounter import generate_encounter
 from logic.loot import generate_loot
 from logic.npc import generate_npc
@@ -26,9 +26,9 @@ def write_log(name, result=None, error=None):
 
 class TestCityGen(unittest.TestCase):
 
-    def test_city_gen_structure(self):
+    def test_generate_city_structure(self):
         try:
-            result = city_gen("bryn_shander")
+            result = generate_city("bryn_shander")
 
             self.assertIsInstance(result, dict)
             self.assertIn("city", result)
@@ -48,7 +48,7 @@ class TestCityGen(unittest.TestCase):
     def test_city_unknown(self):
         try:
             with self.assertRaises(ValueError) as ctx:
-                city_gen("THIS_CITY_DOES_NOT_EXIST")
+                generate_city("THIS_CITY_DOES_NOT_EXIST")
 
             write_log(
                 "city_gen_unknown",
