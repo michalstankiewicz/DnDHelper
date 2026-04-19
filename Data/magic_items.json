@@ -1,0 +1,518 @@
+[
+    {
+        "name": "Wand of Fireballs",
+        "rarity": "rare",
+        "description": "A wand that shoots fireballs",
+        "effect": "3d6 fire damage, recharge 5-6"
+    },
+    {
+        "name": "Cloak of Invisibility",
+        "rarity": "very_rare",
+        "description": "When worn, become invisible",
+        "effect": "Turn invisible, 1 hour per day"
+    },
+    {
+        "name": "Amulet of Health",
+        "rarity": "rare",
+        "description": "Grants increased vitality",
+        "effect": "Constitution 19, max 20"
+    },
+    {
+        "name": "Ring of Protection",
+        "rarity": "uncommon",
+        "description": "A simple protective ring",
+        "effect": "+1 AC and saves"
+    },
+    {
+        "name": "Bag of Holding",
+        "rarity": "uncommon",
+        "description": "Extradimensional storage",
+        "effect": "Holds 227 kg, 2,3 m³"
+    },
+    {
+        "name": "Sword of Sharpness",
+        "rarity": "very_rare",
+        "description": "A blade that never dulls",
+        "effect": "+2 to hit, can sever limbs"
+    },
+    {
+        "name": "Potion of Greater Healing",
+        "rarity": "uncommon",
+        "description": "Restores vitality",
+        "effect": "Restore 4d4+4 HP"
+    },
+    {
+        "name": "Decanter of Endless Water",
+        "rarity": "uncommon",
+        "description": "Water flows endlessly",
+        "effect": "Create fresh water on demand"
+    },
+    {
+        "name": "Wand of Wonder",
+        "rarity": "rare",
+        "description": "Produces random magical effects",
+        "effect": "Roll d100 for effect"
+    },
+    {
+        "name": "Staff of the Magi",
+        "rarity": "legendary",
+        "description": "A powerful magical staff",
+        "effect": "5 charges, spell 3d4+1"
+    },
+    {
+        "name": "Dagger of Venom",
+        "rarity": "rare",
+        "description": "Coated with supernatural poison",
+        "effect": "+1d4 poison damage"
+    },
+    {
+        "name": "Ring of Fire Resistance",
+        "rarity": "common",
+        "description": "Protection from heat",
+        "effect": "Resistance to fire damage"
+    },
+    {
+        "name": "Miecz Światła",
+        "rarity": "very_rare",
+        "description": "Miecz promieniujący czystym światłem",
+        "effect": "+2 do ataku, świeci w ciemności"
+    },
+    {
+        "name": "Zbroja Smokowa Skóra",
+        "rarity": "rare",
+        "description": "Zbroja z autentycznej smoczej skóry",
+        "effect": "+1 AC, odporność na ogień"
+    },
+    {
+        "name": "Tarcza Odrażająca",
+        "rarity": "uncommon",
+        "description": "Tarcza która odpycha wrogów",
+        "effect": "+1 AC, czasem wyrzuca wroga"
+    },
+    {
+        "name": "Buty Szybkości",
+        "rarity": "uncommon",
+        "description": "Magiczne buty zwiększające tempo",
+        "effect": "+10 do szybkości poruszania"
+    },
+    {
+        "name": "Peleryna Rezydentury",
+        "rarity": "common",
+        "description": "Peleryna magiczna o zmiennych właściwościach",
+        "effect": "+1 do AC i rzutów ratunkowych"
+    },
+    {
+        "name": "Hełm Błyskawicy",
+        "rarity": "rare",
+        "description": "Hełm który kontroluje błyskawicę",
+        "effect": "3d6 obrażeń elektrycznych, recharge 6"
+    },
+    {
+        "name": "Rękawice Mocy",
+        "rarity": "rare",
+        "description": "Rękawice dodające siłę uderzenia",
+        "effect": "+2 do obrażeń z broni"
+    },
+    {
+        "name": "Amulет Życia",
+        "rarity": "uncommon",
+        "description": "Amulet chroniący przed śmiercią",
+        "effect": "Gdy spadłbyś do 0 HP, powrót na 1 HP"
+    },
+    {
+        "name": "Pierścionek Magnetyzmu",
+        "rarity": "uncommon",
+        "description": "Pierścionek przyciągający metale",
+        "effect": "Kontroluj metal w promieniu 3m"
+    },
+    {
+        "name": "Laska Lodowa",
+        "rarity": "rare",
+        "description": "Laska wyrzucająca mroźne pociski",
+        "effect": "3d6 obrażeń zimą, recharge 5-6"
+    },
+    {
+        "name": "Butelka Niewidzialności",
+        "rarity": "common",
+        "description": "Butelka która ukrywa zawartość",
+        "effect": "Zawartość jest niewidzialna dla innych"
+    },
+    {
+        "name": "Kolczyk Duchów",
+        "rarity": "very_rare",
+        "description": "Kolczyk pozwalający widzieć duchy",
+        "effect": "Widzisz duchy i niewidzialne stworzenia"
+    },
+    {
+        "name": "Pas Olbrzyma",
+        "rarity": "very_rare",
+        "description": "Pas dodający gigantyczną siłę",
+        "effect": "+4 do Siły, trzymaj do 454 kg"
+    },
+    {
+        "name": "Czara Biegłości",
+        "rarity": "uncommon",
+        "description": "Czara zakamuflowana napoje ze zdolnościami",
+        "effect": "Udziel buff'u na 1 godzinę"
+    },
+    {
+        "name": "Miecz Ognia",
+        "rarity": "rare",
+        "description": "Miecz opłomieniony ogniem",
+        "effect": "+1d6 obrażeń ogniem za każdy cios"
+    },
+    {
+        "name": "Lustro Odbicia",
+        "rarity": "rare",
+        "description": "Lustro odbijające zaklęcia",
+        "effect": "Odbijaj jednorazowo zaklęcie dziennie"
+    },
+    {
+        "name": "Klejnot Blaskawicy",
+        "rarity": "uncommon",
+        "description": "Klejnot który świeci w ciemności",
+        "effect": "Oświetlenie w promieniu 6m"
+    },
+    {
+        "name": "Naparstek Szycia",
+        "rarity": "common",
+        "description": "Naparstek magiczny dla krawca",
+        "effect": "Szybciej naprawiać ubrania"
+    },
+    {
+        "name": "Łyżka Niemęczenia",
+        "rarity": "uncommon",
+        "description": "Łyżka którą można jeść bez zmęczenia",
+        "effect": "Jedzenie z niej daje energię"
+    },
+    {
+        "name": "Dzwoneczek Przywołania",
+        "rarity": "rare",
+        "description": "Dzwoneczek który przywołuje pomoc",
+        "effect": "Przywołaj sojusznika raz dziennie"
+    },
+    {
+        "name": "Szal Powiewu",
+        "rarity": "uncommon",
+        "description": "Szal który unosi na wietrze",
+        "effect": "Unieś się w powietrze na 1 minutę"
+    },
+    {
+        "name": "Pierścionek Czarów",
+        "rarity": "rare",
+        "description": "Pierścionek wzmacniający magię",
+        "effect": "+1 do rzutów zaklęć, +1 do DC"
+    },
+    {
+        "name": "Szabla Mroku",
+        "rarity": "very_rare",
+        "description": "Szabla owita ciemnością",
+        "effect": "+1d8 obrażeń, rzucaj zaklęcia mroku"
+    },
+    {
+        "name": "Okulary Widzenia",
+        "rarity": "uncommon",
+        "description": "Okulary które ujawniają ukryte rzeczy",
+        "effect": "Widzisz wszystko w promieniu 18m"
+    },
+    {
+        "name": "Naszyjnik Ochrony",
+        "rarity": "rare",
+        "description": "Naszyjnik chroniący od zaklęć",
+        "effect": "+2 do rzutów obronnych przed zaklęciami"
+    },
+    {
+        "name": "Pióro Pisarza",
+        "rarity": "uncommon",
+        "description": "Pióro które pisze samo",
+        "effect": "Escriba automatycznie tekst i dokumenty"
+    },
+    {
+        "name": "Róża Wieczna",
+        "rarity": "common",
+        "description": "Róża która nigdy nie więdnie",
+        "effect": "Symbol nieskończonej miłości i piękna"
+    },
+    {
+        "name": "Kamień Gościnności",
+        "rarity": "uncommon",
+        "description": "Kamień który tworzył gościnę",
+        "effect": "Utwórz czarodziejski namiot na 8 godzin"
+    },
+    {
+        "name": "Rękawice Niedźwiedzia",
+        "rarity": "rare",
+        "description": "Rękawice z siłą niedźwiedzia",
+        "effect": "+3 do obrażeń z broni wręcz"
+    },
+    {
+        "name": "Zupa Wzmacniająca",
+        "rarity": "uncommon",
+        "description": "Zupa która daje siłę",
+        "effect": "Wzmocnij 10 pkt HP na 1 godzinę"
+    },
+    {
+        "name": "Lustro Alternatywne",
+        "rarity": "very_rare",
+        "description": "Lustro prowadzące do innego miejsca",
+        "effect": "Teleportuj się do pary luster raz dziennie"
+    },
+    {
+        "name": "Broszka Odwagi",
+        "rarity": "common",
+        "description": "Broszka która dodaje śmiałości",
+        "effect": "Bądź odważny, +1 do ataków"
+    },
+    {
+        "name": "Szabla Czystości",
+        "rarity": "rare",
+        "description": "Miecz który czyści zło",
+        "effect": "+2 przeciw nieumarłym i demonom"
+    },
+    {
+        "name": "Torbita Nieskończoności",
+        "rarity": "uncommon",
+        "description": "Torba która mieści więcej niż widać",
+        "effect": "Trzymaj do 136 kg przedmiotów"
+    },
+    {
+        "name": "Czara Miodosłodu",
+        "rarity": "uncommon",
+        "description": "Czara pełna magicznego miodu",
+        "effect": "Odpowiedź ponad wiem, o co zapytasz"
+    },
+    {
+        "name": "Buty Niewidzialności",
+        "rarity": "very_rare",
+        "description": "Buty które czynią ciebie niewidzialnym",
+        "effect": "Stajesz się niewidoczny, gdy będziesz sam"
+    },
+    {
+        "name": "Miecz Świtu",
+        "rarity": "rare",
+        "description": "Miecz promieniujący świtem",
+        "effect": "Świeci rano, +1d6 na dem...waży 2 kg"
+    },
+    {
+        "name": "Klejnot Mroku",
+        "rarity": "uncommon",
+        "description": "Klejnot który emituje mrok",
+        "effect": "Stwórz sferę mroku w promieniu 3m"
+    },
+    {
+        "name": "Hełm Wzroku",
+        "rarity": "rare",
+        "description": "Hełm który daje widzenie we wszystkie strony",
+        "effect": "Widzisz wszystko dookoła bezpośrednio"
+    },
+    {
+        "name": "Pas Nieskończoności",
+        "rarity": "uncommon",
+        "description": "Pas na przedmioty o zmiennym rozmiarze",
+        "effect": "Każdy przedmiot na pasku waży -50%"
+    },
+    {
+        "name": "Kolczyk Mówiącego",
+        "rarity": "rare",
+        "description": "Kolczyk który pozwala rozumieć zwierzęta",
+        "effect": "Rozmawiaj z zwierzętami jak ludzi"
+    },
+    {
+        "name": "Miecz Duszy",
+        "rarity": "very_rare",
+        "description": "Miecz który atakuje samą duszę",
+        "effect": "+2 do ataku, rzucaj zaklęcia na dusze"
+    },
+    {
+        "name": "Pierścionek Przywołania",
+        "rarity": "rare",
+        "description": "Pierścionek który przywołuje sojuszników",
+        "effect": "Przywołaj zwłokę na 1 turę dziennie"
+    },
+    {
+        "name": "Szal Latającego",
+        "rarity": "very_rare",
+        "description": "Szal który pozwala latać",
+        "effect": "Lataj z szybkością 18m/turę"
+    },
+    {
+        "name": "Hełm Zmiany",
+        "rarity": "rare",
+        "description": "Hełm który zmienia twój wygląd",
+        "effect": "Zmień swoją twarz i wygląd"
+    },
+    {
+        "name": "Laska Łączności",
+        "rarity": "uncommon",
+        "description": "Laska pozwalająca łączyć się odgłosem",
+        "effect": "Rozmawiaj z drugą laską na 9km"
+    },
+    {
+        "name": "Butelka Mikstur",
+        "rarity": "common",
+        "description": "Butelka do przechowywania mikstur",
+        "effect": "Przechowuj magiczne mikstury bezpiecznie"
+    },
+    {
+        "name": "Pierścionek Zimna",
+        "rarity": "uncommon",
+        "description": "Pierścionek który emituje mróz",
+        "effect": "Odporność na zimno, emituj mróz"
+    },
+    {
+        "name": "Miecz Czasochłonny",
+        "rarity": "very_rare",
+        "description": "Miecz który manipuluje czasem",
+        "effect": "Spowal wrogów, +1d10 do ataku"
+    },
+    {
+        "name": "Czara Przejrzystości",
+        "rarity": "rare",
+        "description": "Czara która ujawnia prawdę",
+        "effect": "Widzisz prawdę w promieniu 6m"
+    },
+    {
+        "name": "Broszka Wędrówki",
+        "rarity": "uncommon",
+        "description": "Broszka która zwiększa podróże",
+        "effect": "Poruszaj się 20% szybciej"
+    },
+    {
+        "name": "Szabla Magii",
+        "rarity": "rare",
+        "description": "Szabla która kanalizuje magię",
+        "effect": "+1 do zaklęć, +2 do DC zaklęć"
+    },
+    {
+        "name": "Klejnot Ucieczki",
+        "rarity": "rare",
+        "description": "Klejnot który teleportuje cię",
+        "effect": "Teleportuj się w bezpieczne miejsce raz dziennie"
+    },
+    {
+        "name": "Naszyjnik Łańcucha",
+        "rarity": "uncommon",
+        "description": "Naszyjnik tworzący magiczne łańcuchy",
+        "effect": "Utwórz łańcuch na 6m wokół siebie"
+    },
+    {
+        "name": "Rękawice Złodzieja",
+        "rarity": "uncommon",
+        "description": "Rękawice które pomagają kradć",
+        "effect": "+2 do kradnięcia, +2 do zwinności"
+    },
+    {
+        "name": "Pióro Czar",
+        "rarity": "rare",
+        "description": "Pióro które pisze zaklęcia",
+        "effect": "Zapisz zaklęcie i wrzuć je raz dziennie"
+    },
+    {
+        "name": "Róża Miłości",
+        "rarity": "uncommon",
+        "description": "Róża którą ofiarowujesz z miłością",
+        "effect": "Przywołaj zaklęcie miłości raz dziennie"
+    },
+    {
+        "name": "Kamień Spokoju",
+        "rarity": "common",
+        "description": "Kamień który daje wewnętrzny spokój",
+        "effect": "Zmniejsz stres i lęk"
+    },
+    {
+        "name": "Zbroja Mroku",
+        "rarity": "rare",
+        "description": "Zbroja owita czernią mroku",
+        "effect": "+2 AC, niewidoczny w mroku"
+    },
+    {
+        "name": "Miecz Świata",
+        "rarity": "very_rare",
+        "description": "Miecz który zna sekrety świata",
+        "effect": "+3 do ataku, pytaj o wiedzę"
+    },
+    {
+        "name": "Lustro Nadziei",
+        "rarity": "uncommon",
+        "description": "Lustro które pokaże przyszłość",
+        "effect": "Pokaż możliwe przyszłości raz dziennie"
+    },
+    {
+        "name": "Broszka Zwycięstwa",
+        "rarity": "rare",
+        "description": "Broszka która daje zwycięstwo",
+        "effect": "+1 do wszystkich ataków i rzutów"
+    },
+    {
+        "name": "Szabla Rezonansji",
+        "rarity": "rare",
+        "description": "Szabla która rezonuje z magią",
+        "effect": "Oszalaj wrogi magię, +2 do rzutów"
+    },
+    {
+        "name": "Czara Radości",
+        "rarity": "uncommon",
+        "description": "Czara pełna radości i wesela",
+        "effect": "Przywołaj zaklęcie radości raz dziennie"
+    },
+    {
+        "name": "Buty Sprawności",
+        "rarity": "uncommon",
+        "description": "Buty które zwiększają zwinność",
+        "effect": "+2 do Zwinności, szybciej się poruszaj"
+    },
+    {
+        "name": "Peleryna Ochrony",
+        "rarity": "common",
+        "description": "Peleryna która chroni od zaklęć",
+        "effect": "+1 do rzutów obronnych"
+    },
+    {
+        "name": "Hełm Myśli",
+        "rarity": "rare",
+        "description": "Hełm który wzmacnia myśli",
+        "effect": "+2 do Inteligencji, czytaj myśli"
+    },
+    {
+        "name": "Pas Zdrowia",
+        "rarity": "uncommon",
+        "description": "Pas który regeneruje zdrowie",
+        "effect": "Regeneruj 1 HP na turę w walce"
+    },
+    {
+        "name": "Kolczyk Słuchu",
+        "rarity": "uncommon",
+        "description": "Kolczyk który daje nadnaturalny słuch",
+        "effect": "Słyszysz wszystko w promieniu 30m"
+    },
+    {
+        "name": "Miecz Powinowactwa",
+        "rarity": "rare",
+        "description": "Miecz który łączy się z mistrzem",
+        "effect": "Zawsze wróć do właściciela, +1 ataku"
+    },
+    {
+        "name": "Pierścionek Siły",
+        "rarity": "rare",
+        "description": "Pierścionek który daje super-siłę",
+        "effect": "+3 do Siły, podnośmy 454 kg"
+    },
+    {
+        "name": "Szal Tajemnicy",
+        "rarity": "uncommon",
+        "description": "Szal który ukrywa twoje sekrety",
+        "effect": "Niewidoczny dla magii wykrywającej myśli"
+    },
+    {
+        "name": "Hełm Liderstwa",
+        "rarity": "rare",
+        "description": "Hełm który daje przywództwo",
+        "effect": "Союзники mają +1 do ataków blisko ciebie"
+    },
+    {
+        "name": "Laska Mądrości",
+        "rarity": "uncommon",
+        "description": "Laska która daje mądrość",
+        "effect": "+2 do Mądrości, widzisz bieg zdarzeń"
+    }
+]

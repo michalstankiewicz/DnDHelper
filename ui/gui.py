@@ -37,6 +37,11 @@ class MyApp(tk.Tk):
         super().__init__()
         self.title("DnD Helper")
         self.geometry("860x600")
+        # tracker to store items already rolled
+        self.used_encounters = set()
+        self.used_loots = set()
+        self.used_npcs = set()
+        self.used_city = set()
         self.create_widgets()
 
     def create_widgets(self):
@@ -130,8 +135,7 @@ class MyApp(tk.Tk):
         npc_frame.pack(fill=tk.BOTH, expand=True, pady=10)
 
         # CITY
-        city_data = city.load_city()
-        city_names = list(city_data.keys())
+        city_names = city.get_available_city_names()
         self.tabCity = ttk.Frame(self.tabs)
         self.tabs.add(self.tabCity, text="City")
         self.city_button = tk.Button(
@@ -162,11 +166,21 @@ class MyApp(tk.Tk):
             )
         except ValueError as e:
             self.dice_result_label.config(text=f"Error: {str(e)}")
-    # ENCOUNTER AND LOOT
 
+    # ENCOUNTER AND LOOT
     def generate_encounter(self):
+        """Generate 8 Adventure/Encounter without duplo"""
         self.encounter_listbox.delete(0, tk.END)
-        for _ in range(4):
+        for _ in range(8):
+            all_encounters = encounter.generate_encounter()
+            for _ in range(8):
+                available_enc = [
+                    enc for enc in all_encounters
+                    if enc not in all_encounters
+                ]
+                if not available_enc:
+                    all_encounters.clear()
+                    all_encounters.copy()
             enc = encounter.generate_encounter()
             if enc.get("is_monster"):
                 text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['description']})"
@@ -175,12 +189,87 @@ class MyApp(tk.Tk):
             self.encounter_listbox.insert(tk.END, text)
 
     def loot_generator(self):
+        """Generate loot without duplicate item in the list."""
         self.loot_listbox.delete(0, tk.END)
         for _ in range(6):
+            all_loots = loot.generate_loot()
+            for _ in range(6):
+                available_loot = [
+                    item for item in all_loots
+                    if item not in self.used_loots
+                ]
+                if not available_loot:
+                    self.used_loots.clear()
+                    available_loot.copy()
+
             lt = loot.generate_loot()
             self.loot_listbox.insert(
                 tk.END, f"{lt['name']} value {lt['value']} of gold, rarity {lt['rarity']}, description: {lt['description']}"
             )
+
+# Npc Generator
+    def generate_npc(self):
+        self.npc_listbox.delete(0, tk.END)
+
+        for _ in range(6):
+            npclist = npc.generate_npc()
+
+            key = (npclist["name"], npclist["surname"], npclist["race"])
+
+            if key in self.used_npcs:
+                continue
+
+            self.used_npcs.add(key)
+
+            self.npc_listbox.insert(
+                tk.END,
+                f"|{npclist['name']} {npclist['surname']} | "
+                f"|{npclist['race']} {npclist['gender']} | "
+                f"|{npclist['trait']} | {npclist['hook']} | "
+            )
+
+    # City Generator
+    def generate_city(self):
+        self.city_listbox.delete(0, tk.END)
+
+        city_name = self.city_selector.get()
+        for _ in range(6):
+            city_list = city.generate_city(city_name)
+
+            key = (
+                city_list["city"],
+                tuple(city_list["problems"]),
+                tuple(city_list["goods"]),
+                tuple(city_list["superstitions"])
+            )
+
+            if key in self.used_city:
+                continue
+
+            self.used_city.add(key)
+
+        result = city.generate_city(city_name)
+
+        self.city_listbox.insert(tk.END, f"[CITY] {result['city']}")
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "PROBLEMS:")
+        for p in result["problems"]:
+            self.city_listbox.insert(tk.END, f"- {p}")
+
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "GOODS:")
+        for g in result["goods"]:
+            self.city_listbox.insert(tk.END, f"- {g}")
+
+        self.city_listbox.insert(tk.END, "")
+
+        self.city_listbox.insert(tk.END, "SUPERSTITIONS:")
+        self.city_listbox.insert(
+            tk.END,
+            f"- {result['superstitions']}"
+        )
 
     # SPELLS!
     # Function to show selected spell by user (description, etc from jsonq, triggered by event of selecting spell in listbox)
@@ -221,45 +310,3 @@ class MyApp(tk.Tk):
                 tk.END,
                 f"{s['name']} | Level: {s.get('level')} | Classes: {', '.join(s.get('classes', []))}"
             )
-
-    # Npc Generator
-
-    def generate_npc(self):
-        self.npc_listbox.delete(0, tk.END)
-
-        for _ in range(6):
-            npclist = npc.generate_npc()
-            self.npc_listbox.insert(
-                tk.END,
-                f"|{npclist['name']} {npclist['surname']} | "
-                f"|{npclist['race']} {npclist['gender']}  | "
-                f"|{npclist['trait']} | {npclist['hook']} | "
-            )
-
-    # City Generator
-    def generate_city(self):
-        self.city_listbox.delete(0, tk.END)
-
-        city_name = self.city_selector.get()
-        result = city.city_gen(city_name)
-
-        self.city_listbox.insert(tk.END, f"[CITY] {result['city']}")
-        self.city_listbox.insert(tk.END, "")
-
-        self.city_listbox.insert(tk.END, "PROBLEMS:")
-        for p in result["problems"]:
-            self.city_listbox.insert(tk.END, f"- {p}")
-
-        self.city_listbox.insert(tk.END, "")
-
-        self.city_listbox.insert(tk.END, "GOODS:")
-        for g in result["goods"]:
-            self.city_listbox.insert(tk.END, f"- {g}")
-
-        self.city_listbox.insert(tk.END, "")
-
-        self.city_listbox.insert(tk.END, "SUPERSTITIONS:")
-        self.city_listbox.insert(
-            tk.END,
-            f"- {result['superstitions']}"
-        )
