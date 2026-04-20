@@ -1,6 +1,7 @@
 import sys
 
 
+# function for tests
 def run_test():
     print("Test mode")
     with open("log.txt", "w") as f:
@@ -8,6 +9,7 @@ def run_test():
     exit(0)
 
 
+# normal mode
 def main_gui():
     from ui import gui
     app = gui.MyApp()

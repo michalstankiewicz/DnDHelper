@@ -35,8 +35,8 @@ def create_scrollable_listbox(parent, width=100, height=10, font=("Consolas", 10
 class MyApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("DnD Helper")
-        self.geometry("860x600")
+        self.title("RPG Helper")
+        self.geometry("860x640")
         # tracker to store items already rolled
         self.used_encounters = set()
         self.used_loots = set()
@@ -171,47 +171,48 @@ class MyApp(tk.Tk):
     def generate_encounter(self):
         """Generate 8 Adventure/Encounter without duplo"""
         self.encounter_listbox.delete(0, tk.END)
-        for _ in range(8):
-            all_encounters = encounter.generate_encounter()
-            for _ in range(8):
-                available_enc = [
-                    enc for enc in all_encounters
-                    if enc not in all_encounters
-                ]
-                if not available_enc:
-                    all_encounters.clear()
-                    all_encounters.copy()
-            enc = encounter.generate_encounter()
+        enc_count = 0
+        while enc_count < 6:
+
+            enc = encounter.generate_encounter()  # Zwraca dict
+            enc_key = (enc.get("name"), enc.get("type", "adventure"))
+
+            if enc_key in self.used_encounters:
+                continue
+
+            self.used_encounters.add(enc_key)
+
             if enc.get("is_monster"):
                 text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['description']})"
             else:
                 text = f"[ADVENTURE] {enc['name']} (difficulty: {enc['difficulty']}, {enc['description']})"
             self.encounter_listbox.insert(tk.END, text)
+            enc_count += 1
 
     def loot_generator(self):
         """Generate loot without duplicate item in the list."""
         self.loot_listbox.delete(0, tk.END)
-        for _ in range(6):
-            all_loots = loot.generate_loot()
-            for _ in range(6):
-                available_loot = [
-                    item for item in all_loots
-                    if item not in self.used_loots
-                ]
-                if not available_loot:
-                    self.used_loots.clear()
-                    available_loot.copy()
-
+        loot_count = 0
+        while loot_count < 6:
             lt = loot.generate_loot()
+            loot_key = (lt.get("name"), lt.get("rarity"))
+
+            if loot_key in self.used_loots:
+                continue
+
+            self.used_loots.add(loot_key)
+
             self.loot_listbox.insert(
                 tk.END, f"{lt['name']} value {lt['value']} of gold, rarity {lt['rarity']}, description: {lt['description']}"
             )
+            loot_count += 1
 
 # Npc Generator
     def generate_npc(self):
         self.npc_listbox.delete(0, tk.END)
 
-        for _ in range(6):
+        npc_count = 0
+        while npc_count < 6:
             npclist = npc.generate_npc()
 
             key = (npclist["name"], npclist["surname"], npclist["race"])
@@ -227,13 +228,15 @@ class MyApp(tk.Tk):
                 f"|{npclist['race']} {npclist['gender']} | "
                 f"|{npclist['trait']} | {npclist['hook']} | "
             )
+            npc_count += 1
 
     # City Generator
     def generate_city(self):
         self.city_listbox.delete(0, tk.END)
+        city_count = 0
 
         city_name = self.city_selector.get()
-        for _ in range(6):
+        while city_count < 6:
             city_list = city.generate_city(city_name)
 
             key = (
@@ -247,6 +250,7 @@ class MyApp(tk.Tk):
                 continue
 
             self.used_city.add(key)
+            city_count += 1
 
         result = city.generate_city(city_name)
 
@@ -266,13 +270,13 @@ class MyApp(tk.Tk):
         self.city_listbox.insert(tk.END, "")
 
         self.city_listbox.insert(tk.END, "SUPERSTITIONS:")
-        self.city_listbox.insert(
-            tk.END,
-            f"- {result['superstitions']}"
-        )
+        for s in result["superstitions"]:
+            self.city_listbox.insert(
+                tk.END, f"- {s}")
 
     # SPELLS!
     # Function to show selected spell by user (description, etc from jsonq, triggered by event of selecting spell in listbox)
+
     def show_selected_spell_desc(self, event):
         selection = self.spell_listbox.curselection()
         if selection:

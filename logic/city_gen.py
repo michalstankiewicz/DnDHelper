@@ -37,15 +37,15 @@ class CityGenerator(Generator):
 
         # Problems
         validate_list(city["problems"], "City problems")
-        problems = random.sample(city["problems"], 2)
+        problems = random.sample(city["problems"], 4)
 
         # Goods
         validate_list(city["goods"], "City goods")
-        goods = random.sample(city["goods"], 2)
+        goods = random.sample(city["goods"], 4)
 
         # Superstitions
         validate_list(city["superstitions"], "City superstitions")
-        superstitions = random.choice(city["superstitions"])
+        superstitions = random.sample(city["superstitions"], 4)
 
         return {
             "city": city_name,
