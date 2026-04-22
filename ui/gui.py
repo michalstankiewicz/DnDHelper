@@ -9,8 +9,6 @@ import logic.npc as npc
 import logic.city_gen as city
 import re
 
-# creating helper for gui
-
 
 def create_scrollable_listbox(parent, width=100, height=10, font=("Consolas", 10)):
     frame = tk.Frame(parent)
@@ -37,17 +35,16 @@ class MyApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("RPG Helper")
-        self.geometry("860x640")
-        # tracker to store items already rolled
+        self.geometry("860x800")
         self.used_encounters = set()
         self.used_loots = set()
         self.used_magic_items = set()
         self.used_npcs = set()
         self.used_city = set()
+        self.current_encounter_cr = None
         self.create_widgets()
 
     def create_widgets(self):
-        """Widgets for the application"""
         self.tabs = ttk.Notebook(self)
         self.tabs.pack(fill=tk.BOTH, expand=True)
 
@@ -72,69 +69,58 @@ class MyApp(tk.Tk):
         self.roll_multiple_button = tk.Button(
             self.tabDice, text="Roll Multiple Dice", command=self.roll_multi_dice)
         self.roll_multiple_button.pack(pady=5)
-###################################################################################
+
         # SPELLS_SRD_2014
         self.tabSpells = ttk.Frame(self.tabs)
         self.tabs.add(self.tabSpells, text="Spells SRD 2014")
-        # Search frame for spells
         search_frame = tk.Frame(self.tabSpells)
         search_frame.pack(pady=10)
-        # Label + Entry Level
         tk.Label(search_frame, text="Lvl").grid(row=0, column=0, padx=2)
         self.spell_level_entry = tk.Entry(search_frame, width=3)
         self.spell_level_entry.grid(row=1, column=0, padx=2)
-        # Label + Entry Name
         tk.Label(search_frame, text="Name").grid(row=0, column=1, padx=2)
         self.spell_search_entry = tk.Entry(search_frame)
         self.spell_search_entry.grid(row=1, column=1, padx=2)
-        # Search button
         self.spell_search_button = tk.Button(
             search_frame, text="Search", command=self.search_spells)
         self.spell_search_button.grid(row=1, column=2, padx=5)
         self.spell_search_button.config(width=10)
-        # Listbox for spells
         self.spell_listbox = tk.Listbox(
             self.tabSpells, width=100, height=20)
         self.spell_listbox.pack(pady=5)
-        # Description box for selected spell
         self.spell_desc_text = tk.Text(
             self.tabSpells, width=100, height=5, wrap=tk.WORD)
         self.spell_desc_text.pack(pady=5)
-        # Display all spells at start
         self.all_spells = spells.load_spell_json()
         self.filtered_spells = self.all_spells.copy()
         self.update_spell_listbox(self.filtered_spells)
-        # Bind selection event to show spell description
         self.spell_listbox.bind("<<ListboxSelect>>",
                                 self.show_selected_spell_desc)
-###################################################################################
-        # ENCOUNTER
+
+        # ENCOUNTER + LOOT
         self.tabEncounter = ttk.Frame(self.tabs)
-        self.tabs.add(self.tabEncounter, text="Encounters and Adventures")
+        self.tabs.add(self.tabEncounter, text="Encounters and Loot")
+
+        # Top frame - Encounter generation
         self.encounter_button = tk.Button(
-            self.tabEncounter, text="Generate Encounter", command=self.generate_encounter)
+            self.tabEncounter, text="Generate Encounters", command=self.generate_encounter)
         self.encounter_button.pack(pady=10)
+
+        tk.Label(self.tabEncounter, text="Encounters:", font=(
+            "Consolas", 10, "bold")).pack(anchor=tk.W, padx=10)
         encounter_frame, self.encounter_listbox = create_scrollable_listbox(
-            self.tabEncounter)
-        encounter_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-###################################################################################
-        # LOOT && MAGIC ITEM
-        self.tabLoot = ttk.Frame(self.tabs)
-        self.tabs.add(self.tabLoot, text="Loot and Magic Item Generator")
-        # MAGIC ITEMS
-        self.magic_loot_button = tk.Button(
-            self.tabLoot, text="Generate Magic Item", command=self.generate_magic_item)
-        self.magic_loot_button.pack(pady=10)
-        magic_frame, self.magic_listbox = create_scrollable_listbox(
-            self.tabLoot)
-        magic_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-        # NORMAL LOOT LIST
-        self.loot_button = tk.Button(
-            self.tabLoot, text="Generate normal Loot", command=self.loot_generator)
-        self.loot_button.pack(pady=20)
-        loot_frame, self.loot_listbox = create_scrollable_listbox(self.tabLoot)
-        loot_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-###################################################################################
+            self.tabEncounter, height=12)
+        encounter_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        self.encounter_listbox.bind(
+            "<<ListboxSelect>>", self.on_encounter_selected)
+
+        # Bottom frame - Treasure/Loot
+        tk.Label(self.tabEncounter, text="Treasure:", font=(
+            "Consolas", 10, "bold")).pack(anchor=tk.W, padx=10, pady=(10, 0))
+        treasure_frame, self.treasure_listbox = create_scrollable_listbox(
+            self.tabEncounter, height=12)
+        treasure_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+
         # NPC
         self.tabnpc = ttk.Frame(self.tabs)
         self.tabs.add(self.tabnpc, text="NPC")
@@ -155,12 +141,9 @@ class MyApp(tk.Tk):
             self.tabCity, state="readonly", values=city_names)
         self.city_selector.current(0)
         self.city_selector.pack(pady=5)
-        self.city_selector.pack(pady=5)
         city_frame, self.city_listbox = create_scrollable_listbox(self.tabCity)
         city_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-####################################################################################
 
-    # Functions used in program
     # DICE
     def roll_dice(self, sides):
         rolls, total = dice.roll_multiple_dice(1, sides)
@@ -177,66 +160,101 @@ class MyApp(tk.Tk):
         except ValueError as e:
             self.dice_result_label.config(text=f"Error: {str(e)}")
 
-    # ENCOUNTER
+    # ENCOUNTER+LOOT
     def generate_encounter(self):
-        """Generate 6 Adventure/Encounter without duplo"""
         self.encounter_listbox.delete(0, tk.END)
+        self.treasure_listbox.delete(0, tk.END)
+        self.used_encounters.clear()
         enc_count = 0
-        while enc_count < 6:
 
-            enc = encounter.generate_encounter()  # Zwraca dict
+        while enc_count < 6:
+            enc = encounter.generate_encounter()
             enc_key = (enc.get("name"), enc.get("type", "adventure"))
 
             if enc_key in self.used_encounters:
                 continue
 
             self.used_encounters.add(enc_key)
-
-            if enc.get("is_monster"):
-                text = f"[MONSTER] {enc['name']} ({enc['type']}, CR {enc['cr']}, str. {enc['description']})"
-            else:
-                text = f"[ADVENTURE] {enc['name']} (difficulty: {enc['difficulty']}, {enc['description']})"
+            text = f"[CR {enc['cr']}] {enc['name']} ({enc['type']}) - {enc['description']}"
             self.encounter_listbox.insert(tk.END, text)
             enc_count += 1
-    # MAGIC ITEM
 
-    def generate_magic_item(self):
-        """Generate magic item without duplicate item in the list."""
-        self.magic_listbox.delete(0, tk.END)
-        magic_item_count = 0
-        while magic_item_count < 6:
-            mi = magic_items.generate_magic_item()
-            mi_key = (mi.get("name"), mi.get("rarity"))
+    def on_encounter_selected(self, event):
+        """Called when an encounter is selected from the listbox. Extracts the CR and generates appropriate treasure."""
+        selection = self.encounter_listbox.curselection()
+        if selection:
+            idx = selection[0]
+            enc_text = self.encounter_listbox.get(idx)
 
-            if mi_key in self.used_magic_items:
-                continue
+            # Extract CR from text: "[CR X] ..."
+            try:
+                cr_start = enc_text.find("[CR ") + 4
+                cr_end = enc_text.find("]", cr_start)
+                cr_value = int(enc_text[cr_start:cr_end])
+            except:
+                cr_value = 0
 
-            self.used_magic_items.add(mi_key)
+            self.current_encounter_cr = cr_value
+            self.generate_treasure()
 
-            self.magic_listbox.insert(
-                tk.END, f"{mi['name']} effect {mi['effect']} \n, rarity {mi['rarity']}, description: {mi['description']}"
-            )
-            magic_item_count += 1
+    def generate_treasure(self):
+        if self.current_encounter_cr is None:
+            self.treasure_listbox.delete(0, tk.END)
+            self.treasure_listbox.insert(tk.END, "Select an encounter first")
+            return
 
-    def loot_generator(self):
-        """Generate loot without duplicate item in the list."""
-        self.loot_listbox.delete(0, tk.END)
-        loot_count = 0
-        while loot_count < 6:
-            lt = loot.generate_loot()
-            loot_key = (lt.get("name"), lt.get("rarity"))
+        self.treasure_listbox.delete(0, tk.END)
+        self.used_loots.clear()
+        self.used_magic_items.clear()
 
-            if loot_key in self.used_loots:
-                continue
+        cr = self.current_encounter_cr
 
-            self.used_loots.add(loot_key)
+        # CR > 6 = Magic items; CR <= 6 = Loot
+        if cr > 6:
+            self.treasure_listbox.insert(
+                tk.END, f"[CR {cr}] Magic Items Treasure:")
+            self.treasure_listbox.insert(tk.END, "")
 
-            self.loot_listbox.insert(
-                tk.END, f"{lt['name']} value {lt['value']} of gold, rarity {lt['rarity']}, description: {lt['description']}"
-            )
-            loot_count += 1
+            magic_count = 0
+            while magic_count < 4:
+                mi = magic_items.generate_magic_items()
+                mi_key = (mi.get("name"), mi.get("rarity"))
 
-# Npc Generator
+                if mi_key in self.used_magic_items:
+                    continue
+
+                self.used_magic_items.add(mi_key)
+                self.treasure_listbox.insert(
+                    tk.END, f"[{mi['rarity'].upper()}] {mi['name']}")
+                self.treasure_listbox.insert(
+                    tk.END, f"  {mi['description']}")
+                self.treasure_listbox.insert(
+                    tk.END, f"  Effect: {mi['effect']}")
+                self.treasure_listbox.insert(tk.END, "")
+                magic_count += 1
+        else:
+            self.treasure_listbox.insert(tk.END, f"[CR {cr}] Standard Loot:")
+            self.treasure_listbox.insert(tk.END, "")
+
+            loot_count = 0
+            while loot_count < 4:
+                lt = loot.generate_loot()
+                loot_key = (lt.get("name"), lt.get("rarity"))
+
+                if loot_key in self.used_loots:
+                    continue
+
+                self.used_loots.add(loot_key)
+                self.treasure_listbox.insert(
+                    tk.END, f"[{lt['rarity'].upper()}] {lt['name']}")
+                self.treasure_listbox.insert(
+                    tk.END, f"  Value: {lt['value']} gp")
+                self.treasure_listbox.insert(
+                    tk.END, f"  {lt['description']}")
+                self.treasure_listbox.insert(tk.END, "")
+                loot_count += 1
+
+    # NPC
     def generate_npc(self):
         self.npc_listbox.delete(0, tk.END)
 
@@ -259,7 +277,7 @@ class MyApp(tk.Tk):
             )
             npc_count += 1
 
-    # City Generator
+    # CITY
     def generate_city(self):
         self.city_listbox.delete(0, tk.END)
         city_count = 0
@@ -303,9 +321,7 @@ class MyApp(tk.Tk):
             self.city_listbox.insert(
                 tk.END, f"- {s}")
 
-    # SPELLS!
-    # Function to show selected spell by user (description, etc from jsonq, triggered by event of selecting spell in listbox)
-
+    # SPELLS
     def show_selected_spell_desc(self, event):
         selection = self.spell_listbox.curselection()
         if selection:
@@ -315,7 +331,6 @@ class MyApp(tk.Tk):
             self.spell_desc_text.insert(
                 tk.END, spell.get('description', 'No description'))
 
-    # Search function for spells, triggered by search button, filters spells based on name and level, updates listbox with results
     def search_spells(self):
         name_filter = self.spell_search_entry.get().lower()
         level_val = self.spell_level_entry.get() if self.spell_level_entry else ""
@@ -335,7 +350,6 @@ class MyApp(tk.Tk):
 
         self.update_spell_listbox(self.filtered_spells)
 
-    # Update listbox with filtered spells, called after search to refresh the displayed spells based on filters
     def update_spell_listbox(self, spells_list):
         self.spell_listbox.delete(0, tk.END)
         for s in spells_list:
@@ -343,3 +357,8 @@ class MyApp(tk.Tk):
                 tk.END,
                 f"{s['name']} | Level: {s.get('level')} | Classes: {', '.join(s.get('classes', []))}"
             )
+
+
+if __name__ == "__main__":
+    app = MyApp()
+    app.mainloop()

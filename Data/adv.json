@@ -2,601 +2,601 @@
   {
     "name": "Lawina w górach",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Ogromna lawina zagradza wąską ścieżkę górską."
   },
   {
     "name": "Zawał śnieżny",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Śnieg osuwa się z urwiska, grożąc zasypaniem."
   },
   {
     "name": "Rozpadlina w lodowcu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Niebezpieczna szczelina w lodowym podłożu."
   },
   {
     "name": "Zaginiony podróżnik",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Odnaleziono samotnego podróżnika w śniegu."
   },
   {
     "name": "Wędrowny kupiec",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Kupiec zmierza przez zamieć w poszukiwaniu osady."
   },
   {
     "name": "Ukryta jaskinia lodowa",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Mała jaskinia kryje śnieżne tajemnice."
   },
   {
     "name": "Zamarznięta rzeka",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Lód niepewny, grozi wpadnięciem do wody."
   },
   {
     "name": "Najeźdźcy z północy",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Grupa wrogów wędruje przez zamieć."
   },
   {
     "name": "Dzikie zwierzęta w burzy",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Wilki i rysie polują w zamieci."
   },
   {
     "name": "Zaginiona karawana",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Karawana zniknęła w śnieżnej burzy."
   },
   {
     "name": "Zasypana chatka",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Mała chatka przysypana świeżym śniegiem."
   },
   {
     "name": "Tropiciel yeti",
     "type": "npc",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Spotkanie z legendarnym śnieżnym potworem."
   },
   {
     "name": "Zamarznięty wodospad",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Wodospad pokryty lodem, trudny do obejścia."
   },
   {
     "name": "Burza lodowa",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Niszczycielska burza z piorunami lodowymi."
   },
   {
     "name": "Złodziej w zamieci",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Ktoś kradnie w chaosie śnieżnej burzy."
   },
   {
     "name": "Starożytna runa",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Runy skryte pod lodem i śniegiem."
   },
   {
     "name": "Wędrowny bard",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Bard śpiewa pieśni o lodowych krainach."
   },
   {
     "name": "Śmiertelne zaspy",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Zaspy zagrażają podróżnikom."
   },
   {
     "name": "Zamrożone bagna",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Niepewny lód na bagnach śnieżnych."
   },
   {
     "name": "Osamotniony drwal",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Drwal tkwi sam w zamarzniętym lesie."
   },
   {
     "name": "Zaginione sanie",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Sanie ekspedycji zniknęły w śniegu."
   },
   {
     "name": "Ocalony z lawiny",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Postać ledwo ocalała z potężnej lawiny."
   },
   {
     "name": "Zamarznięty most",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Most lodowy nad przepaścią, ryzykowny."
   },
   {
     "name": "Sztorm nad jeziorem",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Silny wiatr i fale lodowe na jeziorze."
   },
   {
     "name": "Nocna wędrówka",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Podróż w nocy przez lodową pustkę."
   },
   {
     "name": "Nomada lodowy",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Spotkanie z samotnym nomadą północnym."
   },
   {
     "name": "Zasypana wioska",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Cała wioska przysypana śniegiem."
   },
   {
     "name": "Zaginiony przewodnik",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Przewodnik zaginął podczas burzy."
   },
   {
     "name": "Skrzynia skarbu",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Skrzynia ukryta w śnieżnej grocie."
   },
   {
     "name": "Niebezpieczne szczeliny",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Lodowe szczeliny grożą upadkiem."
   },
   {
     "name": "Mędrzec w śniegu",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Starzec ukryty w zamieci śnieżnej."
   },
   {
     "name": "Zamrożony las",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Lasy pokryte grubym lodem."
   },
   {
     "name": "Lodowi barbarzyńcy",
     "type": "npc",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Spotkanie z barbarzyńcami północy."
   },
   {
     "name": "Zaginione zwierzęta",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Stado zwierząt zgubiło się w burzy."
   },
   {
     "name": "Przepaść lodowa",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Głęboka szczelina w lodowej górze."
   },
   {
     "name": "Przemytnik",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Spotkanie z tajemniczym przemytnikiem."
   },
   {
     "name": "Zamieć w górach",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Potężna burza śnieżna w górach."
   },
   {
     "name": "Upadek śnieżnej skały",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Kamień i śnieg spadają z urwiska."
   },
   {
     "name": "Wędrowny myśliwy",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Samotny myśliwy przemierza lodowe pustkowia."
   },
   {
     "name": "Zamrożony kanion",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Kanion pełen lodowych pułapek."
   },
   {
     "name": "Lawina w wąwozie",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Lawina zamyka wąwóz, grozi śmiercią."
   },
   {
     "name": "Osamotniony kupiec",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Kupiec utknął w śnieżnej burzy."
   },
   {
     "name": "Starożytny obelisk",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Odkrycie lodowego obelisku."
   },
   {
     "name": "Przewodnik nomadów",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Spotkanie z przewodnikiem plemienia."
   },
   {
     "name": "Zaginione dzieci",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Dzieci zaginęły w burzy śnieżnej."
   },
   {
     "name": "Zasypana droga",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Droga handlowa całkowicie zasypana."
   },
   {
     "name": "Elf lodowy",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Spotkanie z elfem północnych krain."
   },
   {
     "name": "Zamarznięta jaskinia",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Jaskinia pełna lodowych pułapek."
   },
   {
     "name": "Niebezpieczne nawisy",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Śnieżne nawisy grożą zawaleniem."
   },
   {
     "name": "Wędrowny kapłan",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Kapłan przemierza lodowe pustkowia."
   },
   {
     "name": "Zamrożony wodospad",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Wodospad pokryty grubym lodem."
   },
   {
     "name": "Zaginione sanie ekspedycji",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Sanie ekspedycji zaginęły w śniegu."
   },
   {
     "name": "Barbarzyńca lodowy",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Spotkanie z potężnym wojownikiem północy."
   },
   {
     "name": "Zasypany posterunek",
     "type": "event",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Posterunek straży całkowicie zasypany."
   },
   {
     "name": "Lodowy artefakt",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Odkrycie starożytnego artefaktu lodowego."
   },
   {
     "name": "Wędrowny alchemik",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Alchemik przemierza lodowe pustkowia."
   },
   {
     "name": "Zamieć nad doliną",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Potężna burza zasypuje całą dolinę."
   },
   {
     "name": "Rozpadlina w lodowej górze",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Szczelina w lodowej górze grozi upadkiem."
   },
   {
     "name": "Pogrzeb na śniegu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Ceremonial pogrzeb tradycyjny dla północy"
   },
   {
     "name": "Zjazd na nartach",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Szybki zjazd po zaśnieżonym zboczu"
   },
   {
     "name": "Polowanie na zwierzynę",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Tropienie bestii za pożywieniem"
   },
   {
     "name": "Budowa schronienia",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Konstruowanie warowni z lodu"
   },
   {
     "name": "Handel na targu",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Negocjacja cen na bazarze"
   },
   {
     "name": "Ratowanie zaginionych",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Misja ratownicza dla karawan"
   },
   {
     "name": "Odkrycie jaskini",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Wejście do nieznanej jaskini lodowej"
   },
   {
     "name": "Walka o terytorum",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Konflikt z innym klanem"
   },
   {
     "name": "Szukanie ziół",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Zbiór lekarskich roślin"
   },
   {
     "name": "Spotkanie z elfami",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Negocjacje z lesnym ludem"
   },
   {
     "name": "Odkrycie ruin",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Znalezienie starożytnych ruin"
   },
   {
     "name": "Przepłynięcie rzeki",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Pokonanie bystrej rzeki"
   },
   {
     "name": "Straż przed bestią",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Pilnowanie przed atakami"
   },
   {
     "name": "Pobieranie podatku",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Pobór podatków od osadników"
   },
   {
     "name": "Odkrycie drogi",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Znalezienie nowego szlaku"
   },
   {
     "name": "Kuracja klątwą",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Uzdrowienie opętanego"
   },
   {
     "name": "Wydobywanie minerałów",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Kopanie rzadkich minerałów"
   },
   {
     "name": "Spotkanie z olbrzymem",
     "type": "npc",
-    "difficulty": 5,
+    "cr": 5,
     "description": "Negocjacje z lodowym olbrzymem"
   },
   {
     "name": "Ochrona karawan",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Eskorta handlarzy"
   },
   {
     "name": "Odkrycie skarbu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Znalezienie ukrytych bogactw"
   },
   {
     "name": "Pobieranie opłat",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Pobór myta za przejazd"
   },
   {
     "name": "Zdobywanie informacji",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Zbieranie wiadomości"
   },
   {
     "name": "Odkrycie szpiegów",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Odnajdywanie zdrajców"
   },
   {
     "name": "Budowanie mostu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Konstruowanie przejazdu"
   },
   {
     "name": "Spotkanie z wysłannikiem",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Rozmowa z ambasadorem"
   },
   {
     "name": "Badanie zagadki",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Rozwiązanie tajemnicy"
   },
   {
     "name": "Nauka języka",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Poznawanie nowego dialektu"
   },
   {
     "name": "Zdobycie sojusznika",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Zawarcie przymierza"
   },
   {
     "name": "Odkrycie wroga",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Znalezienie antagonisty"
   },
   {
     "name": "Pokonanie turnieju",
     "type": "npc",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Rywalizacja w zawodach"
   },
   {
     "name": "Zdobycie godności",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Uzyskanie tytułu"
   },
   {
     "name": "Odkrycie świątyni",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Znalezienie świętego miejsca"
   },
   {
     "name": "Spotkanie z kapłanką",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Rozmowa z kapłanką"
   },
   {
     "name": "Zdobycie magii",
     "type": "event",
-    "difficulty": 4,
+    "cr": 4,
     "description": "Nauczenie się zaklęcia"
   },
   {
     "name": "Odkrycie biblioteki",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Znalezienie zboru wiedzy"
   },
   {
     "name": "Spotkanie z mędrzcem",
     "type": "npc",
-    "difficulty": 1,
+    "cr": 1,
     "description": "Rozmowa z uczonym"
   },
   {
     "name": "Zdobycie książki",
     "type": "event",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Znalezienie ważnego tekstu"
   },
   {
     "name": "Odkrycie warsztatu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Znalezienie kowalni"
   },
   {
     "name": "Spotkanie z mistrzem",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Rozmowa z rzemieślnikiem"
   },
   {
     "name": "Zdobycie umiejętności",
     "type": "npc",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Nauczenie się rzemiosła"
   },
   {
     "name": "Odkrycie schronu",
     "type": "event",
-    "difficulty": 3,
+    "cr": 3,
     "description": "Znalezienie bezpiecznego miejsca"
   },
   {
     "name": "Spotkanie z uchodźcą",
     "type": "npc",
-    "difficulty": 2,
+    "cr": 2,
     "description": "Pomoc osobie w potrzebie"
   }
 ]

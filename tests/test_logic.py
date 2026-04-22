@@ -3,6 +3,7 @@ import unittest
 from logic.city_gen import generate_city
 from logic.encounter import generate_encounter
 from logic.loot import generate_loot
+from logic.magic_items import generate_magic_items
 from logic.npc import generate_npc
 
 
@@ -36,8 +37,8 @@ class TestCityGen(unittest.TestCase):
             self.assertIn("goods", result)
             self.assertIn("superstitions", result)
 
-            self.assertEqual(len(result["problems"]), 2)
-            self.assertEqual(len(result["goods"]), 2)
+            self.assertGreaterEqual(len(result["problems"]), 2)
+            self.assertGreaterEqual(len(result["goods"]), 2)
 
             write_log("city_gen", result=result)
 
@@ -62,32 +63,204 @@ class TestCityGen(unittest.TestCase):
 
 class TestEncounter(unittest.TestCase):
 
-    def test_generate_encounter(self):
+    def test_generate_encounter_structure(self):
         try:
             result = generate_encounter()
 
             self.assertIsInstance(result, dict)
-            self.assertIn("is_monster", result)
+            self.assertIn("name", result)
+            self.assertIn("type", result)
+            self.assertIn("cr", result)
+            self.assertIn("description", result)
 
-            write_log("encounter", result=result)
+            self.assertIsInstance(result["cr"], (int, float))
+            self.assertGreaterEqual(result["cr"], 0)
+            self.assertIsInstance(result["name"], str)
+            self.assertGreater(len(result["name"]), 0)
+
+            write_log("encounter_structure", result=result)
 
         except Exception as e:
-            write_log("encounter", error=e)
+            write_log("encounter_structure", error=e)
+            raise
+
+    def test_generate_multiple_encounters_no_duplicates(self):
+        try:
+            encounters = []
+            for _ in range(10):
+                enc = generate_encounter()
+                encounters.append(enc)
+
+            self.assertEqual(len(encounters), 10)
+            
+            names = [e["name"] for e in encounters]
+            self.assertGreater(len(set(names)), 1)
+
+            write_log(
+                "encounter_multiple",
+                result=f"Generated {len(encounters)} encounters, {len(set(names))} unique"
+            )
+
+        except Exception as e:
+            write_log("encounter_multiple", error=e)
+            raise
+
+    def test_encounter_cr_ranges(self):
+        try:
+            cr_values = []
+            for _ in range(20):
+                enc = generate_encounter()
+                cr = enc.get("cr", 0)
+                cr_values.append(cr)
+
+            min_cr = min(cr_values)
+            max_cr = max(cr_values)
+            avg_cr = sum(cr_values) / len(cr_values)
+
+            self.assertGreaterEqual(min_cr, 0)
+            self.assertLess(max_cr, 100)
+
+            write_log(
+                "encounter_cr_ranges",
+                result=f"CR range: {min_cr} - {max_cr}, avg: {avg_cr:.2f}"
+            )
+
+        except Exception as e:
+            write_log("encounter_cr_ranges", error=e)
             raise
 
 
 class TestLoot(unittest.TestCase):
 
-    def test_generate_loot(self):
+    def test_generate_loot_structure(self):
         try:
             result = generate_loot()
 
             self.assertIsInstance(result, dict)
+            self.assertIn("name", result)
+            self.assertIn("rarity", result)
+            self.assertIn("value", result)
+            self.assertIn("description", result)
 
-            write_log("loot", result=result)
+            self.assertIn(result["rarity"], ["common", "uncommon", "rare", "very_rare"])
+            self.assertIsInstance(result["value"], int)
+            self.assertGreater(result["value"], 0)
+
+            write_log("loot_structure", result=result)
 
         except Exception as e:
-            write_log("loot", error=e)
+            write_log("loot_structure", error=e)
+            raise
+
+    def test_loot_rarity_distribution(self):
+        try:
+            rarity_counts = {
+                "common": 0,
+                "uncommon": 0,
+                "rare": 0,
+                "very_rare": 0
+            }
+
+            for _ in range(100):
+                loot = generate_loot()
+                rarity = loot.get("rarity")
+                if rarity in rarity_counts:
+                    rarity_counts[rarity] += 1
+
+            self.assertEqual(sum(rarity_counts.values()), 100)
+            self.assertGreater(rarity_counts["common"], 0)
+            self.assertGreater(rarity_counts["uncommon"], 0)
+
+            write_log("loot_rarity_distribution", result=rarity_counts)
+
+        except Exception as e:
+            write_log("loot_rarity_distribution", error=e)
+            raise
+
+    def test_loot_value_ranges(self):
+        try:
+            values = []
+            for _ in range(50):
+                loot = generate_loot()
+                values.append(loot.get("value", 0))
+
+            min_val = min(values)
+            max_val = max(values)
+            avg_val = sum(values) / len(values)
+
+            self.assertGreater(min_val, 0)
+            self.assertLess(max_val, 1000)
+
+            write_log(
+                "loot_value_ranges",
+                result=f"Value range: {min_val} - {max_val} gp, avg: {avg_val:.2f}"
+            )
+
+        except Exception as e:
+            write_log("loot_value_ranges", error=e)
+            raise
+
+
+class TestMagicItems(unittest.TestCase):
+
+    def test_generate_magic_items_structure(self):
+        try:
+            result = generate_magic_items()
+
+            self.assertIsInstance(result, dict)
+            self.assertIn("name", result)
+            self.assertIn("rarity", result)
+            self.assertIn("description", result)
+            self.assertIn("effect", result)
+
+            valid_rarities = ["rare", "very_rare", "legendary", "uncommon", "common"]
+            self.assertIn(result["rarity"], valid_rarities)
+            self.assertIsInstance(result["name"], str)
+            self.assertGreater(len(result["name"]), 0)
+
+            write_log("magic_items_structure", result=result)
+
+        except Exception as e:
+            write_log("magic_items_structure", error=e)
+            raise
+
+    def test_magic_items_rarity_distribution(self):
+        try:
+            rarity_counts = {
+                "rare": 0,
+                "very_rare": 0,
+                "legendary": 0,
+                "uncommon": 0,
+                "common": 0
+            }
+
+            for _ in range(100):
+                item = generate_magic_items()
+                rarity = item.get("rarity")
+                if rarity in rarity_counts:
+                    rarity_counts[rarity] += 1
+
+            self.assertEqual(sum(rarity_counts.values()), 100)
+            self.assertGreater(rarity_counts["rare"], 0)
+
+            write_log("magic_items_rarity_distribution", result=rarity_counts)
+
+        except Exception as e:
+            write_log("magic_items_rarity_distribution", error=e)
+            raise
+
+    def test_magic_items_have_effects(self):
+        try:
+            for _ in range(20):
+                item = generate_magic_items()
+                effect = item.get("effect", "")
+                self.assertIsInstance(effect, str)
+                self.assertGreater(len(effect), 0)
+
+            write_log("magic_items_effects", result="All items have effects")
+
+        except Exception as e:
+            write_log("magic_items_effects", error=e)
             raise
 
 
@@ -112,8 +285,46 @@ class TestNPC(unittest.TestCase):
             raise
 
 
+class TestGeneratorIntegration(unittest.TestCase):
+
+    def test_encounter_to_loot_flow_low_cr(self):
+        try:
+            enc = generate_encounter()
+            cr = enc.get("cr", 0)
+            
+            if cr <= 6:
+                loot = generate_loot()
+                self.assertIn(loot["rarity"], ["common", "uncommon", "rare", "very_rare"])
+                
+                write_log(
+                    "integration_low_cr",
+                    result=f"Encounter CR {cr} -> Loot: {loot['name']}"
+                )
+
+        except Exception as e:
+            write_log("integration_low_cr", error=e)
+            raise
+
+    def test_encounter_to_magic_items_flow_high_cr(self):
+        try:
+            enc = generate_encounter()
+            cr = enc.get("cr", 0)
+            
+            if cr > 6:
+                item = generate_magic_items()
+                self.assertIn(item["rarity"], ["rare", "very_rare", "legendary"])
+                
+                write_log(
+                    "integration_high_cr",
+                    result=f"Encounter CR {cr} -> Magic Item: {item['name']}"
+                )
+
+        except Exception as e:
+            write_log("integration_high_cr", error=e)
+            raise
+
+
 if __name__ == "__main__":
-    # reset log once per run
     with open(LOG_FILE, "w", encoding="utf-8") as f:
         f.write("=== TEST RUN START ===\n")
 

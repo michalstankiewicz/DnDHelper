@@ -374,7 +374,7 @@
   {
     "name": "Amult Aurili",
     "value": 100,
-    "rarity": "legendary",
+    "rarity": "very_rare",
     "description": "Artefakt bogini mrożu"
   },
   {
@@ -724,119 +724,5 @@
     "value": 19,
     "rarity": "uncommon",
     "description": "Łatwe odmarznięcia"
-  },
-  {
-    "name": "Czara antymrozu",
-    "value": 30,
-    "rarity": "rare",
-    "description": "Chroni zawartość przed zamarznięciem"
-  },
-  {
-    "name": "Rękawy nomady",
-    "value": 22,
-    "rarity": "uncommon",
-    "description": "Pozwalają na podróż bez ekwipunku"
-  },
-  {
-    "name": "Pierścień termiczny",
-    "value": 35,
-    "rarity": "rare",
-    "description": "Utrzymuje temperaturę wewnątrz"
-  },
-  {
-    "name": "Futerał na zwoje",
-    "value": 18,
-    "rarity": "uncommon",
-    "description": "Chroni zwoje przed wilgocią"
-  },
-  {
-    "name": "Sznur lodowy",
-    "value": 11,
-    "rarity": "common",
-    "description": "Niezniszczalna lina"
-  },
-  {
-    "name": "Hełm mroźnika",
-    "value": 42,
-    "rarity": "very_rare",
-    "description": "Udzielaj rezystencji wobec zimna"
-  },
-  {
-    "name": "Torba asymilacji",
-    "value": 28,
-    "rarity": "rare",
-    "description": "Dostosowuje rozmiar zawartości"
-  },
-  {
-    "name": "Klejnot gościnności",
-    "value": 20,
-    "rarity": "uncommon",
-    "description": "Przyciąga zwierzęta do pomocy"
-  },
-  {
-    "name": "Płaszcz Yslandryka",
-    "value": 50,
-    "rarity": "very_rare",
-    "description": "Prawie całkowita ochrona przed lodem"
-  },
-  {
-    "name": "Buty Śnieżnicy",
-    "value": 25,
-    "rarity": "rare",
-    "description": "Przechodzenie przez głębokie śniegi"
-  },
-  {
-    "name": "Amult Aurili",
-    "value": 100,
-    "rarity": "legendary",
-    "description": "Artefakt bogini mrożu"
-  },
-  {
-    "name": "Lasso lodowe",
-    "value": 16,
-    "rarity": "uncommon",
-    "description": "Może przytrzymać istoty lodowe"
-  },
-  {
-    "name": "Lampka wieczna",
-    "value": 40,
-    "rarity": "rare",
-    "description": "Nigdy nie gasnie, zawsze świeci"
-  },
-  {
-    "name": "Rękawice Olbrzyma",
-    "value": 55,
-    "rarity": "very_rare",
-    "description": "Gigantyczna siła chwytu"
-  },
-  {
-    "name": "Zapaska na mróz",
-    "value": 19,
-    "rarity": "uncommon",
-    "description": "Ochrona przed ujęciami mrozu"
-  },
-  {
-    "name": "Naszyjnik ochrony",
-    "value": 32,
-    "rarity": "rare",
-    "description": "Przeciw wszelkim zaklęciom zimna"
-  },
-  {
-    "name": "Mapa ukrytych szlaków",
-    "value": 26,
-    "rarity": "rare",
-    "description": "Ukazuje bezpieczne drogi przez mróz"
-  },
-  {
-    "name": "Wódka mrożna",
-    "value": 14,
-    "rarity": "common",
-    "description": "Rozgrzewa od wewnątrz"
-  },
-  {
-    "name": "Kryształ lodowy",
-    "value": 37,
-    "rarity": "rare",
-    "description": "Magiczny kryształ zimowej mocy"
   }
 ]
