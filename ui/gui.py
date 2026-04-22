@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import logic.dice as dice
 import logic.loot as loot
+import logic.magic_items as magic_items
 import logic.encounter as encounter
 import logic.spells as spells
 import logic.npc as npc
@@ -40,6 +41,7 @@ class MyApp(tk.Tk):
         # tracker to store items already rolled
         self.used_encounters = set()
         self.used_loots = set()
+        self.used_magic_items = set()
         self.used_npcs = set()
         self.used_city = set()
         self.create_widgets()
@@ -70,7 +72,7 @@ class MyApp(tk.Tk):
         self.roll_multiple_button = tk.Button(
             self.tabDice, text="Roll Multiple Dice", command=self.roll_multi_dice)
         self.roll_multiple_button.pack(pady=5)
-
+###################################################################################
         # SPELLS_SRD_2014
         self.tabSpells = ttk.Frame(self.tabs)
         self.tabs.add(self.tabSpells, text="Spells SRD 2014")
@@ -105,26 +107,34 @@ class MyApp(tk.Tk):
         # Bind selection event to show spell description
         self.spell_listbox.bind("<<ListboxSelect>>",
                                 self.show_selected_spell_desc)
-
+###################################################################################
         # ENCOUNTER
-        self.tabEncLoot = ttk.Frame(self.tabs)
-        self.tabs.add(self.tabEncLoot, text="Encounters and Loot Generator")
+        self.tabEncounter = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabEncounter, text="Encounters and Adventures")
         self.encounter_button = tk.Button(
-            self.tabEncLoot, text="Generate Encounter", command=self.generate_encounter)
+            self.tabEncounter, text="Generate Encounter", command=self.generate_encounter)
         self.encounter_button.pack(pady=10)
         encounter_frame, self.encounter_listbox = create_scrollable_listbox(
-            self.tabEncLoot)
+            self.tabEncounter)
         encounter_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-
-        # LOOT
+###################################################################################
+        # LOOT && MAGIC ITEM
+        self.tabLoot = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabLoot, text="Loot and Magic Item Generator")
+        # MAGIC ITEMS
+        self.magic_loot_button = tk.Button(
+            self.tabLoot, text="Generate Magic Item", command=self.generate_magic_item)
+        self.magic_loot_button.pack(pady=10)
+        magic_frame, self.magic_listbox = create_scrollable_listbox(
+            self.tabLoot)
+        magic_frame.pack(fill=tk.BOTH, expand=True, pady=10)
+        # NORMAL LOOT LIST
         self.loot_button = tk.Button(
-            self.tabEncLoot, text="Generate Loot", command=self.loot_generator)
-        self.loot_button.pack(pady=10)
-
-        loot_frame, self.loot_listbox = create_scrollable_listbox(
-            self.tabEncLoot)
+            self.tabLoot, text="Generate normal Loot", command=self.loot_generator)
+        self.loot_button.pack(pady=20)
+        loot_frame, self.loot_listbox = create_scrollable_listbox(self.tabLoot)
         loot_frame.pack(fill=tk.BOTH, expand=True, pady=10)
-
+###################################################################################
         # NPC
         self.tabnpc = ttk.Frame(self.tabs)
         self.tabs.add(self.tabnpc, text="NPC")
@@ -167,9 +177,9 @@ class MyApp(tk.Tk):
         except ValueError as e:
             self.dice_result_label.config(text=f"Error: {str(e)}")
 
-    # ENCOUNTER AND LOOT
+    # ENCOUNTER
     def generate_encounter(self):
-        """Generate 8 Adventure/Encounter without duplo"""
+        """Generate 6 Adventure/Encounter without duplo"""
         self.encounter_listbox.delete(0, tk.END)
         enc_count = 0
         while enc_count < 6:
@@ -188,6 +198,25 @@ class MyApp(tk.Tk):
                 text = f"[ADVENTURE] {enc['name']} (difficulty: {enc['difficulty']}, {enc['description']})"
             self.encounter_listbox.insert(tk.END, text)
             enc_count += 1
+    # MAGIC ITEM
+
+    def generate_magic_item(self):
+        """Generate magic item without duplicate item in the list."""
+        self.magic_listbox.delete(0, tk.END)
+        magic_item_count = 0
+        while magic_item_count < 6:
+            mi = magic_items.generate_magic_item()
+            mi_key = (mi.get("name"), mi.get("rarity"))
+
+            if mi_key in self.used_magic_items:
+                continue
+
+            self.used_magic_items.add(mi_key)
+
+            self.magic_listbox.insert(
+                tk.END, f"{mi['name']} effect {mi['effect']} \n, rarity {mi['rarity']}, description: {mi['description']}"
+            )
+            magic_item_count += 1
 
     def loot_generator(self):
         """Generate loot without duplicate item in the list."""
