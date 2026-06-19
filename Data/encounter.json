@@ -450,60 +450,6 @@
     "description": "Żywy cień"
   },
   {
-    "name": "Abominable Yeti",
-    "type": "Monstrosity",
-    "cr": 4,
-    "description": "Potężny yeti z północy"
-  },
-  {
-    "name": "Winter Wolf",
-    "type": "Monstrosity",
-    "cr": 3,
-    "description": "Wilk z mroźnym oddechem"
-  },
-  {
-    "name": "Frost Giant",
-    "type": "Giant",
-    "cr": 8,
-    "description": "Olbrzym lodu"
-  },
-  {
-    "name": "Ice Troll",
-    "type": "Giant",
-    "cr": 5,
-    "description": "Troll z lodową regeneracją"
-  },
-  {
-    "name": "Remorhaz",
-    "type": "Monstrosity",
-    "cr": 11,
-    "description": "Gigantyczny lodowy robak"
-  },
-  {
-    "name": "Snow Golem",
-    "type": "Construct",
-    "cr": 3,
-    "description": "Żywa kula śniegu"
-  },
-  {
-    "name": "Ice Mephit",
-    "type": "Elemental",
-    "cr": 0.5,
-    "description": "Mały elementarz lodu"
-  },
-  {
-    "name": "Frost Salamander",
-    "type": "Elemental",
-    "cr": 6,
-    "description": "Wąż ognisty w lodzie"
-  },
-  {
-    "name": "Coldlight Walker",
-    "type": "Undead",
-    "cr": 3,
-    "description": "Nieumarły w śniegu"
-  },
-  {
     "name": "Troll",
     "type": "Giant",
     "cr": 5,
@@ -598,5 +544,53 @@
     "type": "Dragon",
     "cr": 2,
     "description": "Młody czarny smok"
+  },
+  {
+    "name": "Zimowy Wilk",
+    "type": "Monstrosity",
+    "cr": 3,
+    "description": "Inteligentny wilk z mroznym odykiem, niebezpieczny w stadzie"
+  },
+  {
+    "name": "Frost Zombie",
+    "type": "Undead",
+    "cr": 1,
+    "description": "Zombie skamienialy w lodzie, pozornie bezwladne ale niebezpieczne"
+  },
+  {
+    "name": "Ice Elemental",
+    "type": "Elemental",
+    "cr": 5,
+    "description": "Zywiolek lodu o ogromnej sile, zatopla wszystko co napotka"
+  },
+  {
+    "name": "Blizzard Wraith",
+    "type": "Undead",
+    "cr": 4,
+    "description": "Duch burzy snieznej, porusza sie szybko i niewidzialnie w zamieci"
+  },
+  {
+    "name": "Arctic Direwolf",
+    "type": "Beast",
+    "cr": 6,
+    "description": "Gigantyczny wilk arktyczny, krolem wszystkich bestii snieznych"
+  },
+  {
+    "name": "Glacial Lich",
+    "type": "Undead",
+    "cr": 10,
+    "description": "Niemierty mag lodu kontrolujacy cala zimę"
+  },
+  {
+    "name": "Snowstorm Elemental",
+    "type": "Elemental",
+    "cr": 7,
+    "description": "Burza sniezna ożywiona magią, niestabilna i niebezpieczna"
+  },
+  {
+    "name": "Frostborn Vampire",
+    "type": "Undead",
+    "cr": 8,
+    "description": "Wampir powstaly z zimna, wszechpotrzebny w arktyce"
   }
 ]

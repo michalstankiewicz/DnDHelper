@@ -4,6 +4,8 @@ import logic.dice as dice
 import logic.loot as loot
 import logic.magic_items as magic_items
 import logic.encounter as encounter
+import logic.weather_encounter_generator as weather_encounter
+import logic.spell_scroll_generator as scroll_generator
 import logic.spells as spells
 import logic.npc as npc
 import logic.city_gen as city
@@ -97,6 +99,42 @@ class MyApp(tk.Tk):
         self.spell_listbox.bind("<<ListboxSelect>>",
                                 self.show_selected_spell_desc)
 
+        # SPELL SCROLL GENERATOR
+        self.tabSpellScroll = ttk.Frame(self.tabs)
+        self.tabs.add(self.tabSpellScroll, text="Spell Scroll")
+        scroll_frame = tk.Frame(self.tabSpellScroll)
+        scroll_frame.pack(pady=10)
+
+        tk.Label(scroll_frame, text="Class:").grid(row=0, column=0, padx=2)
+        class_options = scroll_generator._spell_scroll_generator_instance.get_classes_list()
+        self.scroll_class_selector = ttk.Combobox(
+            scroll_frame, state="readonly", values=class_options, width=18)
+        if class_options:
+            self.scroll_class_selector.current(0)
+        self.scroll_class_selector.grid(row=1, column=0, padx=2)
+
+        self.roll_level_button = tk.Button(
+            scroll_frame, text="Roll 1d9 Level", command=self.roll_spell_scroll_level)
+        self.roll_level_button.grid(row=0, column=1, rowspan=2, padx=5)
+
+        self.scroll_level_label = tk.Label(scroll_frame, text="Level roll: -")
+        self.scroll_level_label.grid(row=0, column=2, padx=5)
+        self.scroll_spells_count_label = tk.Label(
+            scroll_frame, text="Available spells: -")
+        self.scroll_spells_count_label.grid(row=1, column=2, padx=5)
+
+        self.generate_scroll_button = tk.Button(
+            scroll_frame, text="Generate Scroll", command=self.generate_spell_scroll)
+        self.generate_scroll_button.grid(row=0, column=3, rowspan=2, padx=5)
+
+        self.scroll_result_text = tk.Text(
+            self.tabSpellScroll, width=100, height=15, wrap=tk.WORD)
+        self.scroll_result_text.pack(pady=10)
+
+        self.scroll_level_value = None
+        self.scroll_available_spells = 0
+        self.scroll_selected_class = None
+
         # ENCOUNTER + LOOT
         self.tabEncounter = ttk.Frame(self.tabs)
         self.tabs.add(self.tabEncounter, text="Encounters and Loot")
@@ -105,6 +143,52 @@ class MyApp(tk.Tk):
         self.encounter_button = tk.Button(
             self.tabEncounter, text="Generate Encounters", command=self.generate_encounter)
         self.encounter_button.pack(pady=10)
+
+        weather_frame = tk.Frame(self.tabEncounter)
+        weather_frame.pack(pady=5)
+
+        self.weather_button = tk.Button(
+            weather_frame, text="Generate Weather Encounter", command=self.generate_weather_encounter)
+        self.weather_button.pack(side=tk.LEFT, padx=3)
+
+        weather_types = weather_encounter.get_available_weather_types()
+        self.weather_type_selector = ttk.Combobox(
+            weather_frame, state="readonly", values=weather_types, width=18)
+        if weather_types:
+            self.weather_type_selector.current(0)
+        self.weather_type_selector.pack(side=tk.LEFT, padx=3)
+
+        self.weather_type_button = tk.Button(
+            weather_frame, text="Generate Selected Weather", command=self.generate_selected_weather_encounter)
+        self.weather_type_button.pack(side=tk.LEFT, padx=3)
+
+        weather_options_frame = tk.Frame(self.tabEncounter)
+        weather_options_frame.pack(pady=5)
+
+        self.blizzard_button = tk.Button(
+            weather_options_frame, text="Blizzard Encounter", command=self.generate_blizzard_encounter)
+        self.blizzard_button.pack(side=tk.LEFT, padx=3)
+
+        self.whiteout_button = tk.Button(
+            weather_options_frame, text="Whiteout Encounter", command=self.generate_whiteout_encounter)
+        self.whiteout_button.pack(side=tk.LEFT, padx=3)
+
+        self.ice_storm_button = tk.Button(
+            weather_options_frame, text="Ice Storm Encounter", command=self.generate_ice_storm_encounter)
+        self.ice_storm_button.pack(side=tk.LEFT, padx=3)
+
+        danger_frame = tk.Frame(self.tabEncounter)
+        danger_frame.pack(pady=5)
+
+        tk.Label(danger_frame, text="Danger Level:").pack(side=tk.LEFT, padx=3)
+        self.danger_selector = ttk.Combobox(
+            danger_frame, state="readonly", values=[1, 2, 3, 4, 5], width=3)
+        self.danger_selector.current(0)
+        self.danger_selector.pack(side=tk.LEFT, padx=3)
+
+        self.danger_button = tk.Button(
+            danger_frame, text="Generate Danger Encounter", command=self.generate_danger_level_encounter)
+        self.danger_button.pack(side=tk.LEFT, padx=3)
 
         tk.Label(self.tabEncounter, text="Encounters:", font=(
             "Consolas", 10, "bold")).pack(anchor=tk.W, padx=10)
@@ -179,6 +263,86 @@ class MyApp(tk.Tk):
             self.encounter_listbox.insert(tk.END, text)
             enc_count += 1
 
+    def generate_weather_encounter(self):
+        self._clear_encounter_selection()
+        enc_result = weather_encounter.generate_weather_encounter()
+        encounter_data = enc_result["encounter"]
+        weather_data = enc_result["weather"]
+        text = (
+            f"[Weather: {weather_data.get('weather_type')} | Intensity: {weather_data.get('intensity')} | "
+            f"CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def generate_selected_weather_encounter(self):
+        weather_type = self.weather_type_selector.get() or None
+        if not weather_type:
+            self.generate_weather_encounter()
+            return
+        self._clear_encounter_selection()
+        enc_result = weather_encounter.generate_weather_encounter(weather_type)
+        encounter_data = enc_result["encounter"]
+        weather_data = enc_result["weather"]
+        text = (
+            f"[Weather: {weather_data.get('weather_type')} | Intensity: {weather_data.get('intensity')} | "
+            f"CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def generate_blizzard_encounter(self):
+        self._clear_encounter_selection()
+        enc_result = weather_encounter.generate_blizzard_encounter()
+        encounter_data = enc_result["encounter"]
+        weather_data = enc_result["weather"]
+        text = (
+            f"[Blizzard | CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def generate_whiteout_encounter(self):
+        self._clear_encounter_selection()
+        enc_result = weather_encounter.generate_whiteout_encounter()
+        encounter_data = enc_result["encounter"]
+        weather_data = enc_result["weather"]
+        text = (
+            f"[Whiteout | CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def generate_ice_storm_encounter(self):
+        self._clear_encounter_selection()
+        enc_result = weather_encounter.generate_ice_storm_encounter()
+        encounter_data = enc_result["encounter"]
+        text = (
+            f"[Ice Storm | CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def generate_danger_level_encounter(self):
+        self._clear_encounter_selection()
+        danger_level = int(self.danger_selector.get())
+        enc_result = weather_encounter.generate_encounter_by_danger_level(
+            danger_level)
+        encounter_data = enc_result["encounter"]
+        weather_data = enc_result["weather"]
+        text = (
+            f"[Danger {danger_level} | Weather: {weather_data.get('weather_type')} | "
+            f"CR {encounter_data.get('cr')} | Adj {enc_result.get('adjusted_cr', 0):.1f}] "
+            f"{encounter_data.get('name')} ({encounter_data.get('type')}) - {encounter_data.get('description')}"
+        )
+        self.encounter_listbox.insert(tk.END, text)
+
+    def _clear_encounter_selection(self):
+        self.encounter_listbox.delete(0, tk.END)
+        self.treasure_listbox.delete(0, tk.END)
+        self.used_encounters.clear()
+        self.current_encounter_cr = None
+
     def on_encounter_selected(self, event):
         """Called when an encounter is selected from the listbox. Extracts the CR and generates appropriate treasure."""
         selection = self.encounter_listbox.curselection()
@@ -186,13 +350,15 @@ class MyApp(tk.Tk):
             idx = selection[0]
             enc_text = self.encounter_listbox.get(idx)
 
-            # Extract CR from text: "[CR X] ..."
-            try:
-                cr_start = enc_text.find("[CR ") + 4
-                cr_end = enc_text.find("]", cr_start)
-                cr_value = int(enc_text[cr_start:cr_end])
-            except:
-                cr_value = 0
+            # Extract CR from text: "[CR X] ..." and support float values
+            match = re.search(r"\[CR\s*([0-9]+(?:\.[0-9]+)?)\]", enc_text)
+            if match:
+                try:
+                    cr_value = float(match.group(1))
+                except ValueError:
+                    cr_value = 0.0
+            else:
+                cr_value = 0.0
 
             self.current_encounter_cr = cr_value
             self.generate_treasure()
@@ -280,25 +446,9 @@ class MyApp(tk.Tk):
     # CITY
     def generate_city(self):
         self.city_listbox.delete(0, tk.END)
-        city_count = 0
+        self.used_city.clear()
 
         city_name = self.city_selector.get()
-        while city_count < 6:
-            city_list = city.generate_city(city_name)
-
-            key = (
-                city_list["city"],
-                tuple(city_list["problems"]),
-                tuple(city_list["goods"]),
-                tuple(city_list["superstitions"])
-            )
-
-            if key in self.used_city:
-                continue
-
-            self.used_city.add(key)
-            city_count += 1
-
         result = city.generate_city(city_name)
 
         self.city_listbox.insert(tk.END, f"[CITY] {result['city']}")
@@ -349,6 +499,92 @@ class MyApp(tk.Tk):
             self.filtered_spells.append(s)
 
         self.update_spell_listbox(self.filtered_spells)
+
+    def roll_spell_scroll_level(self):
+        class_name = self.scroll_class_selector.get()
+        if not class_name:
+            self.scroll_result_text.delete("1.0", tk.END)
+            self.scroll_result_text.insert(tk.END, "Select a class first.")
+            return
+
+        self.scroll_selected_class = class_name
+        level_roll = dice.roll_dice(9)
+        if class_name.lower() in ("czarnoksiężnik", "warlock"):
+            level_roll = min(level_roll, 5)
+
+        spells_at_level = scroll_generator._spell_scroll_generator_instance.get_spells_by_level_and_class(
+            level_roll, class_name)
+        spells_count = len(spells_at_level)
+
+        self.scroll_level_value = level_roll
+        self.scroll_available_spells = spells_count
+        self.scroll_level_label.config(text=f"Level roll: {level_roll}")
+        self.scroll_spells_count_label.config(
+            text=f"Available spells: {spells_count}")
+
+        self.scroll_result_text.delete("1.0", tk.END)
+        if spells_count == 0:
+            self.scroll_result_text.insert(
+                tk.END,
+                f"No spells found for class {class_name} at level {level_roll}.\nPress the button again to reroll."
+            )
+        else:
+            self.scroll_result_text.insert(
+                tk.END,
+                f"Rolled 1d9 = {level_roll}.\nFound {spells_count} spells for {class_name} at that level.\n"
+                f"Press Generate Scroll to roll d{spells_count} and choose one spell."
+            )
+
+    def generate_spell_scroll(self):
+        class_name = self.scroll_class_selector.get()
+        if not class_name:
+            self.scroll_result_text.delete("1.0", tk.END)
+            self.scroll_result_text.insert(tk.END, "Select a class first.")
+            return
+
+        if self.scroll_selected_class != class_name:
+            self.scroll_level_value = None
+            self.scroll_available_spells = 0
+            self.scroll_selected_class = None
+
+        if self.scroll_level_value is None:
+            self.roll_spell_scroll_level()
+            if self.scroll_available_spells == 0:
+                return
+
+        if self.scroll_available_spells == 0:
+            self.scroll_result_text.delete("1.0", tk.END)
+            self.scroll_result_text.insert(
+                tk.END,
+                "There are no spells for the selected class and rolled level. Reroll 1d9 first."
+            )
+            return
+
+        try:
+            spells_at_level = scroll_generator._spell_scroll_generator_instance.get_spells_by_level_and_class(
+                self.scroll_level_value, class_name)
+            spell_roll = dice.roll_dice(self.scroll_available_spells)
+            selected_spell = spells_at_level[spell_roll - 1]
+
+            self.scroll_result_text.delete("1.0", tk.END)
+            self.scroll_result_text.insert(tk.END,
+                                           f"Class: {class_name}\n"
+                                           f"Rolled level (1d9): {self.scroll_level_value}\n"
+                                           f"Available spells at this level: {self.scroll_available_spells}\n"
+                                           f"Selected spell roll (d{self.scroll_available_spells}): {spell_roll}\n\n"
+                                           f"Name: {selected_spell.get('name')}\n"
+                                           f"Level: {selected_spell.get('level', 0)}\n"
+                                           f"School: {selected_spell.get('school', 'unknown')}\n"
+                                           f"Classes: {', '.join(selected_spell.get('classes', []))}\n"
+                                           f"Range: {selected_spell.get('range', 'Unknown')}\n"
+                                           f"Duration: {selected_spell.get('duration', '')}\n"
+                                           f"Concentration: {selected_spell.get('concentration', False)}\n"
+                                           f"Ritual: {selected_spell.get('ritual', False)}\n\n"
+                                           f"Description:\n{selected_spell.get('description', '')}"
+                                           )
+        except Exception as e:
+            self.scroll_result_text.delete("1.0", tk.END)
+            self.scroll_result_text.insert(tk.END, f"Error: {e}")
 
     def update_spell_listbox(self, spells_list):
         self.spell_listbox.delete(0, tk.END)

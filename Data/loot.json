@@ -1,728 +1,866 @@
 [
   {
+    "name": "Miecz długi",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 15,
+    "rarity": "common",
+    "description": "Uniwersalna broń do walki wręcz, solidna i niezawodna."
+  },
+  {
+    "name": "Miecz długi +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 150,
+    "rarity": "uncommon",
+    "description": "Magiczny miecz dający +1 do rzutów i obrażeń."
+  },
+  {
+    "name": "Miecz długi +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 500,
+    "rarity": "rare",
+    "description": "Potężny miecz magiczny dający +2 do rzutów i obrażeń."
+  },
+  {
+    "name": "Rapier",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 25,
+    "rarity": "common",
+    "description": "Precyzyjna broń dla zwinnych walczaków i szermierzy."
+  },
+  {
+    "name": "Łuk długi",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 50,
+    "rarity": "common",
+    "description": "Łuk do strzelania na dalkie dystanse, wymaga strzał i umiejętności."
+  },
+  {
+    "name": "Łuk długi +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 250,
+    "rarity": "uncommon",
+    "description": "Magiczny łuk ze zwiększoną dokładnością i siłą."
+  },
+  {
+    "name": "Topór bojowy",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 10,
+    "rarity": "common",
+    "description": "Broń w jednej ręce, popularna wśród wojowników i barbarzyńców."
+  },
+  {
+    "name": "Młot bojowy",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 10,
+    "rarity": "common",
+    "description": "Ciężka broń, efektywna przeciwko pancerzom."
+  },
+  {
+    "name": "Włócznia",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 5,
+    "rarity": "common",
+    "description": "Prosta broń, może być rzucana lub używana w walce wręcz."
+  },
+  {
+    "name": "Sztylet",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 2,
+    "rarity": "common",
+    "description": "Mała broń, łatwa do ukrycia, popularna wśród rozbójników."
+  },
+  {
+    "name": "Miecz drukachta",
+    "type": "weapon",
+    "category": "bronie",
+    "value": 35,
+    "rarity": "common",
+    "description": "Dwuręczny miecz o ogromnej mocy, wymaga siły."
+  },
+  {
+    "name": "Miecz zimowy",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 300,
+    "rarity": "rare",
+    "description": "Miecz, który zadaje dodatkowe obrażenia od zimna i może zamrażać."
+  },
+  {
+    "name": "Pancerz kolczasty",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 50,
+    "rarity": "common",
+    "description": "Kolczucha, zapewnia dobrą ochronę, powoduje szum."
+  },
+  {
+    "name": "Pancerz łuskowy",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 50,
+    "rarity": "common",
+    "description": "Pancerz z łusek, dobrze balansuje ochronę i mobilność."
+  },
+  {
+    "name": "Zbroja płytowa",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 200,
+    "rarity": "uncommon",
+    "description": "Ciężki pancerz z stalowych płyt, najlepsza ochrona ale ogranicza ruch."
+  },
+  {
+    "name": "Zbroja płytowa +1",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 500,
+    "rarity": "rare",
+    "description": "Magiczny pancerz zwiększający obronę i nagięciu magicznych efektów."
+  },
+  {
+    "name": "Skórzana zbroja",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 10,
+    "rarity": "common",
+    "description": "Lekka zbroja, popularna wśród szybkich wojowników i zbójów."
+  },
+  {
+    "name": "Półzbroja",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 75,
+    "rarity": "uncommon",
+    "description": "Pancerz łączący mobilność i ochronę, popularna wśród rycerzy."
+  },
+  {
+    "name": "Hełm staliwny",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 10,
+    "rarity": "common",
+    "description": "Hełm ze stali, chroni głowę bez utraty widzenia."
+  },
+  {
+    "name": "Tarcza drewniana",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 10,
+    "rarity": "common",
+    "description": "Tarcza z drewna, zwiększa AC, może być niszem."
+  },
+  {
+    "name": "Tarcza stalowa",
+    "type": "armor",
+    "category": "pancerze",
+    "value": 20,
+    "rarity": "common",
+    "description": "Stalowa tarcza, bardziej trwała niż drewniana."
+  },
+  {
+    "name": "Płaszcz niewidzialności",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 1000,
+    "rarity": "legendary",
+    "description": "Artefakt, który czyni użytkownika niewidzialnym."
+  },
+  {
+    "name": "Pierścień ochrony",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 300,
+    "rarity": "rare",
+    "description": "Pierścień dający +1 do AC i rzutów ratunkowych."
+  },
+  {
+    "name": "Amulet zdrowia",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 200,
+    "rarity": "uncommon",
+    "description": "Chroni przed chorobami i magią transformacji."
+  },
+  {
+    "name": "Buty szybkości",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 250,
+    "rarity": "uncommon",
+    "description": "Buty podwajające prędkość poruszania się."
+  },
+  {
+    "name": "Worek bez dna",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 300,
+    "rarity": "rare",
+    "description": "Magiczny worek mogący pomieścić znacznie więcej niż się mieści."
+  },
+  {
+    "name": "Kryształowa kula",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 500,
+    "rarity": "rare",
+    "description": "Pozwala patrzeć na odległe miejsca i magiczne widzenia."
+  },
+  {
+    "name": "Księga potęgi",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 400,
+    "rarity": "rare",
+    "description": "Śpiewnik zaklęć i magicznych znań."
+  },
+  {
+    "name": "Zwój zaklęcia - Ognista Kula",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 50,
+    "rarity": "uncommon",
+    "description": "Zwój zawierający zaklęcie Ognista Kula (poziom 3), dla magów i czarowników."
+  },
+  {
+    "name": "Zwój zaklęcia - Magiczny Pocisk",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 25,
+    "rarity": "uncommon",
+    "description": "Zwój zawierający zaklęcie Magiczny Pocisk (poziom 1), dla wszystkich klas magicznych."
+  },
+  {
+    "name": "Zwój zaklęcia - Wskrzeszenie",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 200,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie Wskrzeszenie (poziom 9), dla kleryków i druidów."
+  },
+  {
+    "name": "Elixir Niezwykłej Mocy",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 150,
+    "rarity": "uncommon",
+    "description": "Eliksir tymczasowo podwajający siłę."
+  },
+  {
+    "name": "Mikstura Leczenia",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 50,
+    "rarity": "common",
+    "description": "Mikstura leczaca 2d4+2 punktów życia."
+  },
+  {
+    "name": "Mikstura Większego Leczenia",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 100,
+    "rarity": "uncommon",
+    "description": "Mikstura leczaca 4d4+4 punktów życia."
+  },
+  {
+    "name": "Mikstura Niewidzialności",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 300,
+    "rarity": "rare",
+    "description": "Eliksir czyniący drinką niewidzialnym na godzinę."
+  },
+  {
+    "name": "Mikstura Zmienności",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 200,
+    "rarity": "rare",
+    "description": "Eliksir pozwalający na zmianę wyglądu przez godzinę."
+  },
+  {
+    "name": "Uzdrawiająca Opatranka",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 75,
+    "rarity": "uncommon",
+    "description": "Magiczna opatranka uzdrawiająca 2d6+2 obrażeń każdego dnia."
+  },
+  {
+    "name": "Magiczny Rękopis",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 250,
+    "rarity": "rare",
+    "description": "Rękopis zawierający zaklęcia i wiedze magiczną."
+  },
+  {
+    "name": "Szmata Czyszczenia",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 50,
+    "rarity": "common",
+    "description": "Magiczna szmata mogąca wyczyścić wszystko."
+  },
+  {
+    "name": "Lustra Przywołania",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 400,
+    "rarity": "rare",
+    "description": "Magiczne lustro pozwalające przywołać sojusznika."
+  },
+  {
+    "name": "Kwiaty Specjalne",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 100,
+    "rarity": "uncommon",
+    "description": "Kwiaty magiczne, każda z innymi właściwościami leczniczymi."
+  },
+  {
+    "name": "Zwój Mapy Skarbów",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 300,
+    "rarity": "rare",
+    "description": "Magiczny zwój pokazujący lokację skarbu."
+  },
+  {
     "name": "Zamarznięty racjon",
+    "type": "consumable",
+    "category": "zwykłe_przedmioty",
     "value": 5,
     "rarity": "common",
     "description": "Porcja jedzenia na mroźną noc."
   },
   {
-    "name": "Zardzewiały nóż",
-    "value": 3,
-    "rarity": "common",
-    "description": "Stary nóż do krojenia lub obrony."
-  },
-  {
-    "name": "Pęknięta latarnia",
-    "value": 2,
-    "rarity": "common",
-    "description": "Latarnia świeci słabo w mrozie."
-  },
-  {
-    "name": "Płaszcz z futra",
-    "value": 10,
-    "rarity": "uncommon",
-    "description": "Chroni przed mrozem i wiatrem."
-  },
-  {
-    "name": "Skórzane buty",
-    "value": 8,
-    "rarity": "common",
-    "description": "Solidne buty na śnieg i lód."
-  },
-  {
-    "name": "Mikstura rozgrzewająca",
-    "value": 15,
-    "rarity": "uncommon",
-    "description": "Rozgrzewa ciało w ekstremalnym mrozie."
-  },
-  {
     "name": "Zimowe rękawice",
+    "type": "wondrous",
+    "category": "pancerze",
     "value": 4,
     "rarity": "common",
     "description": "Chronią dłonie przed odmrożeniem."
   },
   {
-    "name": "Złota moneta",
-    "value": 20,
-    "rarity": "rare",
-    "description": "Cenna moneta do wymiany lub sprzedaży."
-  },
-  {
-    "name": "Koc niedźwiedzi",
-    "value": 12,
-    "rarity": "uncommon",
-    "description": "Ciepły koc na noc na śniegu."
-  },
-  {
-    "name": "Złamany kubek",
-    "value": 1,
-    "rarity": "common",
-    "description": "Stary kubek, użyteczny prowizorycznie."
-  },
-  {
-    "name": "Zimowy kapelusz",
-    "value": 5,
-    "rarity": "common",
-    "description": "Chroni głowę przed zimnem."
-  },
-  {
-    "name": "Kamień runiczny",
-    "value": 25,
-    "rarity": "rare",
-    "description": "Starodawny kamień z magicznymi symbolami."
-  },
-  {
-    "name": "Sakwa z monetami",
-    "value": 15,
-    "rarity": "uncommon",
-    "description": "Torba z drobnym złotem."
-  },
-  {
-    "name": "Lina z lodu",
-    "value": 6,
-    "rarity": "common",
-    "description": "Skręcona lina, przydatna w śniegu."
-  },
-  {
-    "name": "Świeca woskowa",
-    "value": 2,
-    "rarity": "common",
-    "description": "Pomaga w ciemności i w zimnie."
-  },
-  {
-    "name": "Zimowy pas",
-    "value": 3,
-    "rarity": "common",
-    "description": "Pas podtrzymujący ubranie, chroni przed wiatrem."
-  },
-  {
-    "name": "Stare rękawice skórzane",
-    "value": 2,
-    "rarity": "common",
-    "description": "Chronią ręce, już trochę przetarte."
-  },
-  {
-    "name": "Lodowy sztylet",
-    "value": 18,
-    "rarity": "uncommon",
-    "description": "Sztylet z ostrzem pokrytym lodem."
-  },
-  {
-    "name": "Miniaturowy kompas",
-    "value": 7,
-    "rarity": "common",
-    "description": "Pomaga znaleźć kierunek w zamieci."
-  },
-  {
-    "name": "Zimowy płaszcz kapturowy",
-    "value": 9,
-    "rarity": "uncommon",
-    "description": "Ciepły kaptur chroni przed śniegiem."
-  },
-  {
-    "name": "Skórzany pas na broń",
-    "value": 4,
-    "rarity": "common",
-    "description": "Trzyma broń przy pasie."
-  },
-  {
-    "name": "Mroźny eliksir",
-    "value": 12,
-    "rarity": "uncommon",
-    "description": "Chroni przed wychłodzeniem przez godzinę."
-  },
-  {
-    "name": "Złamany miecz",
-    "value": 3,
-    "rarity": "common",
-    "description": "Nie nadaje się do walki, może prowizorycznie."
-  },
-  {
-    "name": "Sakwa z prowiantem",
-    "value": 5,
-    "rarity": "common",
-    "description": "Zapas jedzenia i wody na drogę."
-  },
-  {
-    "name": "Śnieżna lampa",
-    "value": 6,
-    "rarity": "common",
-    "description": "Lampka świeci w śnieżnej zamieci."
-  },
-  {
-    "name": "Kamień ogrzewający",
-    "value": 8,
-    "rarity": "uncommon",
-    "description": "Trzyma ciepło w dłoniach przez kilka minut."
-  },
-  {
-    "name": "Stare buty wojskowe",
-    "value": 5,
-    "rarity": "common",
-    "description": "Wygodne na krótkie wyprawy."
-  },
-  {
-    "name": "Zimowy pas na sakwy",
-    "value": 3,
-    "rarity": "common",
-    "description": "Przytrzymuje torby i sakwy."
-  },
-  {
-    "name": "Zimowa maska",
-    "value": 4,
-    "rarity": "common",
-    "description": "Chroni twarz przed wiatrem i śniegiem."
-  },
-  {
-    "name": "Pikowana kurtka",
-    "value": 9,
-    "rarity": "uncommon",
-    "description": "Chroni przed lodowatym wiatrem."
-  },
-  {
     "name": "Mroźny amulet",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
     "value": 20,
     "rarity": "rare",
     "description": "Chroni przed zimnem i magią lodu."
   },
   {
-    "name": "Złamana topórka",
-    "value": 2,
-    "rarity": "common",
-    "description": "Nie nadaje się do walki, do użytku awaryjnego."
-  },
-  {
-    "name": "Rękawice z futra",
-    "value": 5,
-    "rarity": "common",
-    "description": "Ciepłe rękawice do zimowej wyprawy."
-  },
-  {
-    "name": "Sakiewka z kryształami",
-    "value": 25,
+    "name": "Perła Mocy",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 350,
     "rarity": "rare",
-    "description": "Małe kryształy o wartości magicznej."
+    "description": "Perła zawierająca magiczną energię, może być wykorzystana do wzmocnienia zaklęć."
   },
   {
-    "name": "Zimowy kubek",
-    "value": 3,
-    "rarity": "common",
-    "description": "Trzyma ciepły napój przez chwilę."
+    "name": "Diament Zdrowia",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 600,
+    "rarity": "very_rare",
+    "description": "Diament mogący uzdrowić każdą chorobę i trucizną."
   },
   {
-    "name": "Skórzany pas na broń",
-    "value": 4,
-    "rarity": "common",
-    "description": "Podtrzymuje miecz lub sztylet."
-  },
-  {
-    "name": "Mikstura lodowego oddechu",
-    "value": 15,
-    "rarity": "uncommon",
-    "description": "Ułatwia oddychanie w mrozie."
-  },
-  {
-    "name": "Stary kociołek",
-    "value": 5,
-    "rarity": "common",
-    "description": "Do gotowania na ognisku."
-  },
-  {
-    "name": "Zimowy kocyk",
-    "value": 6,
-    "rarity": "common",
-    "description": "Lekki koc na krótkie noclegi."
-  },
-  {
-    "name": "Latarnia ręczna",
-    "value": 7,
-    "rarity": "common",
-    "description": "Świeci na kilka godzin w mrozie."
-  },
-  {
-    "name": "Stare sakwy",
-    "value": 3,
-    "rarity": "common",
-    "description": "Torba na drobiazgi, przetarta."
-  },
-  {
-    "name": "Łopata śnieżna",
-    "value": 8,
-    "rarity": "uncommon",
-    "description": "Do odśnieżania lub kopania w śniegu."
-  },
-  {
-    "name": "Płaszcz futrzany",
-    "value": 10,
-    "rarity": "uncommon",
-    "description": "Chroni przed mrozem i wiatrem."
-  },
-  {
-    "name": "Mroźny pierścień",
-    "value": 18,
-    "rarity": "uncommon",
-    "description": "Chroni przed niskimi temperaturami."
-  },
-  {
-    "name": "Zimowy kaptur",
-    "value": 4,
-    "rarity": "common",
-    "description": "Kaptur do ochrony głowy i twarzy."
-  },
-  {
-    "name": "Skórzany pas na sakwy",
-    "value": 3,
-    "rarity": "common",
-    "description": "Trzyma torby przy pasie."
-  },
-  {
-    "name": "Mroźny talizman",
-    "value": 20,
+    "name": "Magiczny Róg",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 250,
     "rarity": "rare",
-    "description": "Chroni przed ekstremalnym zimnem."
+    "description": "Róg którego dźwięk ma magiczne właściwości."
   },
   {
-    "name": "Śnieżna latarnia",
-    "value": 7,
-    "rarity": "common",
-    "description": "Świeci słabo, wystarczy do oświetlenia drogi."
+    "name": "Księga Starożytnej Wiedzy",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 500,
+    "rarity": "rare",
+    "description": "Księga zawierająca mądrość wieków."
   },
   {
-    "name": "Zimowa sakiewka",
-    "value": 4,
-    "rarity": "common",
-    "description": "Torba z drobnymi monetami."
-  },
-  {
-    "name": "Mroźny zwój",
-    "value": 15,
-    "rarity": "uncommon",
-    "description": "Zawiera wiedzę o mroźnej magii."
-  },
-  {
-    "name": "Złamana strzała",
-    "value": 1,
-    "rarity": "common",
-    "description": "Do prowizorycznej broni lub naprawy."
-  },
-  {
-    "name": "Pikowana czapka",
-    "value": 4,
-    "rarity": "common",
-    "description": "Czapka chroni przed wiatrem i śniegiem."
-  },
-  {
-    "name": "Czara antymrozu",
+    "name": "Zwój ochrony - Magiczny Pancerz",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
     "value": 30,
-    "rarity": "rare",
-    "description": "Chroni zawartość przed zamarznięciem"
-  },
-  {
-    "name": "Rękawy nomady",
-    "value": 22,
     "rarity": "uncommon",
-    "description": "Pozwalają na podróż bez ekwipunku"
+    "description": "Zwój zawierający zaklęcie Magiczny Pancerz (poziom 1), dla magów i czarowników."
   },
   {
-    "name": "Pierścień termiczny",
-    "value": 35,
-    "rarity": "rare",
-    "description": "Utrzymuje temperaturę wewnątrz"
-  },
-  {
-    "name": "Futerał na zwoje",
-    "value": 18,
+    "name": "Zwój przywołania - Przywołaj Zwierzę",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 60,
     "rarity": "uncommon",
-    "description": "Chroni zwoje przed wilgocią"
+    "description": "Zwój zawierający zaklęcie Przywołaj Zwierzę (poziom 3), dla druidów."
   },
   {
-    "name": "Sznur lodowy",
-    "value": 11,
-    "rarity": "common",
-    "description": "Niezniszczalna lina"
-  },
-  {
-    "name": "Hełm mroźnika",
-    "value": 42,
-    "rarity": "very_rare",
-    "description": "Udzielaj rezystencji wobec zimna"
-  },
-  {
-    "name": "Torba asymilacji",
-    "value": 28,
-    "rarity": "rare",
-    "description": "Dostosowuje rozmiar zawartości"
-  },
-  {
-    "name": "Klejnot gościnności",
-    "value": 20,
-    "rarity": "uncommon",
-    "description": "Przyciąga zwierzęta do pomocy"
-  },
-  {
-    "name": "Płaszcz Yslandryka",
-    "value": 50,
-    "rarity": "very_rare",
-    "description": "Prawie całkowita ochrona przed lodem"
-  },
-  {
-    "name": "Buty Śnieżnicy",
-    "value": 25,
-    "rarity": "rare",
-    "description": "Przechodzenie przez głębokie śniegi"
-  },
-  {
-    "name": "Amult Aurili",
+    "name": "Zwój zniszczenia - Niszcząca Fala",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
     "value": 100,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie Niszcząca Fala (poziom 5), dla magów i czarowników."
+  },
+  {
+    "name": "Sznur Węzłów",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 100,
+    "rarity": "uncommon",
+    "description": "Sznur z magicznymi węzłami o specjalnych właściwościach."
+  },
+  {
+    "name": "Pierścień Odpychania",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 350,
+    "rarity": "rare",
+    "description": "Pierścień mogący odpychać atakujących."
+  },
+  {
+    "name": "Pierścień Teleportacji",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 450,
     "rarity": "very_rare",
-    "description": "Artefakt bogini mrożu"
+    "description": "Pierścień pozwalający na teleportację na krótkie dystanse."
   },
   {
-    "name": "Lasso lodowe",
-    "value": 16,
+    "name": "Magiczny Łańcuch",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 200,
     "rarity": "uncommon",
-    "description": "Może przytrzymać istoty lodowe"
+    "description": "Łańcuch, który nie może być przerwany."
   },
   {
-    "name": "Lampka wieczna",
-    "value": 40,
+    "name": "Płaszcz Zmienialności",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 300,
     "rarity": "rare",
-    "description": "Nigdy nie gasnie, zawsze świeci"
+    "description": "Płaszcz mogący zmieniać kolory i teksturę."
   },
   {
-    "name": "Rękawice Olbrzyma",
-    "value": 55,
+    "name": "Zwój - Ogień Niezniszczalny",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 80,
+    "rarity": "uncommon",
+    "description": "Zwój zawierający zaklęcie Ogień Niezniszczalny (poziom 4), dla magów."
+  },
+  {
+    "name": "Miecz Waleczności",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 600,
     "rarity": "very_rare",
-    "description": "Gigantyczna siła chwytu"
+    "description": "Miecz zwiększający szansę trafienia i dający +2 do ataku."
   },
   {
-    "name": "Zapaska na mróz",
-    "value": 19,
+    "name": "Łuk Dokładności",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 400,
+    "rarity": "rare",
+    "description": "Łuk ze zwiększoną dokładnością i magiczną siłą."
+  },
+  {
+    "name": "Drut Cieśla",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 150,
     "rarity": "uncommon",
-    "description": "Ochrona przed ujęciami mrozu"
+    "description": "Narzędzie do pracy w drewnie z magiczną mocą."
   },
   {
-    "name": "Naszyjnik ochrony",
-    "value": 32,
-    "rarity": "rare",
-    "description": "Przeciw wszelkim zaklęciom zimna"
-  },
-  {
-    "name": "Mapa ukrytych szlaków",
-    "value": 26,
-    "rarity": "rare",
-    "description": "Ukazuje bezpieczne drogi przez mróz"
-  },
-  {
-    "name": "Wódka mrożna",
-    "value": 14,
-    "rarity": "common",
-    "description": "Rozgrzewa od wewnątrz"
-  },
-  {
-    "name": "Kryształ lodowy",
-    "value": 37,
-    "rarity": "rare",
-    "description": "Magiczny kryształ zimowej mocy"
-  },
-  {
-    "name": "Czaszka Oświetlacza",
-    "value": 44,
+    "name": "Miecz Dragonosławuący",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 750,
     "rarity": "very_rare",
-    "description": "Mówi o przeszłości lodowca"
+    "description": "Legendarny miecz chroniący przed smokami."
   },
   {
-    "name": "Odznaka Myśliwego",
-    "value": 21,
-    "rarity": "uncommon",
-    "description": "Identyfikuje profesjonalnego myśliwego"
-  },
-  {
-    "name": "Zioła lecznicze",
-    "value": 13,
-    "rarity": "common",
-    "description": "Leczą obfitą odmrożenia"
-  },
-  {
-    "name": "Medalion Pogody",
-    "value": 48,
-    "rarity": "rare",
-    "description": "Przewiduje burze śnieżne"
-  },
-  {
-    "name": "Peleryna Niewidoczności",
-    "value": 75,
+    "name": "Zbroja Niezniszczalna",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 1000,
     "rarity": "very_rare",
-    "description": "Całkowita niewidzialność na śniegu"
+    "description": "Pancerz, który nigdy nie może zostać zniszczony."
   },
   {
-    "name": "Dagger Lodowy",
-    "value": 31,
-    "rarity": "rare",
-    "description": "Zadaje mroźne obrażenia"
-  },
-  {
-    "name": "Zwój Ciepła",
-    "value": 24,
-    "rarity": "uncommon",
-    "description": "Jednorazowe zaklęcie rozgrzewające"
-  },
-  {
-    "name": "Kompas Północy",
-    "value": 29,
-    "rarity": "rare",
-    "description": "Zawsze wskazuje na północ"
-  },
-  {
-    "name": "Zestaw naprawczy",
-    "value": 17,
-    "rarity": "common",
-    "description": "Naprawia zbroję i narzędzia"
-  },
-  {
-    "name": "Maska Wyroczni",
-    "value": 51,
+    "name": "Tarcza +3",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 600,
     "rarity": "very_rare",
-    "description": "Widzisz przyszłość na śniegu"
+    "description": "Legendarna tarcza ze wzmocnieniem +3."
   },
   {
-    "name": "Pas Obrońcy",
-    "value": 19,
-    "rarity": "uncommon",
-    "description": "Wzmacnia obronę"
-  },
-  {
-    "name": "Sprzęt wspinacza",
-    "value": 27,
-    "rarity": "rare",
-    "description": "Pomaga wspinać się po lodzie"
-  },
-  {
-    "name": "Czara magii",
-    "value": 56,
+    "name": "Pierścień Trzyżyczenia",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 800,
     "rarity": "very_rare",
-    "description": "Zwiększa moc zaklęć zimna"
+    "description": "Pierścień mogący wypełnić trzy życzenia użytkownika."
   },
   {
-    "name": "Rękawice Rybaka",
-    "value": 15,
-    "rarity": "common",
-    "description": "Pomaga w łowieniu ryb"
-  },
-  {
-    "name": "Zwój Języka",
-    "value": 22,
-    "rarity": "uncommon",
-    "description": "Pozwala rozumieć inne języki"
-  },
-  {
-    "name": "Pierścionek Mocy",
-    "value": 38,
-    "rarity": "rare",
-    "description": "Zwiększa siłę noszącego"
-  },
-  {
-    "name": "Przedmiot Druidów",
-    "value": 43,
-    "rarity": "rare",
-    "description": "Pomaga porozumiewać się z naturą"
-  },
-  {
-    "name": "Zwój Ochrony",
-    "value": 20,
-    "rarity": "uncommon",
-    "description": "Chroni przed jednym zaklęciem"
-  },
-  {
-    "name": "Nalepka Reputacji",
-    "value": 8,
-    "rarity": "common",
-    "description": "Pokazuje twoją sławę"
-  },
-  {
-    "name": "Kwiat Lodowy",
-    "value": 33,
-    "rarity": "rare",
-    "description": "Magiczny kwiat zmrozu"
-  },
-  {
-    "name": "Zestaw Herbaty",
-    "value": 12,
-    "rarity": "common",
-    "description": "Robi ciepły napój"
-  },
-  {
-    "name": "Harpun Łowiecki",
-    "value": 36,
-    "rarity": "rare",
-    "description": "Do łowiienia morskich bestii"
-  },
-  {
-    "name": "Mapa Rumorów",
-    "value": 23,
-    "rarity": "uncommon",
-    "description": "Ukazuje miejsca plotek"
-  },
-  {
-    "name": "Klejnot Nocy",
-    "value": 52,
+    "name": "Zwój - Meteor Swarm",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 300,
     "rarity": "very_rare",
-    "description": "Udzielaj ochrony w ciemności"
+    "description": "Zwój zawierający zaklęcie Meteor Swarm (poziom 9)."
   },
   {
-    "name": "Flaga Poddania",
-    "value": 9,
-    "rarity": "common",
-    "description": "Do negocjacji pokojowych"
+    "name": "Księga Wszystkich Zaklęć",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 2000,
+    "rarity": "legendary",
+    "description": "Legendarny artefakt zawierający wszystkie zaklęcia."
   },
   {
-    "name": "Zwój Historii",
-    "value": 25,
-    "rarity": "rare",
-    "description": "Zawiera starożytną wiedzę"
+    "name": "Korona Mocy",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 1500,
+    "rarity": "legendary",
+    "description": "Korona dająca nieograniczoną magiczną moc."
   },
   {
-    "name": "Pierścionek Łyżwiara",
-    "value": 18,
+    "name": "Miecz Arturiusza",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 2500,
+    "rarity": "legendary",
+    "description": "Najsławniejszy miecz w królestwie, niezniszczalny i wszechmogący."
+  },
+  {
+    "name": "Zbroja Zwycięzcy",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 2000,
+    "rarity": "legendary",
+    "description": "Pancerz stosowany przez wielkiego herosa."
+  },
+  {
+    "name": "Topór +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 120,
     "rarity": "uncommon",
-    "description": "Pozwala łyżwować po lodzie"
+    "description": "Magiczny topór ze wzmocnieniem +1."
   },
   {
-    "name": "Zestaw Rękodzieła",
-    "value": 19,
+    "name": "Łuk +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 180,
     "rarity": "uncommon",
-    "description": "Do robienia przedmiotów"
+    "description": "Magiczny łuk ze wzmocnieniem +1."
   },
   {
-    "name": "Statuetka Smoka",
-    "value": 53,
-    "rarity": "very_rare",
-    "description": "Mała figurka smoka"
-  },
-  {
-    "name": "Zwój Magii Mroku",
-    "value": 39,
-    "rarity": "rare",
-    "description": "Nauczaj czarnej magii"
-  },
-  {
-    "name": "Zestaw Gotowania",
-    "value": 16,
-    "rarity": "common",
-    "description": "Do przygotowywania potraw"
-  },
-  {
-    "name": "Naszyjnik Wyroczni",
-    "value": 57,
-    "rarity": "very_rare",
-    "description": "Wyrocze informacje"
-  },
-  {
-    "name": "Zwój Bezpieczeństwa",
-    "value": 21,
+    "name": "Włócznia +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 100,
     "rarity": "uncommon",
-    "description": "Chroni obozowisko"
+    "description": "Magiczna włócznia ze wzmocnieniem +1."
   },
   {
-    "name": "Klejnot Gościnności",
-    "value": 28,
-    "rarity": "rare",
-    "description": "Przyciąga sojuszników"
-  },
-  {
-    "name": "Peleryna Mroku",
-    "value": 62,
-    "rarity": "very_rare",
-    "description": "Całkowita ochrona"
-  },
-  {
-    "name": "Hełm Jasności",
-    "value": 47,
-    "rarity": "rare",
-    "description": "Udzielaj jasności"
-  },
-  {
-    "name": "Zwój Ucieczki",
-    "value": 26,
-    "rarity": "rare",
-    "description": "Jednorazowy teleport"
-  },
-  {
-    "name": "Maska Bestii",
-    "value": 34,
-    "rarity": "rare",
-    "description": "Podszywanie się za zwierzę"
-  },
-  {
-    "name": "Zestaw Medyka",
-    "value": 17,
+    "name": "Sztylet +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 80,
     "rarity": "uncommon",
-    "description": "Leczenie ran"
+    "description": "Magiczny sztylet ze wzmocnieniem +1."
   },
   {
-    "name": "Pierścionek Znalazcy",
-    "value": 41,
-    "rarity": "rare",
-    "description": "Znajdujesz ukryte przedmioty"
-  },
-  {
-    "name": "Zwój Zmiany",
-    "value": 32,
-    "rarity": "rare",
-    "description": "Zmiana wyglądu"
-  },
-  {
-    "name": "Klejnot Mocy",
-    "value": 58,
-    "rarity": "very_rare",
-    "description": "Ogromna moc"
-  },
-  {
-    "name": "Statuetka Lodowa",
-    "value": 24,
+    "name": "Hełm +1",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 150,
     "rarity": "uncommon",
-    "description": "Wyrzeźbiona z czystego lodu"
+    "description": "Magiczny hełm ze wzmocnieniem +1."
   },
   {
-    "name": "Zestaw Průzkumnika",
-    "value": 20,
+    "name": "Buty Podróżnika",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 200,
     "rarity": "uncommon",
-    "description": "Do eksploracji"
+    "description": "Buty pozwalające na szybszą podróż."
   },
   {
-    "name": "Naszyjnik Znalazcy",
-    "value": 45,
-    "rarity": "rare",
-    "description": "Najdowanie skarbu"
-  },
-  {
-    "name": "Zwój Oporu",
-    "value": 23,
+    "name": "Płaszcz Zmienności",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 180,
     "rarity": "uncommon",
-    "description": "Odporność na zaklęcia"
+    "description": "Płaszcz mogący zmieniać kolory i wzory."
   },
   {
-    "name": "Maska Nocy",
-    "value": 49,
-    "rarity": "rare",
-    "description": "Widzisz w ciemności"
-  },
-  {
-    "name": "Zestaw Zbierania",
-    "value": 15,
-    "rarity": "common",
-    "description": "Do zbierania zasobów"
-  },
-  {
-    "name": "Pierścionek Oszczędności",
-    "value": 30,
-    "rarity": "rare",
-    "description": "Bezpłatne przedmioty"
-  },
-  {
-    "name": "Zwój Zmęczenia",
-    "value": 19,
+    "name": "Lina Zwracająca",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 120,
     "rarity": "uncommon",
-    "description": "Łatwe odmarznięcia"
+    "description": "Magiczna lina, która zawsze wraca do właściciela."
+  },
+  {
+    "name": "Kolczuga +1",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 200,
+    "rarity": "uncommon",
+    "description": "Magiczna kolczuga ze wzmocnieniem +1."
+  },
+  {
+    "name": "Skórzana Zbroja +1",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 140,
+    "rarity": "uncommon",
+    "description": "Magiczna skórzana zbroja ze wzmocnieniem +1."
+  },
+  {
+    "name": "Młot +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 130,
+    "rarity": "uncommon",
+    "description": "Magiczny młot ze wzmocnieniem +1."
+  },
+  {
+    "name": "Zwój Niewidzialności",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 120,
+    "rarity": "uncommon",
+    "description": "Zwój zawierający zaklęcie Niewidzialność."
+  },
+  {
+    "name": "Zwój Teleportacji",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 150,
+    "rarity": "uncommon",
+    "description": "Zwój zawierający zaklęcie Teleportacji."
+  },
+  {
+    "name": "Mikstura Eliksiru",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 80,
+    "rarity": "uncommon",
+    "description": "Eliksir dający tymczasowe ulepszenia."
+  },
+  {
+    "name": "Miecz Ochrony",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 450,
+    "rarity": "rare",
+    "description": "Miecz chroniący przed magią."
+  },
+  {
+    "name": "Topór +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 320,
+    "rarity": "rare",
+    "description": "Magiczny topór ze wzmocnieniem +2."
+  },
+  {
+    "name": "Łuk +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 420,
+    "rarity": "rare",
+    "description": "Magiczny łuk ze wzmocnieniem +2."
+  },
+  {
+    "name": "Włócznia +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 280,
+    "rarity": "rare",
+    "description": "Magiczna włócznia ze wzmocnieniem +2."
+  },
+  {
+    "name": "Sztylet +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 250,
+    "rarity": "rare",
+    "description": "Magiczny sztylet ze wzmocnieniem +2."
+  },
+  {
+    "name": "Zbroja Płytowa +2",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 500,
+    "rarity": "rare",
+    "description": "Magiczna zbroja płytowa ze wzmocnieniem +2."
+  },
+  {
+    "name": "Kolczuga +2",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 400,
+    "rarity": "rare",
+    "description": "Magiczna kolczuga ze wzmocnieniem +2."
+  },
+  {
+    "name": "Hełm +2",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 350,
+    "rarity": "rare",
+    "description": "Magiczny hełm ze wzmocnieniem +2."
+  },
+  {
+    "name": "Tarcza +2",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 420,
+    "rarity": "rare",
+    "description": "Magiczna tarcza ze wzmocnieniem +2."
+  },
+  {
+    "name": "Zwój - Niszcząca Fala",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 180,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie Niszcząca Fala."
+  },
+  {
+    "name": "Zwój - Wskrzeszenie",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 250,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie Wskrzeszenie."
+  },
+  {
+    "name": "Pierścień Zdrowia +2",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 380,
+    "rarity": "rare",
+    "description": "Pierścień dający +2 do wszystkich rzeczy dotyczących zdrowia."
+  },
+  {
+    "name": "Mikstura Potęgi",
+    "type": "potion",
+    "category": "magiczne_przedmioty",
+    "value": 220,
+    "rarity": "rare",
+    "description": "Mikstura dająca ogromną siłę na krótko."
+  },
+  {
+    "name": "Młot +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 380,
+    "rarity": "rare",
+    "description": "Magiczny młot ze wzmocnieniem +2."
+  },
+  {
+    "name": "Drukachta +1",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 280,
+    "rarity": "uncommon",
+    "description": "Magiczny miecz dwuręczny ze wzmocnieniem +1."
+  },
+  {
+    "name": "Drukachta +2",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 580,
+    "rarity": "rare",
+    "description": "Magiczny miecz dwuręczny ze wzmocnieniem +2."
+  },
+  {
+    "name": "Półzbroja +1",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 280,
+    "rarity": "uncommon",
+    "description": "Magiczna półzbroja ze wzmocnieniem +1."
+  },
+  {
+    "name": "Półzbroja +2",
+    "type": "armor",
+    "category": "magiczne_pancerze",
+    "value": 520,
+    "rarity": "rare",
+    "description": "Magiczna półzbroja ze wzmocnieniem +2."
+  },
+  {
+    "name": "Pierścień Magii",
+    "type": "magical_item",
+    "category": "magiczne_przedmioty",
+    "value": 480,
+    "rarity": "rare",
+    "description": "Pierścień zwiększający moce magiczne użytkownika."
+  },
+  {
+    "name": "Księga Czarów",
+    "type": "wondrous",
+    "category": "magiczne_przedmioty",
+    "value": 320,
+    "rarity": "rare",
+    "description": "Księga zawierająca zaklęcia i magiczne formuły."
+  },
+  {
+    "name": "Zwój - Przywołaj Smoków",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 220,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie do przywołania smoków."
+  },
+  {
+    "name": "Łuk Przenikający",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 380,
+    "rarity": "rare",
+    "description": "Łuk, którego strzały przenikają każdą obronę."
+  },
+  {
+    "name": "Miecz Wisielca",
+    "type": "weapon",
+    "category": "magiczne_bronie",
+    "value": 420,
+    "rarity": "rare",
+    "description": "Miecz, którego uderzenia są zawsze śmiertelne."
+  },
+  {
+    "name": "Zwój - Szalony Kamień",
+    "type": "scroll",
+    "category": "zwoje_zaklec",
+    "value": 180,
+    "rarity": "rare",
+    "description": "Zwój zawierający zaklęcie Szalonego Kamienia."
   }
 ]
