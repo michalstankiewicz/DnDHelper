@@ -1,0 +1,31 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONPATH=/app \
+    PYTHONUNBUFFERED=1 \
+    DISPLAY=:99
+
+# Zainstaluj tkinter, xvfb (virtual display) i screenshot tools
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-tk \
+    xvfb \
+    x11-utils \
+    imagemagick \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY req.txt .
+
+RUN pip install --no-cache-dir -r req.txt && \
+    pip install --no-cache-dir pillow pyscreenshot
+
+COPY . .
+
+# Create logs directory
+RUN mkdir -p /app/gui_test_logs
+
+# Entrypoint script runs xvfb + GUI tests
+COPY developers/docker_Teste/gui_test_entrypoint.sh /app/gui_test_entrypoint.sh
+RUN chmod +x /app/gui_test_entrypoint.sh
+
+ENTRYPOINT ["/app/gui_test_entrypoint.sh"]

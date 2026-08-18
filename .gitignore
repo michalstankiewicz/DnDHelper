@@ -4,4 +4,12 @@ tasks.txt
 Plan.txt
 test.py
 log.txt
-developers
+cleanup_duplicates.py
+
+# Allow required Docker GUI test files to be included in CI checkout
+developers/*
+!developers/docker_Teste/
+developers/docker_Teste/*
+!developers/docker_Teste/Dockerfile_gui_test
+!developers/docker_Teste/gui_test_entrypoint.sh
+!developers/docker_Teste/req.txt
