@@ -16,12 +16,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image with GUI test support
-        run: docker build -f developers/docker_Teste/Dockerfile_gui_test -t dnd-helper-gui-test .
+        run: |
+          docker build \
+            -f "${{ github.workspace }}/developers/docker_Teste/Dockerfile_gui_test" \
+            -t dnd-helper-gui-test \
+            "${{ github.workspace }}"
 
       - name: Run GUI automation tests in Docker
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}/gui_test_logs:/app/gui_test_logs \
+            -v "${{ github.workspace }}/gui_test_logs:/app/gui_test_logs" \
             dnd-helper-gui-test
 
       - name: Upload GUI test screenshots
