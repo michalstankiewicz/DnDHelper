@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONPATH=/app \
+    PYTHONUNBUFFERED=1
+
+COPY req.txt .
+
+RUN pip install --no-cache-dir -r req.txt
+
+COPY . .
+
+# Run tests by default (as per your setup)
+CMD ["python", "main.py", "--test"]

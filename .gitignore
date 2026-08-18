@@ -6,10 +6,9 @@ test.py
 log.txt
 cleanup_duplicates.py
 
-# Allow required Docker GUI test files to be included in CI checkout
+# Keep Docker GUI test helpers available in CI
+# (the whole folder is needed by the image and entrypoint)
 developers/*
 !developers/docker_Teste/
 developers/docker_Teste/*
-!developers/docker_Teste/Dockerfile_gui_test
-!developers/docker_Teste/gui_test_entrypoint.sh
-!developers/docker_Teste/req.txt
+!developers/docker_Teste/**
