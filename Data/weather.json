@@ -1,0 +1,206 @@
+[
+  {
+    "weather_type": "blizzard",
+    "intensity": "severe",
+    "duration": 360,
+    "visibility": 0.1,
+    "temperature": -40,
+    "encounter_modifier": 1.5,
+    "travel_speed_modifier": 0.3,
+    "effects": [
+      "extreme_cold",
+      "visibility_reduced",
+      "avalanche_risk",
+      "freezing_damage"
+    ],
+    "loot_penalty": 0.7,
+    "description": "A raging blizzard obscures all vision and drops temperatures dangerously low. Wind chill makes survival nearly impossible."
+  },
+  {
+    "weather_type": "heavy_snow",
+    "intensity": "severe",
+    "duration": 480,
+    "visibility": 0.4,
+    "temperature": -25,
+    "encounter_modifier": 1.2,
+    "travel_speed_modifier": 0.4,
+    "effects": [
+      "snow_accumulation",
+      "extreme_cold",
+      "slippery_ground",
+      "buried_items"
+    ],
+    "loot_penalty": 0.8,
+    "description": "Snow falls in thick curtains, piling up and obscuring the landscape. Movement becomes increasingly difficult."
+  },
+  {
+    "weather_type": "frost",
+    "intensity": "light",
+    "duration": 300,
+    "visibility": 0.9,
+    "temperature": -15,
+    "encounter_modifier": 1.0,
+    "travel_speed_modifier": 0.9,
+    "effects": [
+      "icy_surfaces",
+      "extreme_cold",
+      "breath_visible",
+      "numbing_cold"
+    ],
+    "loot_penalty": 0.95,
+    "description": "A crisp frost covers everything with a layer of ice and frozen crystals. Breath hangs frozen in the air."
+  },
+  {
+    "weather_type": "ice_storm",
+    "intensity": "severe",
+    "duration": 240,
+    "visibility": 0.3,
+    "temperature": -20,
+    "encounter_modifier": 1.4,
+    "travel_speed_modifier": 0.3,
+    "effects": [
+      "ice_accumulation",
+      "slippery_ground",
+      "falling_ice",
+      "extreme_cold"
+    ],
+    "loot_penalty": 0.75,
+    "description": "Freezing rain coats everything in a layer of ice. The ground becomes a treacherous skating rink."
+  },
+  {
+    "weather_type": "whiteout",
+    "intensity": "severe",
+    "duration": 180,
+    "visibility": 0.05,
+    "temperature": -35,
+    "encounter_modifier": 1.6,
+    "travel_speed_modifier": 0.2,
+    "effects": [
+      "visibility_near_zero",
+      "extreme_cold",
+      "disorientation",
+      "deadly_winds"
+    ],
+    "loot_penalty": 0.6,
+    "description": "Blinding snow and wind create a complete whiteout. Navigation is impossible. Freezing death awaits the lost."
+  },
+  {
+    "weather_type": "cold_clear",
+    "intensity": "moderate",
+    "duration": 600,
+    "visibility": 1.0,
+    "temperature": -20,
+    "encounter_modifier": 1.0,
+    "travel_speed_modifier": 0.9,
+    "effects": [
+      "extreme_cold",
+      "clear_visibility",
+      "dry_air",
+      "dangerous_beauty"
+    ],
+    "loot_penalty": 0.9,
+    "description": "Clear skies reveal a frozen landscape in all its deadly beauty. The cold is relentless but visibility is perfect."
+  },
+  {
+    "weather_type": "sleet",
+    "intensity": "moderate",
+    "duration": 150,
+    "visibility": 0.5,
+    "temperature": -10,
+    "encounter_modifier": 1.1,
+    "travel_speed_modifier": 0.6,
+    "effects": [
+      "ice_and_snow",
+      "slippery_ground",
+      "stinging_precipitation",
+      "extreme_cold"
+    ],
+    "loot_penalty": 0.85,
+    "description": "Sleet falls in sharp, icy pellets that sting exposed skin and coat the ground with slick ice."
+  },
+  {
+    "weather_type": "frozen_fog",
+    "intensity": "heavy",
+    "duration": 360,
+    "visibility": 0.15,
+    "temperature": -22,
+    "encounter_modifier": 1.3,
+    "travel_speed_modifier": 0.5,
+    "effects": [
+      "visibility_reduced",
+      "freezing_fog",
+      "rime_formation",
+      "eerie_silence"
+    ],
+    "loot_penalty": 0.8,
+    "description": "A thick, freezing fog hangs over the land. Every breath becomes difficult as ice crystals form in the air."
+  },
+  {
+    "weather_type": "wind_chill",
+    "intensity": "extreme",
+    "duration": 120,
+    "visibility": 0.6,
+    "temperature": -30,
+    "encounter_modifier": 1.2,
+    "travel_speed_modifier": 0.4,
+    "effects": [
+      "deadly_cold",
+      "strong_winds",
+      "frostbite_risk",
+      "extreme_wind_chill"
+    ],
+    "loot_penalty": 0.7,
+    "description": "Howling winds amplify the cold to lethal levels. Exposed skin freezes in minutes."
+  },
+  {
+    "weather_type": "permafrost",
+    "intensity": "light",
+    "duration": 1440,
+    "visibility": 0.8,
+    "temperature": -25,
+    "encounter_modifier": 0.9,
+    "travel_speed_modifier": 0.7,
+    "effects": [
+      "frozen_ground",
+      "extreme_cold",
+      "hard_as_stone",
+      "unchanging_desolation"
+    ],
+    "loot_penalty": 0.8,
+    "description": "The ground beneath your feet is permanently frozen solid. Nothing grows. Nothing changes. Only ice and death remain."
+  },
+  {
+    "weather_type": "avalanche_weather",
+    "intensity": "severe",
+    "duration": 200,
+    "visibility": 0.2,
+    "temperature": -28,
+    "encounter_modifier": 1.7,
+    "travel_speed_modifier": 0.25,
+    "effects": [
+      "avalanche_risk",
+      "extreme_cold",
+      "rumbling_slopes",
+      "deadly_slopes"
+    ],
+    "loot_penalty": 0.65,
+    "description": "Fresh snow loads the mountainsides. The slopes are primed for catastrophic avalanche. One wrong step and death slides down."
+  },
+  {
+    "weather_type": "midnight_cold",
+    "intensity": "severe",
+    "duration": 480,
+    "visibility": 0.3,
+    "temperature": -45,
+    "encounter_modifier": 1.8,
+    "travel_speed_modifier": 0.2,
+    "effects": [
+      "soul_crushing_cold",
+      "extreme_darkness",
+      "numbing_death",
+      "eternal_night"
+    ],
+    "loot_penalty": 0.5,
+    "description": "The temperature plummets to lethal levels. This is not cold—this is death itself, slowly claiming all warmth and life."
+  }
+]

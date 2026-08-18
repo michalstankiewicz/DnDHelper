@@ -1,0 +1,50 @@
+name: GUI Automation Tests
+
+on:
+  push:
+    branches: [ "dev", "DnD" ]
+  pull_request:
+    branches: [ "DnD" ]
+  workflow_dispatch:
+
+jobs:
+  gui-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image with GUI test support
+        run: docker build -f developers/docker_Teste/Dockerfile_gui_test -t dnd-helper-gui-test .
+
+      - name: Run GUI automation tests in Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/gui_test_logs:/app/gui_test_logs \
+            dnd-helper-gui-test
+
+      - name: Upload GUI test screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gui-test-screenshots
+          path: gui_test_logs/
+          retention-days: 30
+
+      - name: Create test summary
+        if: always()
+        run: |
+          echo "## GUI Automation Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f gui_test_logs/test_log.txt ]; then
+            echo "### Test Log" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            cat gui_test_logs/test_log.txt >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Screenshots Generated" >> $GITHUB_STEP_SUMMARY
+          if [ -d gui_test_logs ]; then
+            ls -1 gui_test_logs/*.png 2>/dev/null | wc -l | xargs echo "Total screenshots:"
+          fi
